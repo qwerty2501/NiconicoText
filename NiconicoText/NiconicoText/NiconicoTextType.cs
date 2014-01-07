@@ -13,10 +13,11 @@ namespace NiconicoText
         VideoId,
         LiveId,
         CommunityId,
+        ChangelId,
         UserName,
         AttoMarkUserName,
         Command,
-        AnchorHtmlTag,
-        OtherHtmlTag,
+        HtmlAnchorElement,
+        HtmlInvalidElement,
     }
 }
