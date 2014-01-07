@@ -102,12 +102,29 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="NiconicoTextPatterns.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NiconicoTextPatterns.txt</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INiconicoText.cs" />
     <Compile Include="NiconicoTextParser.cs" />
+    <Compile Include="NiconicoTextPatternGenerator.partial.cs" />
+    <Compile Include="NiconicoTextPatterns.partial.cs" />
+    <Compile Include="NiconicoTextRegex.cs" />
     <Compile Include="NiconicoTextType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NiconicoTextPatterns.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

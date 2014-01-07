@@ -8,5 +8,9 @@ namespace NiconicoText
 {
     class NiconicoTextRegex
     {
+        NiconicoTextRegex()
+        {
+            
+        }
     }
 }

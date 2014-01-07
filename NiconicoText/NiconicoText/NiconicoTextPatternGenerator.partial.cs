@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    partial class  NiconicoTextPatternGenerator
+    partial class  NiconicoTextPatternGenerator2
     {
+        internal NiconicoTextPatternGenerator(string patternName, string pattern)
+        {
+            this.PatternName = patternName;
+            this.Pattern = pattern;
+        }
+
+        internal string PatternName { get; private set; }
+
+        internal string Pattern { get; private set; }
     }
 }
