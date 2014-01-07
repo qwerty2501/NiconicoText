@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public static class NiconicoTextPatterns
+    public static partial class NiconicoTextPatterns
     {
         #region Public
 
