@@ -3,7 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".txt" #>
+
 
 namespace NiconicoText
 {
@@ -11,23 +11,45 @@ namespace NiconicoText
     {
         <#
 			var patterns = new KeyValuePair<string,string>[]{
-				new KeyValuePair<string,string>("communityId","\\bco\\d{1,14}\\b")
+				new KeyValuePair<string,string>("communityId","\\bco\\d{1,14}\\b"),
+				new KeyValuePair<string,string>("channelId","\\bch\\d{1,14}\\b"),
+				new KeyValuePair<string,string>("videoId","\\b(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\\d{1,14}\\b")
 			};
 
 		#>
 			
-		#region Patterns
 
 
 
-		#endregion
-
+		
 		<#
-			foreach(var pattern in patterns){
+			foreach(var pattern in patterns)
+			{
+
+				var patternName = char.ToUpper( pattern.Key[0]) + pattern.Key.Substring(1,pattern.Key.Length - 1) + "Pattern";
+
+				var privatePaternName = char.ToLower(patternName[0]) + patternName.Substring(1,patternName.Length - 1);
+
+				var captureName = pattern.Key + "GroupPattern";
 		#>
-			
+
+		public string <#= patternName #> 
+		{
+			get
+			{
+				return <#= privatePaternName #>;
+			}
+		}
+
+		private const string <#= privatePaternName #> = <#= "@\"" + pattern.Value + "\"" #> ;
+
+		internal const string <#= captureName #> = <#= "\"(?<" + pattern.Key + ">\""  #> +  <#= privatePaternName #> + ")";
+
 		<#
 			}
 		#>
+
+
+
     }
 }
