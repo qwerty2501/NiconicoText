@@ -7,22 +7,25 @@
 
 namespace NiconicoText
 {
+	
+
     public static partial class NiconicoTextPatterns
     {
         <#
-			var patterns = new KeyValuePair<string,string>[]{
-				new KeyValuePair<string,string>("communityId","\\bco\\d{1,14}\\b"),
-				new KeyValuePair<string,string>("channelId","\\bch\\d{1,14}\\b"),
-				new KeyValuePair<string,string>("videoId","\\b(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\\d{1,14}\\b")
-			};
+			var patterns = new Dictionary<string,string>();
+			patterns.Add("communityId",@"\bco\d{1,14}\b");
+			patterns.Add("channelId",@"\bch\d{1,14}\b");
+			patterns.Add("videoId",@"(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14}");
+			patterns.Add("articleId",@"ar\d{1,14}");
+			patterns.Add("materialId",@"nc\d{1,14}");
+			patterns.Add("marketItemId",@"(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+)");
+			patterns.Add("liveId",@"lv\d{1,14}");
+			patterns.Add("watchStillImageId",@"(?:[sm]g|im)\d{1,14}");
+			patterns.Add("stillImageId",@"im\d{1,14}");
+			patterns.Add("url",@"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+");
+			patterns.Add("htmlAnchor",@"<a\s+?.*?href=\""""""+""(?<href>"" + " + "urlPattern" + @"+"")""+@""\""""\s*?.*?>(?<anchorText>.*?)</a\s*?>");
+			patterns.Add("htmlFont",@"<font\s+?(?:color=\""""(?<color>#?[A-Za-z0-9]+?)|size=\""""(?<size>[0-9]+?))\""""\s*?)>(?<fontText>.*?)</font\s*?>");
 
-		#>
-			
-
-
-
-		
-		<#
 			foreach(var pattern in patterns)
 			{
 
@@ -30,7 +33,9 @@ namespace NiconicoText
 
 				var privatePaternName = char.ToLower(patternName[0]) + patternName.Substring(1,patternName.Length - 1);
 
-				var captureName = pattern.Key + "GroupPattern";
+				var gruopKeyName = pattern.Key + "GroupPattern";
+
+				var paatternKeyName = pattern.Key + "KeyName";
 		#>
 
 		public string <#= patternName #> 
@@ -43,7 +48,9 @@ namespace NiconicoText
 
 		private const string <#= privatePaternName #> = <#= "@\"" + pattern.Value + "\"" #> ;
 
-		internal const string <#= captureName #> = <#= "\"(?<" + pattern.Key + ">\""  #> +  <#= privatePaternName #> + ")";
+		internal const string <#= paatternKeyName #> = "<#= pattern.Key #>";
+
+		internal const string <#= gruopKeyName #> = "(?<" + <#= paatternKeyName   #> + ">" +  <#= privatePaternName #> + ")";
 
 		<#
 			}
