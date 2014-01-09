@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INiconicoText.cs" />
+    <Compile Include="NiconicoBodyText.cs" />
     <Compile Include="NiconicoTextParser.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
