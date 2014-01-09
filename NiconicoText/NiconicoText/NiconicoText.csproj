@@ -110,14 +110,12 @@
   <ItemGroup>
     <Compile Include="INiconicoText.cs" />
     <Compile Include="NiconicoTextParser.cs" />
-    <Compile Include="NiconicoTextPatternGenerator.partial.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
     </Compile>
     <Compile Include="NiconicoTextPatterns.partial.cs" />
-    <Compile Include="NiconicoTextRegex.cs" />
     <Compile Include="NiconicoTextType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
