@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 namespace NiconicoTextTest
 {
     [TestClass]
-    public class UnitTest1
+    public class VideoIdRegexTest
     {
         [TestMethod]
         public void TestMethod1()
