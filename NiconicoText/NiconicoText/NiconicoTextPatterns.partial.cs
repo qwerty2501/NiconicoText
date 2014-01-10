@@ -20,7 +20,7 @@ namespace NiconicoText
 
         internal const string stillImageDomain = "seiga." + partialNiconicoDomain;
 
-        internal const string niconicoTextParsePattern = videoIdGroupPattern + "|" +
+        internal const string niconicoTextParsePattern = "(?:" + videoIdGroupPattern + "|" +
                                                          liveIdGroupPattern + "|" +
                                                          channelIdGroupPattern + "|" +
                                                          communityIdGroupPattern + "|" +
@@ -38,7 +38,7 @@ namespace NiconicoText
                                                          htmlItalicGroupPattern + "|" +
                                                          htmlStrikeGroupPattern + "|" +
                                                          htmlUnderLineGroupPattern + "|" +
-                                                         invalidHtmlElementGroupPattern;
+                                                         invalidHtmlElementGroupPattern + ")";
 
 
     }
