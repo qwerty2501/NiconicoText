@@ -12,12 +12,13 @@ namespace NiconicoTextTest.Tests
     [TestClass]
     public class NiconicoTextParsePatternTest
     {
+        /*
         [TestMethod]
         public void CreateTest()
         {
             var regex = createRegex();
         }
-
+        */
 
         private Regex createRegex()
         {
