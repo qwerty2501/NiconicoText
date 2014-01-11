@@ -142,6 +142,7 @@
     <Compile Include="Tests\NiconicoTextParsePatternTest.cs" />
     <Compile Include="Tests\VideoIdRegexTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\WatchStillImageIdRegexTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
