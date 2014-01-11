@@ -137,6 +137,7 @@
     <Compile Include="Tests\ChannelIdRegexTest.cs" />
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
     <Compile Include="Tests\LiveIdRegexTest.cs" />
+    <Compile Include="Tests\MarketItemIdRegexTest.cs" />
     <Compile Include="Tests\NiconicoTextParsePatternTest.cs" />
     <Compile Include="Tests\VideoIdRegexTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
