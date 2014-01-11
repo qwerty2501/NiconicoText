@@ -101,7 +101,7 @@ namespace NiconicoText
 		internal const string numberAnchorGroupPattern = "(?<" + numberAnchorKeyName + ">" +  numberAnchorPattern + ")";
 
 		
-		internal const string lineBreakPattern = @"(?:\r?\n|<(?i)br(?-i)\s*?/?>)" ;
+		internal const string lineBreakPattern = @"(?:\r?\n|<(?i:br)\s*?/?>)" ;
 
 		internal const string lineBreakKeyName = "lineBreak";
 
