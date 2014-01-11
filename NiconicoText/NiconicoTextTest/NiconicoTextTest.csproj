@@ -142,6 +142,7 @@
     <Compile Include="Tests\HtmlItalicRegexTest.cs" />
     <Compile Include="Tests\HtmlStrikeRegexTest.cs" />
     <Compile Include="Tests\HtmlUnderLineRegexTest.cs" />
+    <Compile Include="Tests\InvalidHtmlRegexPatterns.cs" />
     <Compile Include="Tests\LineBreakRegexTest.cs" />
     <Compile Include="Tests\LiveIdRegexTest.cs" />
     <Compile Include="Tests\MarketItemIdRegexTest.cs" />
