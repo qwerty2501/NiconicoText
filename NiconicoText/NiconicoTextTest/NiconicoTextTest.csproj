@@ -133,6 +133,7 @@
     <Compile Include="..\NiconicoText\NiconicoTextType.cs">
       <Link>NiconicoTextType.cs</Link>
     </Compile>
+    <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
     <Compile Include="Tests\LiveIdRegexTest.cs" />
