@@ -16,8 +16,8 @@ namespace NiconicoText
 
         <#
 			var patterns = new Dictionary<string,string>();
-			patterns.Add("communityId",@"\bco\d{1,14}\b");
-			patterns.Add("channelId",@"\bch\d{1,14}\b");
+			patterns.Add("communityId",@"co\d{1,14}");
+			patterns.Add("channelId",@"ch\d{1,14}");
 			patterns.Add("videoId",@"(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14}");
 			patterns.Add("articleId",@"ar\d{1,14}");
 			patterns.Add("materialId",@"nc\d{1,14}");

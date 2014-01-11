@@ -10,14 +10,14 @@ namespace NiconicoText
 		
 
         
-		internal const string communityIdPattern = @"\bco\d{1,14}\b" ;
+		internal const string communityIdPattern = @"co\d{1,14}" ;
 
 		internal const string communityIdKeyName = "communityId";
 
 		internal const string communityIdGroupPattern = "(?<" + communityIdKeyName + ">" +  communityIdPattern + ")";
 
 		
-		internal const string channelIdPattern = @"\bch\d{1,14}\b" ;
+		internal const string channelIdPattern = @"ch\d{1,14}" ;
 
 		internal const string channelIdKeyName = "channelId";
 
