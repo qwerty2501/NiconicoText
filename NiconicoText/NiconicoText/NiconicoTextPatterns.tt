@@ -28,8 +28,7 @@ namespace NiconicoText
 			patterns.Add("url",@"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+");
 			patterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""""+""(?<href>"" + " + "urlPattern" + @"+"")""+@""\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
 			patterns.Add("htmlFont",@"<(?i)font(?-i)\s+?(?:color=\""""(?<color>#?[A-Za-z0-9]+?)|size=\""""(?<size>[0-9]+?))\""""\s*?)>(?<fontText>.*?)</(?i)font(?-i)\s*?>");
-			patterns.Add("singleAnchor",@">>[0-9]+?");
-			patterns.Add("rangeAnchor",@">>[0-9]+?-[0-9]+?");
+			patterns.Add("numberAnchor",@">>[0-9]+?(-[0-9]+?)?");
 			patterns.Add("lineBreak",@"(?:\r?\n|<(?i)br(?-i)\s*?/?>)");
 			patterns.Add("htmlBold",@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>");
 			patterns.Add("htmlItalic",@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>");

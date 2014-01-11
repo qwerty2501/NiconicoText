@@ -94,18 +94,11 @@ namespace NiconicoText
 		internal const string htmlFontGroupPattern = "(?<" + htmlFontKeyName + ">" +  htmlFontPattern + ")";
 
 		
-		internal const string singleAnchorPattern = @">>[0-9]+?" ;
+		internal const string numberAnchorPattern = @">>[0-9]+?(-[0-9]+?)?" ;
 
-		internal const string singleAnchorKeyName = "singleAnchor";
+		internal const string numberAnchorKeyName = "numberAnchor";
 
-		internal const string singleAnchorGroupPattern = "(?<" + singleAnchorKeyName + ">" +  singleAnchorPattern + ")";
-
-		
-		internal const string rangeAnchorPattern = @">>[0-9]+?-[0-9]+?" ;
-
-		internal const string rangeAnchorKeyName = "rangeAnchor";
-
-		internal const string rangeAnchorGroupPattern = "(?<" + rangeAnchorKeyName + ">" +  rangeAnchorPattern + ")";
+		internal const string numberAnchorGroupPattern = "(?<" + numberAnchorKeyName + ">" +  numberAnchorPattern + ")";
 
 		
 		internal const string lineBreakPattern = @"(?:\r?\n|<(?i)br(?-i)\s*?/?>)" ;
