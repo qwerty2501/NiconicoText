@@ -18,6 +18,14 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        
+        public void MatchTest()
+        {
+            var regex = createRegex();
+
+
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.htmlItalicGroupPattern);

@@ -18,6 +18,19 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        [DataTestMethod]
+        [DataRow(@"<font color=""#FFCCDD"">testmessage</font>","testmessage",@"#FFCCDD","")]
+        public void MatcheTest(string text,string parsedtext,string color,string size)
+        {
+            var regex = createRegex();
+            var match = regex.Match(text);
+
+            Assert.AreEqual(parsedtext, match.Groups["fontText"].Value);
+            Assert.AreEqual(color, match.Groups["color"].Value);
+            Assert.AreEqual(size, match.Groups["size"].Value);
+            
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.htmlFontGroupPattern);

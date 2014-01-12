@@ -87,7 +87,7 @@ namespace NiconicoText
 		internal const string htmlAnchorGroupPattern = "(?<" + htmlAnchorKeyName + ">" +  htmlAnchorPattern + ")";
 
 		
-		internal const string htmlFontPattern = @"<(?i:font)\s+?(?:(?i:color)=\""(?:(?<color>\#?[A-Za-z0-9]+?)|(?i:size)=\""(?<size>[0-9]+?))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>" ;
+		internal const string htmlFontPattern = @"<(?i:font)\s+?(?:(?:(?i:color)=\""(?<color>#?[a-zA-Z0-9]+)|(?i:size)=\""(?<size>[0-9]+?))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>" ;
 
 		internal const string htmlFontKeyName = "htmlFont";
 

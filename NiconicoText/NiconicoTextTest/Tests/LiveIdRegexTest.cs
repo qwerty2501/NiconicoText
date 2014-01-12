@@ -19,6 +19,37 @@ namespace NiconicoTextTest.Tests
 
         }
 
+        [DataTestMethod]
+        [DataRow("cccclv162882011?zrou", "lv162882011",true)]
+        [DataRow("ccccev162882011?zrou", "", false)]
+        public void MatchTest(string text,string id,bool succed)
+        {
+            var regex = createRegex();
+            
+            var match = regex.Match(text);
+
+            Assert.AreEqual(succed, match.Success);
+
+            if (succed)
+            {
+                Assert.AreEqual(2, match.Groups.Count);
+
+                Assert.AreEqual(id, match.Value);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow("cccclv162882011?zrou_lv162882011", "lv162882011", "lv162882011")]
+        public void MatchesTest(string text,string id1,string id2)
+        {
+            var regex = createRegex();
+            var mathes = regex.Matches(text);
+            Assert.AreEqual(2, mathes.Count);
+            Assert.AreEqual(id1, mathes[0].Value);
+            Assert.AreEqual(id2, mathes[1].Value);
+            
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.liveIdGroupPattern);
