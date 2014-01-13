@@ -23,17 +23,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("ofler407000ccie", "", false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            var regex = createRegex();
-
-            var match = regex.Match(text);
-
-            Assert.AreEqual(succeed, match.Success);
-
-            if (succeed)
-            {
-                Assert.AreEqual(2, match.Groups.Count);
-                Assert.AreEqual(id, match.Value);
-            }
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.articleIdGroupPattern, text, id, 2, succeed);
 
         }
 

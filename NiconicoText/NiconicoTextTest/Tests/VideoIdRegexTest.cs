@@ -40,16 +40,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("testmessagenb22635959","",false)]
         public void MatchTest(string text, string value, bool succeed)
         {
-            var regex = createRegex();
-            var match = regex.Match(text);
-
-            Assert.AreEqual(succeed, match.Success);
-            
-            if (succeed)
-            {
-                Assert.AreEqual(2, match.Groups.Count);
-                Assert.AreEqual(value, match.Value);
-            }
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.videoIdGroupPattern, text, value, 2,succeed);
         }
 
 

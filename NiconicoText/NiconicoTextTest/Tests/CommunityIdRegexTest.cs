@@ -18,6 +18,14 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        [DataTestMethod]
+        [DataRow("oflco28428ccie", "co28428", true)]
+        public void MatchTest(string text, string id, bool succeed)
+        {
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.communityIdGroupPattern, text, id, 2, true);
+        }
+
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.communityIdGroupPattern);

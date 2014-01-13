@@ -19,12 +19,11 @@ namespace NiconicoTextTest.Tests
         }
 
         [DataTestMethod]
-        [DataRow(@"<font color=""#FFCCDD"">testmessage</font>","testmessage",@"#FFCCDD","")]
-        public void MatcheTest(string text,string parsedtext,string color,string size)
+        [DataRow(@"<font color=""#FFCCDD"">testmessage</font>","testmessage",@"#FFCCDD","",true)]
+        public void MatchTest(string text,string parsedtext,string color,string size,bool succeed)
         {
-            var regex = createRegex();
-            var match = regex.Match(text);
-
+            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlFontGroupPattern, text, text, 5, succeed);
+            
             Assert.AreEqual(parsedtext, match.Groups["fontText"].Value);
             Assert.AreEqual(color, match.Groups["color"].Value);
             Assert.AreEqual(size, match.Groups["size"].Value);

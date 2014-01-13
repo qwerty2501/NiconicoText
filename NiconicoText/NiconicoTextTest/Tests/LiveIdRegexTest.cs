@@ -22,20 +22,9 @@ namespace NiconicoTextTest.Tests
         [DataTestMethod]
         [DataRow("cccclv162882011?zrou", "lv162882011",true)]
         [DataRow("ccccev162882011?zrou", "", false)]
-        public void MatchTest(string text,string id,bool succed)
+        public void MatchTest(string text,string id,bool succeed)
         {
-            var regex = createRegex();
-            
-            var match = regex.Match(text);
-
-            Assert.AreEqual(succed, match.Success);
-
-            if (succed)
-            {
-                Assert.AreEqual(2, match.Groups.Count);
-
-                Assert.AreEqual(id, match.Value);
-            }
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.liveIdGroupPattern, text, id, 2, succeed);
         }
 
         [DataTestMethod]
