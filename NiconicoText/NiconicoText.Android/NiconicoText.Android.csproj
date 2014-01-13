@@ -16,6 +16,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AssemblyName>NiconicoText.Android</AssemblyName>
     <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <BaseDirectory>..\NiconicoText</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,123 +44,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="..\NiconicoText\INiconicoText.cs">
-      <Link>NiconicoText\INiconicoText.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoBodyText.cs">
-      <Link>NiconicoText\NiconicoBodyText.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextParser.cs">
-      <Link>NiconicoText\NiconicoTextParser.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextPatterns.cs">
-      <Link>NiconicoText\NiconicoTextPatterns.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextPatterns.partial.cs">
-      <Link>NiconicoText\NiconicoTextPatterns.partial.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextType.cs">
-      <Link>NiconicoText\NiconicoTextType.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs">
-      <Link>NiconicoText\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs">
-      <Link>NiconicoText\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs">
-      <Link>NiconicoText\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\Properties\AssemblyInfo.cs">
-      <Link>NiconicoText\Properties\AssemblyInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
-    <None Include="..\NiconicoText\NiconicoTextPatterns.tt">
-      <Link>NiconicoText\NiconicoTextPatterns.tt</Link>
-    </None>
-    <None Include="..\NiconicoText\bin\Debug\NiconicoText.pdb">
-      <Link>NiconicoText\bin\Debug\NiconicoText.pdb</Link>
-    </None>
-    <None Include="..\NiconicoText\bin\Debug\NiconicoText.pri">
-      <Link>NiconicoText\bin\Debug\NiconicoText.pri</Link>
-    </None>
-    <None Include="..\NiconicoText\bin\Debug\NiconicoText.winmd">
-      <Link>NiconicoText\bin\Debug\NiconicoText.winmd</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache">
-      <Link>NiconicoText\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\layout.resfiles">
-      <Link>NiconicoText\obj\Debug\layout.resfiles</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\layout.resfiles.intermediate">
-      <Link>NiconicoText\obj\Debug\layout.resfiles.intermediate</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\MultipleQualifiersPerDimensionFound.txt">
-      <Link>NiconicoText\obj\Debug\MultipleQualifiersPerDimensionFound.txt</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\NiconicoText.compile.pdb">
-      <Link>NiconicoText\obj\Debug\NiconicoText.compile.pdb</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\NiconicoText.csproj.FileListAbsolute.txt">
-      <Link>NiconicoText\obj\Debug\NiconicoText.csproj.FileListAbsolute.txt</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\NiconicoText.pdb">
-      <Link>NiconicoText\obj\Debug\NiconicoText.pdb</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\NiconicoText.winmd">
-      <Link>NiconicoText\obj\Debug\NiconicoText.winmd</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\NiconicoText.winmdobj">
-      <Link>NiconicoText\obj\Debug\NiconicoText.winmdobj</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\pri.resfiles">
-      <Link>NiconicoText\obj\Debug\pri.resfiles</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\pri.resfiles.intermediate">
-      <Link>NiconicoText\obj\Debug\pri.resfiles.intermediate</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\priconfig.xml">
-      <Link>NiconicoText\obj\Debug\priconfig.xml</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\priconfig.xml.intermediate">
-      <Link>NiconicoText\obj\Debug\priconfig.xml.intermediate</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\qualifiers.txt">
-      <Link>NiconicoText\obj\Debug\qualifiers.txt</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\qualifiers.txt.intermediate">
-      <Link>NiconicoText\obj\Debug\qualifiers.txt.intermediate</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\resources.resfiles">
-      <Link>NiconicoText\obj\Debug\resources.resfiles</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\resources.resfiles.intermediate">
-      <Link>NiconicoText\obj\Debug\resources.resfiles.intermediate</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\TempPE\NiconicoTextPatterns.cs.dll">
-      <Link>NiconicoText\obj\Debug\TempPE\NiconicoTextPatterns.cs.dll</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\TempPE\NiconicoTextPatterns.txt.dll">
-      <Link>NiconicoText\obj\Debug\TempPE\NiconicoTextPatterns.txt.dll</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\TempPE\NiconicoTextPatternsGenerator.cs.dll">
-      <Link>NiconicoText\obj\Debug\TempPE\NiconicoTextPatternsGenerator.cs.dll</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\TempPE\NiconicoTextPatternsGenerator.txt.dll">
-      <Link>NiconicoText\obj\Debug\TempPE\NiconicoTextPatternsGenerator.txt.dll</Link>
-    </None>
-    <None Include="..\NiconicoText\obj\Debug\TempPE\TextTemplate1.txt.dll">
-      <Link>NiconicoText\obj\Debug\TempPE\TextTemplate1.txt.dll</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
