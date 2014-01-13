@@ -8,7 +8,7 @@
     <ProjectGuid>{7B2FBBDD-D210-4F70-B3F6-7B497856DC77}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>NiconicoText.Android</RootNamespace>
+    <RootNamespace>NiconicoText</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-    <None Include="..\NiconicoText\NiconicoText.csproj">
-      <Link>NiconicoText\NiconicoText.csproj</Link>
-    </None>
     <None Include="..\NiconicoText\NiconicoTextPatterns.tt">
       <Link>NiconicoText\NiconicoTextPatterns.tt</Link>
     </None>
