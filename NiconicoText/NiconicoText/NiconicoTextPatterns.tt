@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
 
 namespace NiconicoText
 {
@@ -48,7 +49,24 @@ namespace NiconicoText
 					list.Add(toGroupValue(pattern.Key,pattern.Value) );
 				}
 
-				return string.Join("|",list);
+				return "(?:" + string.Join("|",list) + ")";
+			};
+
+			Func<string,string> writePatternNumber = (pattern)=>
+			{
+				var regex = new Regex(pattern.Replace("\"\"","\""));
+				var list = new List<string>();
+
+				foreach(var key in regex.GetGroupNames())
+				{
+					int tmp;
+					
+					if(int.TryParse(key,out tmp))
+						continue;
+					list.Add("\t\tinternal const int " + key + "GroupNumber=" + regex.GroupNumberFromName(key) + ";\r\n\r\n");
+				}
+
+				return string.Join("",list);
 			};
 
 			Func<Dictionary<string,string>,string> writePatterns = (dictionary)=>
@@ -107,6 +125,8 @@ namespace NiconicoText
 
 		internal const string niconicoTextParsePattern = @"<#= niconicoTextParsePattern #>";
 
+<#= writePatternNumber(niconicoTextParsePattern) #>
+
 
     }
 
@@ -115,14 +135,14 @@ namespace NiconicoText
 	{
 		<#
 			var niconicoCommentTextPatterns = new Dictionary<string,string>();
-			niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(-[0-9]+?)?");
+			niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
 			niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
-			var niconicoCommentTextParsePattern = toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
+			var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
 		#>
 
 <#= writePatterns(niconicoCommentTextPatterns) #>
-
 		internal const string niconicoCommentTextParsePattern = @"<#= niconicoCommentTextParsePattern #>";
 
+<#= writePatternNumber(niconicoCommentTextParsePattern) #>
 	}
 }
