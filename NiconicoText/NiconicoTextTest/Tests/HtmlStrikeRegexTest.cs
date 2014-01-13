@@ -18,6 +18,18 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        [DataTestMethod]
+        [DataRow("<s>strikeText</s>","<s>strikeText</s>","strikeText",true)]
+        public void MatchTest(string text,string parsedText,string strikeText,bool succeed)
+        {
+            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlStrikeGroupPattern, text, parsedText, 3, succeed);
+
+            if (succeed)
+            {
+                Assert.AreEqual(strikeText, match.Groups["strikeText"].Value);
+            }
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.htmlStrikeGroupPattern);

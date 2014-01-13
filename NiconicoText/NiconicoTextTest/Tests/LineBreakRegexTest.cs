@@ -18,6 +18,13 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        [DataTestMethod]
+        [DataRow("<br>","<br>",true)]
+        public void MatchTest(string text,string parsedText,bool succeed)
+        {
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.lineBreakGroupPattern,text,parsedText,2,succeed);
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.lineBreakGroupPattern);

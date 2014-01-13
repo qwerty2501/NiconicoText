@@ -18,6 +18,18 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
+        [DataTestMethod]
+        [DataRow("<u>underLineText</u>","<u>underLineText</u>","underLineText",true)]
+        public void MatchTest(string text,string patterndText,string underLineText,bool succeed)
+        {
+            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlUnderLineGroupPattern, text, patterndText, 3, succeed);
+
+            if (succeed)
+            {
+                Assert.AreEqual(underLineText, match.Groups["underLineText"].Value);
+            }
+        }
+
         private Regex createRegex()
         {
             return new Regex(NiconicoTextPatterns.htmlUnderLineGroupPattern);

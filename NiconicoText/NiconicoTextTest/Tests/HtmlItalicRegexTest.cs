@@ -18,13 +18,20 @@ namespace NiconicoTextTest.Tests
             var regex = createRegex();
         }
 
-        
-        public void MatchTest()
+
+        [DataTestMethod]
+        [DataRow("<i>italicText</i>","<i>italicText</i>","italicText",true)]
+        public void MatchTest(string text,string formatedText,string italicText,bool succeed)
         {
-            var regex = createRegex();
+            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlItalicGroupPattern, text, formatedText, 3, succeed);
 
-
+            if (succeed)
+            {
+                Assert.AreEqual(italicText, match.Groups["italicText"].Value);
+            }
         }
+
+
 
         private Regex createRegex()
         {

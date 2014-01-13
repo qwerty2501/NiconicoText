@@ -18,6 +18,13 @@ namespace NiconicoTextTest.Tests
             var regex = creteRegex();
         }
 
+        [DataTestMethod]
+        [DataRow("ceewim14567522565ccew","im14567522565",true)]
+        public void MatchTest(string text,string id,bool succeed)
+        {
+            RegexTestHelper.MatchTest(NiconicoTextPatterns.stillImageIdGroupPattern, text, id, 2, succeed);
+        }
+
         private Regex creteRegex()
         {
             return new Regex(NiconicoTextPatterns.stillImageIdGroupPattern);
