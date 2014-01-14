@@ -66,8 +66,6 @@ namespace NiconicoText
 				#>
 
 		<#= "internal const int " + key + "GroupNumber=" + regex.GroupNumberFromName(key) + ";\r\n\r\n" #>
-					
-
 				<#
 				}
 
@@ -111,7 +109,7 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("stillImageId",@"im\d{1,14}");
 			niconicoTextPatterns.Add("url",@"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+");
 			
-			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:(?:(?i:color)=\""""(?<color>#?[a-fA-F0-9]+)|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>");
+			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>");
 			niconicoTextPatterns.Add("lineBreak",@"(?:\r?\n|<(?i:br)\s*?/?>)");
 			niconicoTextPatterns.Add("htmlBold",@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>");
 			niconicoTextPatterns.Add("htmlItalic",@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>");

@@ -115,9 +115,6 @@
     <Compile Include="..\NiconicoText\INiconicoText.cs">
       <Link>INiconicoText.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoBodyText.cs">
-      <Link>NiconicoBodyText.cs</Link>
-    </Compile>
     <Compile Include="..\NiconicoText\NiconicoTextParser.cs">
       <Link>NiconicoTextParser.cs</Link>
     </Compile>
@@ -189,7 +186,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
+      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
