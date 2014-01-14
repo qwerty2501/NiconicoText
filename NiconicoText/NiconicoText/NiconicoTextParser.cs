@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+
 namespace NiconicoText
 {
     public sealed class NiconicoTextParser
@@ -13,6 +14,7 @@ namespace NiconicoText
 
         public NiconicoTextParser()
         {
+           
             this.regex_ = new Regex(NiconicoTextPatterns.niconicoTextParsePattern);
         }
 

@@ -22,10 +22,10 @@ namespace NiconicoTextTest.Tests
         [DataRow(@"<font color=""#FFCCDD"">testmessage</font>","testmessage",@"#FFCCDD","",true)]
         public void MatchTest(string text,string parsedtext,string color,string size,bool succeed)
         {
-            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlFontGroupPattern, text, text, 5, succeed);
+            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlFontGroupPattern, text, text, 6, succeed);
             
             Assert.AreEqual(parsedtext, match.Groups["fontText"].Value);
-            Assert.AreEqual(color, match.Groups["color"].Value);
+            Assert.AreEqual(color, match.Groups["colorCode"].Value);
             Assert.AreEqual(size, match.Groups["size"].Value);
             
         }

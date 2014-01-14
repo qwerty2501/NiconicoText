@@ -107,7 +107,7 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("liveId",@"lv\d{1,14}");
 			niconicoTextPatterns.Add("watchStillImageId",@"(?:[sm]g|im)\d{1,14}");
 			niconicoTextPatterns.Add("stillImageId",@"im\d{1,14}");
-			niconicoTextPatterns.Add("url",@"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+");
+			niconicoTextPatterns.Add("url",@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?");
 			
 			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>");
 			niconicoTextPatterns.Add("lineBreak",@"(?:\r?\n|<(?i:br)\s*?/?>)");
