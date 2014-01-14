@@ -108,7 +108,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="INiconicoWord.cs" />
+    <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="NiconicoGeneralTextParser.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
@@ -116,7 +116,7 @@
       <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
     </Compile>
     <Compile Include="NiconicoTextPatterns.partial.cs" />
-    <Compile Include="NiconicoWordType.cs" />
+    <Compile Include="NiconicoTextSegmentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

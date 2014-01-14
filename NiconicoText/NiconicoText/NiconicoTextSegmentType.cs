@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public enum NiconicoWordType
+    public enum NiconicoTextSegmentType
     {
         Plain,
         Url,
