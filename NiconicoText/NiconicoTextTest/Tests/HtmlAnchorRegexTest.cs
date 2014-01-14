@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using NiconicoText;
+using NiconicoText.Comments;
 using System;
 using System.Collections.Generic;
 using System.Linq;

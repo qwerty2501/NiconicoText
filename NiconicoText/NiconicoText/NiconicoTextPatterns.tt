@@ -63,15 +63,19 @@ namespace NiconicoText
 					
 					if(int.TryParse(key,out tmp))
 						continue;
-					list.Add("\t\tinternal const int " + key + "GroupNumber=" + regex.GroupNumberFromName(key) + ";\r\n\r\n");
+				#>
+
+		<#= "internal const int " + key + "GroupNumber=" + regex.GroupNumberFromName(key) + ";\r\n\r\n" #>
+					
+
+				<#
 				}
 
 				return string.Join("",list);
 			};
 
-			Func<Dictionary<string,string>,string> writePatterns = (dictionary)=>
+			Action<Dictionary<string,string>> writePatterns = (dictionary)=>
 			{
-				string result = string.Empty;
 				foreach(var textPattern in dictionary)
 				{
 
@@ -83,18 +87,16 @@ namespace NiconicoText
 
 					var patternKeyName =  textPattern.Key ;
 			
+			#>
 
-					result += "\t\tinternal const string " +  internalPatternName + "=" + "@\"" + textPattern.Value + "\"" + ";\r\n\r\n" ;
-
-					result += "\t\tinternal const string " +  patternKeyName + "=\"" + textPattern.Key + "\";\r\n\r\n" ;
-
-
-					result += "\t\tinternal const string " +  gruopKeyName + "=" + "@\"" + toGroupValue(patternKeyName,textPattern.Value)  + "\";\r\n\r\n";
-
+		<#="internal const string " +  internalPatternName + "=" + "@\"" + textPattern.Value + "\"" + ";\r\n\r\n" #>
+		<#= "internal const string " +  patternKeyName + "=\"" + textPattern.Key + "\";\r\n\r\n"  #>
+		<#= "internal const string " +  gruopKeyName + "=" + "@\"" + toGroupValue(patternKeyName,textPattern.Value)  + "\";\r\n\r\n" #>
+			<#
 			
 				}
 
-				return result;
+
 			};
 			
 			var niconicoTextPatterns = new Dictionary<string,string>();
@@ -117,32 +119,31 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("htmlUnderLine",@"<[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>");
 			niconicoTextPatterns.Add("invalidHtmlElement",@"</?.*?>");
 			var niconicoTextParsePattern = toPatterns(niconicoTextPatterns);
+
 			#>
 
 
-<#= writePatterns(niconicoTextPatterns) #>
-
+		<# writePatterns(niconicoTextPatterns); #>
 
 		internal const string niconicoTextParsePattern = @"<#= niconicoTextParsePattern #>";
 
-<#= writePatternNumber(niconicoTextParsePattern) #>
-
-
+<# writePatternNumber(niconicoTextParsePattern); #>
     }
 
+	namespace Comments{
+		internal static class NiconicoCommentTextPatterns
+		{
+			<#
+				var niconicoCommentTextPatterns = new Dictionary<string,string>();
+				niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
+				niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
+				var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
+			#>
 
-	internal static class NiconicoCommentTextPatterns
-	{
-		<#
-			var niconicoCommentTextPatterns = new Dictionary<string,string>();
-			niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
-			niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
-			var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
-		#>
-
-<#= writePatterns(niconicoCommentTextPatterns) #>
+	<# writePatterns(niconicoCommentTextPatterns); #>
 		internal const string niconicoCommentTextParsePattern = @"<#= niconicoCommentTextParsePattern #>";
 
-<#= writePatternNumber(niconicoCommentTextParsePattern) #>
+<# writePatternNumber(niconicoCommentTextParsePattern); #>
+		}
 	}
 }
