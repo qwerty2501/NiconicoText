@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public enum NiconicoTextType
+    public enum NiconicoWordType
     {
         Plain,
         Url,
         VideoId,
         LiveId,
         CommunityId,
-        ChangelId,
+        ChanelId,
+        ArticleId,
+        MaterialId,
+        MarketId,
+        StillImageId,
+        LineBreak,
         UserName,
-        AttoMarkUserName,
         Command,
         HtmlAnchorElement,
+        HtmlFontElement,
+        HtmlItalicElement,
+        HtmlStrikeElement,
+        HtmlUnderLineElement,
         HtmlInvalidElement,
     }
 }

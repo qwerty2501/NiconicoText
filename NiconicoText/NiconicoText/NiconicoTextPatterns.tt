@@ -135,6 +135,7 @@ namespace NiconicoText
 				var niconicoCommentTextPatterns = new Dictionary<string,string>();
 				niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
 				niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
+				niconicoCommentTextPatterns.Add("attoMarkName",@"@[^@^\s]+");
 				var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
 			#>
 

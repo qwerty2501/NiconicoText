@@ -112,11 +112,11 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NiconicoText\INiconicoText.cs">
-      <Link>INiconicoText.cs</Link>
+    <Compile Include="..\NiconicoText\INiconicoWord.cs">
+      <Link>INiconicoWord.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextParser.cs">
-      <Link>NiconicoTextParser.cs</Link>
+    <Compile Include="..\NiconicoText\NiconicoGeneralTextParser.cs">
+      <Link>NiconicoGeneralTextParser.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.cs">
       <Link>NiconicoTextPatterns.cs</Link>
@@ -127,8 +127,8 @@
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextType.cs">
-      <Link>NiconicoTextType.cs</Link>
+    <Compile Include="..\NiconicoText\NiconicoWordType.cs">
+      <Link>NiconicoWordType.cs</Link>
     </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />

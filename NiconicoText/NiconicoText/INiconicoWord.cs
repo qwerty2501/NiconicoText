@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    interface INiconicoText
+    interface INiconicoWord
     {
-        NiconicoTextType TextType { get; }
+        NiconicoWordType TextType { get; }
 
         string Text { get; }
 

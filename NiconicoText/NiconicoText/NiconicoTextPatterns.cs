@@ -309,7 +309,17 @@ namespace NiconicoText
 		internal const string htmlAnchorGroupPattern=@"(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)";
 
 
-					internal const string niconicoCommentTextParsePattern = @"(?:(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+			
+		internal const string attoMarkNamePattern=@"@[^@^\s]+";
+
+
+		internal const string attoMarkName="attoMarkName";
+
+
+		internal const string attoMarkNameGroupPattern=@"(?<attoMarkName>@[^@^\s]+)";
+
+
+					internal const string niconicoCommentTextParsePattern = @"(?:(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int numberAnchorGroupNumber=1;
@@ -332,103 +342,107 @@ namespace NiconicoText
 
 
 				
-		internal const int communityIdGroupNumber=6;
+		internal const int attoMarkNameGroupNumber=6;
 
 
 				
-		internal const int channelIdGroupNumber=7;
+		internal const int communityIdGroupNumber=7;
 
 
 				
-		internal const int videoIdGroupNumber=8;
+		internal const int channelIdGroupNumber=8;
 
 
 				
-		internal const int articleIdGroupNumber=9;
+		internal const int videoIdGroupNumber=9;
 
 
 				
-		internal const int materialIdGroupNumber=10;
+		internal const int articleIdGroupNumber=10;
 
 
 				
-		internal const int marketItemIdGroupNumber=11;
+		internal const int materialIdGroupNumber=11;
 
 
 				
-		internal const int liveIdGroupNumber=12;
+		internal const int marketItemIdGroupNumber=12;
 
 
 				
-		internal const int watchStillImageIdGroupNumber=13;
+		internal const int liveIdGroupNumber=13;
 
 
 				
-		internal const int stillImageIdGroupNumber=14;
+		internal const int watchStillImageIdGroupNumber=14;
 
 
 				
-		internal const int urlGroupNumber=15;
+		internal const int stillImageIdGroupNumber=15;
 
 
 				
-		internal const int htmlFontGroupNumber=16;
+		internal const int urlGroupNumber=16;
 
 
 				
-		internal const int colorCodeGroupNumber=17;
+		internal const int htmlFontGroupNumber=17;
 
 
 				
-		internal const int colorNameGroupNumber=18;
+		internal const int colorCodeGroupNumber=18;
 
 
 				
-		internal const int sizeGroupNumber=19;
+		internal const int colorNameGroupNumber=19;
 
 
 				
-		internal const int fontTextGroupNumber=20;
+		internal const int sizeGroupNumber=20;
 
 
 				
-		internal const int lineBreakGroupNumber=21;
+		internal const int fontTextGroupNumber=21;
 
 
 				
-		internal const int htmlBoldGroupNumber=22;
+		internal const int lineBreakGroupNumber=22;
 
 
 				
-		internal const int boldTextGroupNumber=23;
+		internal const int htmlBoldGroupNumber=23;
 
 
 				
-		internal const int htmlItalicGroupNumber=24;
+		internal const int boldTextGroupNumber=24;
 
 
 				
-		internal const int italicTextGroupNumber=25;
+		internal const int htmlItalicGroupNumber=25;
 
 
 				
-		internal const int htmlStrikeGroupNumber=26;
+		internal const int italicTextGroupNumber=26;
 
 
 				
-		internal const int strikeTextGroupNumber=27;
+		internal const int htmlStrikeGroupNumber=27;
 
 
 				
-		internal const int htmlUnderLineGroupNumber=28;
+		internal const int strikeTextGroupNumber=28;
 
 
 				
-		internal const int underLineTextGroupNumber=29;
+		internal const int htmlUnderLineGroupNumber=29;
 
 
 				
-		internal const int invalidHtmlElementGroupNumber=30;
+		internal const int underLineTextGroupNumber=30;
+
+
+				
+		internal const int invalidHtmlElementGroupNumber=31;
 
 
 						}

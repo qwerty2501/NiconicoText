@@ -108,15 +108,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="INiconicoText.cs" />
-    <Compile Include="NiconicoTextParser.cs" />
+    <Compile Include="INiconicoWord.cs" />
+    <Compile Include="NiconicoGeneralTextParser.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
     </Compile>
     <Compile Include="NiconicoTextPatterns.partial.cs" />
-    <Compile Include="NiconicoTextType.cs" />
+    <Compile Include="NiconicoWordType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
