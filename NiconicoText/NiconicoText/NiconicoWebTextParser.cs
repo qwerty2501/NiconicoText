@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public sealed class NiconicoGeneralTextParser
+    public sealed class NiconicoWebTextParser
     {
         
 
-        public NiconicoGeneralTextParser()
+        public NiconicoWebTextParser()
         {
            
             this.regex_ = new Regex(NiconicoTextPatterns.niconicoTextParsePattern);

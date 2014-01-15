@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INiconicoTextSegment.cs" />
-    <Compile Include="NiconicoGeneralTextParser.cs" />
+    <Compile Include="NiconicoWebTextParser.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

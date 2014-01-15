@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    interface INiconicoTextSegment
+    public interface INiconicoTextSegment
     {
-        NiconicoTextSegmentType WordType { get; }
+        INiconicoTextSegment PalentSegment { get; }
+
 
         string Text { get; }
 
