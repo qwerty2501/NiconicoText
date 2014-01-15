@@ -127,11 +127,11 @@
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoTextSegmentType.cs">
-      <Link>NiconicoTextSegmentType.cs</Link>
-    </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextParser.cs">
       <Link>NiconicoWebTextParser.cs</Link>
+    </Compile>
+    <Compile Include="..\NiconicoText\NiconicoWebTextSegmentType.cs">
+      <Link>NiconicoWebTextSegmentType.cs</Link>
     </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />

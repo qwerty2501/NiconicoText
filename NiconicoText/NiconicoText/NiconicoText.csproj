@@ -117,7 +117,7 @@
       <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
     </Compile>
     <Compile Include="NiconicoTextPatterns.partial.cs" />
-    <Compile Include="NiconicoTextSegmentType.cs" />
+    <Compile Include="NiconicoWebTextSegmentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
