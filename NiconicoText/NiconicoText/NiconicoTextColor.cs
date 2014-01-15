@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public interface INiconicoTextSegment
+    class NiconicoTextColor
     {
-        string Text { get; }
-
-        string FriendlyText { get; }
-
-        
     }
 }

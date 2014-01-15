@@ -8,5 +8,6 @@ namespace NiconicoText
 {
     public interface INiconicoWebTextSegment:INiconicoTextSegment
     {
+        
     }
 }

@@ -118,6 +118,9 @@
     <Compile Include="..\NiconicoText\INiconicoWebTextSegment.cs">
       <Link>INiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\NiconicoTextColor.cs">
+      <Link>NiconicoTextColor.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.cs">
       <Link>NiconicoTextPatterns.cs</Link>
       <AutoGen>True</AutoGen>
