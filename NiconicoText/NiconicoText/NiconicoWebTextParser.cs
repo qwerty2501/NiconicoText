@@ -8,10 +8,15 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
+    /// <summary>
+    /// Niconico web text parser.
+    /// </summary>
     public sealed class NiconicoWebTextParser
     {
         
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public NiconicoWebTextParser()
         {
            

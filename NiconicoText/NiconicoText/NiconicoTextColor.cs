@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    class NiconicoTextColor
+    /// <summary>
+    /// Niconico text's color.
+    /// </summary>
+    public struct NiconicoTextColor
     {
+        /// <summary>
+        /// Red
+        /// </summary>
+        public byte R;
+
+        /// <summary>
+        /// Green
+        /// </summary>
+        public byte G;
+
+        /// <summary>
+        /// Blue
+        /// </summary>
+        public byte B;
     }
 }
