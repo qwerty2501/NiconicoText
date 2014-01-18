@@ -8,7 +8,9 @@ namespace NiconicoText
 {
     internal sealed class VideoIdNiconicoTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
     {
-        protected internal override Uri OnCreateUrlAssosiatedId()
+        internal VideoIdNiconicoTextSegment(string id) : base(id) { }
+
+        protected internal override Uri OnCreateUrl()
         {
             throw new NotImplementedException();
         }

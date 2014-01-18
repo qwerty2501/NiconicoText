@@ -10,6 +10,8 @@ namespace NiconicoText
     {
         internal const string partialNiconicoDomain = "nicovideo.jp";
 
+        internal const string worldWideWebNiconicoDomain = "www." + partialNiconicoDomain;
+
         internal const string communityDomain = "com." + partialNiconicoDomain;
 
         internal const string channelDomain = "ch." + partialNiconicoDomain;
@@ -20,6 +22,7 @@ namespace NiconicoText
 
         internal const string stillImageDomain = "seiga." + partialNiconicoDomain;
 
+        internal const string niconicoVideoIdFormat = "http://" + worldWideWebNiconicoDomain + "/watch/{0}";
 
     }
 }

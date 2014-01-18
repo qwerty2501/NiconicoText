@@ -8,18 +8,25 @@ namespace NiconicoText
 {
     internal abstract class IdNiconicoWebTextSegmentBase:PlainNiconicoWebTextSegmentWithUrlBase
     {
-        protected internal override Uri OnCreateUrl()
+        internal IdNiconicoWebTextSegmentBase(string id): base(id) { }
+
+        public new Uri Url
         {
-            if (this.HasParent)
+            get
             {
-                return this.Parent.Url;
+                if (this.HasParent)
+                {
+                    return this.Parent.Url;
+                }
+                else
+                {
+                    return this.OnCreateUrl();
+                }
             }
-            else
-            {
-                return this.OnCreateUrlAssosiatedId();
-            }
+
         }
 
-        protected internal abstract Uri OnCreateUrlAssosiatedId();
+
+
     }
 }
