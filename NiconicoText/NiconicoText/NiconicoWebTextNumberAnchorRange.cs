@@ -13,6 +13,7 @@ namespace NiconicoText
     {
         /// <summary>
         /// Start number.
+        /// If this value and EndNumber are 0,the number anchor is invalid.
         /// </summary>
         public int StartNumber;
 
