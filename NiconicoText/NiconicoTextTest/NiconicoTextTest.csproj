@@ -148,8 +148,8 @@
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentType.cs">
       <Link>NiconicoWebTextSegmentType.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\PlainNiconicoWebTextSegment.cs">
-      <Link>PlainNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\PlainNiconicoWebTextSegmentBase.cs">
+      <Link>PlainNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentBase:INiconicoWebTextSegment
+    using Color = NiconicoTextColor;
+
+    internal abstract class NiconicoWebTextSegmentBase:INiconicoWebTextSegment
     {
 
 
@@ -35,29 +37,29 @@ namespace NiconicoText
             get { return null; }
         }
 
-        public byte FontSize
+        public byte FontElementSize
         {
-            get { return this.hasParent ? this.Parent.FontSize : defaultFontSize; }
+            get { return this.hasParent ? this.Parent.FontElementSize : NiconicoText.FontElementSize.defaultSize; }
         }
 
         public bool AssociatedUnderLine
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.AssociatedUnderLine : false; }
         }
 
         public bool AssociatedStrike
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.AssociatedStrike : false; }
         }
 
         public bool AssociatedItalic
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.AssociatedItalic : false; }
         }
 
         public Uri Url
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         public INiconicoWebTextSegment Parent
@@ -68,17 +70,17 @@ namespace NiconicoText
 
         public string Text
         {
-            get { throw new NotImplementedException(); }
+            get { return string.Empty; }
         }
 
         public string FriendlyText
         {
-            get { throw new NotImplementedException(); }
+            get { return string.Empty; }
         }
 
-        public NiconicoTextColor Color
+        public Color Color
         {
-            get { throw new NotImplementedException(); }
+            get { return default(Color); }
         }
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    class FontElementSize
+    internal struct FontElementSize
     {
+
+        internal const byte defaultSize = 3;
     }
 }

@@ -29,7 +29,7 @@ namespace NiconicoText
         /// <summary>
         /// Size attribute of font element
         /// </summary>
-        byte FontSize { get; }
+        byte FontElementSize { get; }
 
         /// <summary>
         /// Determine wheter decorated text segment by underline.
