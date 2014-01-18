@@ -112,8 +112,8 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NiconicoText\ChanelIdNiconicoWebTextSegment.cs">
-      <Link>ChanelIdNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\ChannelIdNiconicoWebTextSegment.cs">
+      <Link>ChannelIdNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\CommunityIdNiconicoWebTextSegment.cs">
       <Link>CommunityIdNiconicoWebTextSegment.cs</Link>

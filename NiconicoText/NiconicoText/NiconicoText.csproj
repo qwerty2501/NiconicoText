@@ -108,7 +108,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChanelIdNiconicoWebTextSegment.cs" />
+    <Compile Include="ChannelIdNiconicoWebTextSegment.cs" />
     <Compile Include="CommunityIdNiconicoWebTextSegment.cs" />
     <Compile Include="FontElementSize.cs" />
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />

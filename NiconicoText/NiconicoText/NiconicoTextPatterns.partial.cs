@@ -34,5 +34,7 @@ namespace NiconicoText
 
         internal const string niconicoCommunityUrlFormat = httpSchema + communityDomain + "/community/{0}";
 
+        internal const string niconicoChannelUrlFormat = httpSchema + channelDomain + "/{0}";
+
     }
 }
