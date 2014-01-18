@@ -115,11 +115,11 @@
     <Compile Include="..\NiconicoText\INiconicoTextSegment.cs">
       <Link>INiconicoTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\INiconicoTextSgmentCollection.cs">
-      <Link>INiconicoTextSgmentCollection.cs</Link>
-    </Compile>
     <Compile Include="..\NiconicoText\INiconicoWebTextSegment.cs">
       <Link>INiconicoWebTextSegment.cs</Link>
+    </Compile>
+    <Compile Include="..\NiconicoText\INiconicoWebTextSgmentCollection.cs">
+      <Link>INiconicoWebTextSgmentCollection.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\NiconicoTextColor.cs">
       <Link>NiconicoTextColor.cs</Link>

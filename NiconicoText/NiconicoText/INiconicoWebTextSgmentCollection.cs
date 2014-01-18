@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    interface INiconicoTextSgmentCollection
+    public interface INiconicoTextSgmentCollection<T>:IList<T>
+        where T:INiconicoTextSegment
     {
+
     }
 }
