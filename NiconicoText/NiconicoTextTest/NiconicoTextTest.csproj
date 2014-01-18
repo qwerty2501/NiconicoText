@@ -166,6 +166,9 @@
     <Compile Include="..\NiconicoText\PlainNiconicoWebTextSegmentWithUrlBase.cs">
       <Link>PlainNiconicoWebTextSegmentWithUrlBase.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\UrlNiconicoWebTextSegment.cs">
+      <Link>UrlNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\Utils\NiconicoTextUrlUtility.cs">
       <Link>Utils\NiconicoTextUrlUtility.cs</Link>
     </Compile>
