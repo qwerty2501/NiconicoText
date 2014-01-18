@@ -28,9 +28,11 @@ namespace NiconicoText
 
         private const string watchPathFormat = "/watch/{0}";
 
-        internal const string niconicoVideoIdFormat = httpSchema + worldWideWebNiconicoDomain + watchPathFormat;
+        internal const string niconicoVideoUrlFormat = httpSchema + worldWideWebNiconicoDomain + watchPathFormat;
 
-        internal const string niconicoLiveIdFormat = httpSchema + liveDomain + watchPathFormat;
+        internal const string niconicoLiveUrlFormat = httpSchema + liveDomain + watchPathFormat;
+
+        internal const string niconicoCommunityUrlFormat = httpSchema + communityDomain + "/community/{0}";
 
     }
 }

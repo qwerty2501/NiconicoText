@@ -10,12 +10,17 @@ namespace NiconicoText.Utils
     {
         public static Uri CreateNiconicoVideoUrl(string videoId)
         {
-            return new Uri(string.Format(NiconicoTextPatterns.niconicoVideoIdFormat, videoId));
+            return new Uri(string.Format(NiconicoTextPatterns.niconicoVideoUrlFormat, videoId));
         }
 
         public static Uri CraeteNiconicoLiveUrl(string liveId)
         {
-            return new Uri(string.Format(NiconicoTextPatterns.niconicoLiveIdFormat, liveId));
+            return new Uri(string.Format(NiconicoTextPatterns.niconicoLiveUrlFormat, liveId));
+        }
+
+        public static Uri CreateNiconicoCommunityUrl(string communityId)
+        {
+            return new Uri(string.Format(NiconicoTextPatterns.niconicoCommunityUrlFormat, communityId));
         }
     }
 }
