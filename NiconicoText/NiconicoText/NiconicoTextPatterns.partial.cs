@@ -14,6 +14,8 @@ namespace NiconicoText
 
         internal const string communityDomain = "com." + partialNiconicoDomain;
 
+        internal const string liveDomain = "live." + partialNiconicoDomain;
+
         internal const string channelDomain = "ch." + partialNiconicoDomain;
 
         internal const string commonsDomain = "commons." + partialNiconicoDomain;
@@ -22,7 +24,13 @@ namespace NiconicoText
 
         internal const string stillImageDomain = "seiga." + partialNiconicoDomain;
 
-        internal const string niconicoVideoIdFormat = "http://" + worldWideWebNiconicoDomain + "/watch/{0}";
+        private const string httpSchema = "http://";
+
+        private const string watchPathFormat = "/watch/{0}";
+
+        internal const string niconicoVideoIdFormat = httpSchema + worldWideWebNiconicoDomain + watchPathFormat;
+
+        internal const string niconicoLiveIdFormat = httpSchema + liveDomain + watchPathFormat;
 
     }
 }

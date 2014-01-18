@@ -9,14 +9,12 @@ namespace NiconicoText
 {
     internal sealed class VideoIdNiconicoTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
     {
-        internal VideoIdNiconicoTextSegment(string id) : base(id) { }
+        internal VideoIdNiconicoTextSegment(string videoId) : base(videoId) { }
+
 
         public override NiconicoWebTextSegmentType SegmentType
-        {
-            get
-            {
-                return NiconicoWebTextSegmentType.VideoId;
-            }
+        { 
+            get { return NiconicoWebTextSegmentType.VideoId; } 
         }
 
         protected internal override Uri OnCreateUrl()

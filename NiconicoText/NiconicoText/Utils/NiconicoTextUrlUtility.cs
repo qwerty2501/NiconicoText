@@ -12,5 +12,10 @@ namespace NiconicoText.Utils
         {
             return new Uri(string.Format(NiconicoTextPatterns.niconicoVideoIdFormat, videoId));
         }
+
+        public static Uri CraeteNiconicoLiveUrl(string liveId)
+        {
+            return new Uri(string.Format(NiconicoTextPatterns.niconicoLiveIdFormat, liveId));
+        }
     }
 }
