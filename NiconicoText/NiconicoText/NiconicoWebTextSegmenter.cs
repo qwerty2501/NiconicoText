@@ -11,18 +11,20 @@ namespace NiconicoText
     /// <summary>
     /// Niconico web text parser.
     /// </summary>
-    internal sealed class NiconicoWebTextSegmenter
+    public sealed class NiconicoWebTextSegmenter
     {
         
         /// <summary>
         /// Constructor
         /// </summary>
-        internal NiconicoWebTextSegmenter()
+        public NiconicoWebTextSegmenter()
         {
            
             this.regex_ = new Regex(NiconicoTextPatterns.niconicoTextParsePattern);
         }
 
         private Regex regex_;
+
+
     }
 }

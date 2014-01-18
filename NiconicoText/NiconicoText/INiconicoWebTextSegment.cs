@@ -14,12 +14,27 @@ namespace NiconicoText
         /// <summary>
         /// Determine wheter Url Associated with this segment of text.
         /// </summary>
-        bool HasAssociatedUrl { get; }
+        bool HasUrl { get; }
 
         /// <summary>
         /// Size attribute of font element
         /// </summary>
         byte FontSize { get; }
+
+        /// <summary>
+        /// Determine wheter decorated text segment by underline.
+        /// </summary>
+        bool AssociatedUnderLine { get; }
+
+        /// <summary>
+        /// Determine wheter decorated text segment by strike.
+        /// </summary>
+        bool AssociatedStrike { get; }
+
+        /// <summary>
+        /// Determine wheter decorated text segment by italic.
+        /// </summary>
+        bool AssociatedItalic { get; }
 
         /// <summary>
         /// Url Associated with this sgment of text.
