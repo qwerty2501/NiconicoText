@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal abstract class PlainNiconicoWebTextSegmentBase : NiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal abstract class PlainNiconicoWebTextSegmentBase : NiconicoWebTextSegmentBase, INiconicoWebTextSegment
     {
         internal PlainNiconicoWebTextSegmentBase(string text)
         {
             this.text_ = text;
         }
 
-        private string text_;
+        internal protected string text_;
 
         public new string Text
         {
@@ -29,6 +29,11 @@ namespace NiconicoText
             {
                 return this.text_;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.text_;
         }
     }
 }

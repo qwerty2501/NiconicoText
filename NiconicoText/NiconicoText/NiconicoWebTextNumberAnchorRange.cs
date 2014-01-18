@@ -9,18 +9,22 @@ namespace NiconicoText
     /// <summary>
     /// Number anchor range in Niconico web text.
     /// </summary>
+    /// <remarks>
+    /// If this StartNumber and EndNumber are 0,the number anchor is invalid.
+    /// </remarks>
     public struct NiconicoWebTextNumberAnchorRange
     {
         /// <summary>
         /// Start number.
-        /// If this value and EndNumber are 0,the number anchor is invalid.
         /// </summary>
         public int StartNumber;
 
         /// <summary>
         /// End number.
-        /// If this value is 0, the number anchor is single anchor.
         /// </summary>
+        /// <remarks>
+        /// If this value is 0, the number anchor is single anchor.
+        /// </remarks>
         public int EndNumber;
 
     }

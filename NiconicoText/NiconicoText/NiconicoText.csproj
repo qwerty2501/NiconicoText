@@ -124,6 +124,7 @@
     <Compile Include="NiconicoTextPatterns.partial.cs" />
     <Compile Include="NiconicoWebTextNumberAnchorRange.cs" />
     <Compile Include="NiconicoWebTextSegmentType.cs" />
+    <Compile Include="PlainNiconicoWebTextSegment.cs" />
     <Compile Include="PlainNiconicoWebTextSegmentBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
