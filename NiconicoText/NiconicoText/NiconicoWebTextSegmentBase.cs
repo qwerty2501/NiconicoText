@@ -59,7 +59,7 @@ namespace NiconicoText
 
         public Uri Url
         {
-            get { return null; }
+            get { return this.hasParent ? this.Parent.Url : null; }
         }
 
         public INiconicoWebTextSegment Parent
@@ -70,7 +70,7 @@ namespace NiconicoText
 
         public string Text
         {
-            get { return string.Empty; }
+            get { throw new NotImplementedException(); }
         }
 
         public string FriendlyText
@@ -80,7 +80,13 @@ namespace NiconicoText
 
         public Color Color
         {
-            get { return default(Color); }
+            get { return this.hasParent ? this.Parent.Color : default(Color); }
+        }
+
+
+        public NiconicoWebTextSegmentType SegmentType
+        {
+            get { throw new NotImplementedException(); }
         }
     }
 }
