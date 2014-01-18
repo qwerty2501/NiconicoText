@@ -22,42 +22,42 @@ namespace NiconicoText
         Url,
 
         /// <summary>
-        /// Niconico Video Id.
+        /// Niconico video id.
         /// </summary>
         VideoId,
 
         /// <summary>
-        /// Niconico Live Id.
+        /// Niconico live id.
         /// </summary>
         LiveId,
 
         /// <summary>
-        /// Niconico Community Id.
+        /// Niconico commnity id.
         /// </summary>
         CommunityId,
 
         /// <summary>
-        /// Niconico Chanel Id.
+        /// Niconico chanel id.
         /// </summary>
         ChanelId,
 
         /// <summary>
-        /// Niconico Article Id.
+        /// Niconico article id.
         /// </summary>
         ArticleId,
 
         /// <summary>
-        /// Niconico MaterialId.
+        /// Niconico material id.
         /// </summary>
         MaterialId,
 
         /// <summary>
-        /// Niconico Ichiba Id.
+        /// Niconico ichiba id.
         /// </summary>
         MarketId,
 
         /// <summary>
-        /// Niconico Seiga Id.
+        /// Niconico seiga id.
         /// </summary>
         StillImageId,
 
