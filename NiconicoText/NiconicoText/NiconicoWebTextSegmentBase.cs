@@ -68,10 +68,8 @@ namespace NiconicoText
             internal protected set;
         }
 
-        public string Text
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public abstract string Text { get; }
+
 
         public string FriendlyText
         {
@@ -84,11 +82,7 @@ namespace NiconicoText
         }
 
 
-        public NiconicoWebTextSegmentType SegmentType
-        {
-            get { throw new NotImplementedException(); }
-        }
-
+        public abstract NiconicoWebTextSegmentType SegmentType { get; }
 
         public bool HasNumberAnchor
         {

@@ -11,7 +11,7 @@ namespace NiconicoText
     {
         internal VideoIdNiconicoTextSegment(string id) : base(id) { }
 
-        public new NiconicoWebTextSegmentType SegmentType
+        public override NiconicoWebTextSegmentType SegmentType
         {
             get
             {

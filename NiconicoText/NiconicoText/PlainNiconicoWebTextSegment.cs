@@ -10,7 +10,7 @@ namespace NiconicoText
     {
         internal PlainNiconicoWebTextSegment(string text) : base(text) { }
 
-        public new NiconicoWebTextSegmentType SegmentType
+        public override NiconicoWebTextSegmentType SegmentType
         {
             get
             {

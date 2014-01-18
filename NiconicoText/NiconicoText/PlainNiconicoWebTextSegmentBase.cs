@@ -15,7 +15,7 @@ namespace NiconicoText
 
         internal protected string text_;
 
-        public new string Text
+        public override string Text
         {
             get
             {
