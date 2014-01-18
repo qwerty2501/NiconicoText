@@ -12,13 +12,23 @@ namespace NiconicoText
     public interface INiconicoWebTextSegment:INiconicoTextSegment
     {
         /// <summary>
-        /// Determine wheter Url Associated with this text.
+        /// Determine wheter Url Associated with this segment of text.
         /// </summary>
         bool HasAssociatedUrl { get; }
 
         /// <summary>
-        /// Url Associated with this text.
+        /// Size attribute of font element
         /// </summary>
-        Uri AssociatedUrl { get; }
+        byte FontSize { get; }
+
+        /// <summary>
+        /// Url Associated with this sgment of text.
+        /// </summary>
+        Uri Url { get; }
+
+        /// <summary>
+        /// Parent segment text of this segment text
+        /// </summary>
+        INiconicoWebTextSegment Parent { get; }
     }
 }

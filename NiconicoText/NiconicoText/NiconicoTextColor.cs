@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#if NETFX_CORE
+
+using Color = Windows.UI.Color;
+
+#endif
+
 namespace NiconicoText
 {
     /// <summary>
@@ -25,5 +31,7 @@ namespace NiconicoText
         /// Blue
         /// </summary>
         public byte B;
+
+
     }
 }

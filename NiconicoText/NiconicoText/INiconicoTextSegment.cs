@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
+
+    using Color = NiconicoTextColor;
+
     /// <summary>
     /// A Segment of Niconico text.
     /// </summary>
@@ -21,14 +24,10 @@ namespace NiconicoText
         /// </summary>
         string FriendlyText { get; }
 
-        /// <summary>
-        /// Determine whether has a color associated with this text.
-        /// </summary>
-        bool HasAssociatedColor { get; }
 
         /// <summary>
-        /// Color associated with this text.
+        /// Color associated with this segment of text.
         /// </summary>
-        NiconicoTextColor AssociatedColor { get; }
+        Color Color { get; }
     }
 }
