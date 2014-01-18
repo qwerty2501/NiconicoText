@@ -12,7 +12,7 @@ namespace NiconicoText
     public interface INiconicoWebTextSegment:INiconicoTextSegment
     {
         /// <summary>
-        /// Determine wheter Url Associated with this segment of text.
+        /// Determine wheter Url Associated with this text segment.
         /// </summary>
         bool HasUrl { get; }
 
@@ -20,6 +20,11 @@ namespace NiconicoText
         /// Determine wheter has child test sements.
         /// </summary>
         bool HasChild { get; }
+
+        /// <summary>
+        /// Get, this text segment type.
+        /// </summary>
+        NiconicoWebTextSegmentType SegmentType { get; }
 
         /// <summary>
         /// child segments of this text segment.
@@ -47,12 +52,12 @@ namespace NiconicoText
         bool AssociatedItalic { get; }
 
         /// <summary>
-        /// Url Associated with this sgment of text.
+        /// Url Associated with this text segment.
         /// </summary>
         Uri Url { get; }
 
         /// <summary>
-        /// Parent segment text of this segment text
+        /// Parent segment text of this text segment.
         /// </summary>
         INiconicoWebTextSegment Parent { get; }
     }

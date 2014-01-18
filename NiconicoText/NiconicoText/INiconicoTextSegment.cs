@@ -15,18 +15,18 @@ namespace NiconicoText
     public interface INiconicoTextSegment
     {
         /// <summary>
-        /// Full segment of text.
+        /// Full text segment.
         /// </summary>
         string Text { get; }
 
         /// <summary>
-        /// User friendly segment of text.
+        /// User friendly text segment.
         /// </summary>
         string FriendlyText { get; }
 
 
         /// <summary>
-        /// Color associated with this segment of text.
+        /// Color associated with this text segment.
         /// </summary>
         Color Color { get; }
     }
