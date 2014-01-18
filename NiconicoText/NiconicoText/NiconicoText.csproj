@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INiconicoTextSegment.cs" />
+    <Compile Include="INiconicoTextSgmentCollection.cs" />
     <Compile Include="INiconicoWebTextSegment.cs" />
     <Compile Include="NiconicoTextColor.cs" />
     <Compile Include="NiconicoWebTextSegmenter.cs" />
