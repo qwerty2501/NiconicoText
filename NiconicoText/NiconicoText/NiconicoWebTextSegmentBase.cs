@@ -12,7 +12,7 @@ namespace NiconicoText
     {
 
 
-        private bool hasParent
+        internal protected bool HasParent
         {
             get
             {
@@ -24,12 +24,12 @@ namespace NiconicoText
 
         public bool HasUrl
         {
-            get { return this.hasParent ? this.Parent.HasUrl : false; }
+            get { return this.HasParent ? this.Parent.HasUrl : false; }
         }
 
         public bool HasChild
         {
-            get { return this.hasParent ? this.Parent.HasChild : false; }
+            get { return this.HasParent ? this.Parent.HasChild : false; }
         }
 
         public INiconicoWebTextSegmentCollection ChildSegments
@@ -39,27 +39,27 @@ namespace NiconicoText
 
         public byte FontElementSize
         {
-            get { return this.hasParent ? this.Parent.FontElementSize : NiconicoText.FontElementSize.defaultSize; }
+            get { return this.HasParent ? this.Parent.FontElementSize : NiconicoText.FontElementSize.defaultSize; }
         }
 
         public bool AssociatedUnderLine
         {
-            get { return this.hasParent ? this.Parent.AssociatedUnderLine : false; }
+            get { return this.HasParent ? this.Parent.AssociatedUnderLine : false; }
         }
 
         public bool AssociatedStrike
         {
-            get { return this.hasParent ? this.Parent.AssociatedStrike : false; }
+            get { return this.HasParent ? this.Parent.AssociatedStrike : false; }
         }
 
         public bool AssociatedItalic
         {
-            get { return this.hasParent ? this.Parent.AssociatedItalic : false; }
+            get { return this.HasParent ? this.Parent.AssociatedItalic : false; }
         }
 
         public Uri Url
         {
-            get { return this.hasParent ? this.Parent.Url : null; }
+            get { return this.HasParent ? this.Parent.Url : null; }
         }
 
         public INiconicoWebTextSegment Parent
@@ -80,7 +80,7 @@ namespace NiconicoText
 
         public Color Color
         {
-            get { return this.hasParent ? this.Parent.Color : default(Color); }
+            get { return this.HasParent ? this.Parent.Color : default(Color); }
         }
 
 

@@ -126,6 +126,7 @@
     <Compile Include="NiconicoWebTextSegmentType.cs" />
     <Compile Include="PlainNiconicoWebTextSegment.cs" />
     <Compile Include="PlainNiconicoWebTextSegmentBase.cs" />
+    <Compile Include="PlainNiconicoWebTextSegmentWithUrlBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
