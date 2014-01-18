@@ -136,6 +136,9 @@
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\NiconicoWebTextNumberAnchorRange.cs">
+      <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentBase.cs">
       <Link>NiconicoWebTextSegmentBase.cs</Link>
     </Compile>
@@ -144,9 +147,6 @@
     </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmenter.cs">
       <Link>NiconicoWebTextSegmenter.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\NiconicoWebTextSegmentNumberAnchorRange.cs">
-      <Link>NiconicoWebTextSegmentNumberAnchorRange.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentType.cs">
       <Link>NiconicoWebTextSegmentType.cs</Link>

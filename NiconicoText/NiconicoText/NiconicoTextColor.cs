@@ -32,10 +32,5 @@ namespace NiconicoText
         /// </summary>
         public byte B;
 
-
-        public override string ToString()
-        {
-            return string.Concat("#", Convert.ToString(this.R, 16).ToUpper(), Convert.ToString(this.G, 16).ToUpper(), Convert.ToString(this.B, 16).ToUpper());
-        }
     }
 }
