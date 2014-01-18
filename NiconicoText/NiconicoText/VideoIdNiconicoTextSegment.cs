@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NiconicoText.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,17 @@ namespace NiconicoText
     {
         internal VideoIdNiconicoTextSegment(string id) : base(id) { }
 
+        public new NiconicoWebTextSegmentType SegmentType
+        {
+            get
+            {
+                return NiconicoWebTextSegmentType.VideoId;
+            }
+        }
+
         protected internal override Uri OnCreateUrl()
         {
-            throw new NotImplementedException();
+            return NiconicoTextUrlUtility.CreateNiconicoVideoUrl(this.text_);
         }
     }
 }
