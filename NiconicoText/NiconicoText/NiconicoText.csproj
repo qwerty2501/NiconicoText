@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FontElementSize.cs" />
-    <Compile Include="IdNiconicoWebTextSEgmentBase.cs" />
+    <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />
     <Compile Include="INiconicoWebTextSegment.cs" />

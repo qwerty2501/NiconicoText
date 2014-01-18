@@ -115,8 +115,8 @@
     <Compile Include="..\NiconicoText\FontElementSize.cs">
       <Link>FontElementSize.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\IdNiconicoWebTextSEgmentBase.cs">
-      <Link>IdNiconicoWebTextSEgmentBase.cs</Link>
+    <Compile Include="..\NiconicoText\IdNiconicoWebTextSegmentBase.cs">
+      <Link>IdNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\INiconicoTextSegment.cs">
       <Link>INiconicoTextSegment.cs</Link>

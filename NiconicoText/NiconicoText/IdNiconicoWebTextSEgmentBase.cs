@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal abstract class IdNiconicoWebTextSEgmentBase:PlainNiconicoWebTextSegmentWithUrlBase
+    internal abstract class IdNiconicoWebTextSegmentBase:PlainNiconicoWebTextSegmentWithUrlBase
     {
         protected internal override Uri OnCreateUrl()
         {
