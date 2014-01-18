@@ -112,7 +112,7 @@
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />
     <Compile Include="INiconicoWebTextSegment.cs" />
     <Compile Include="NiconicoTextColor.cs" />
-    <Compile Include="NiconicoWebTextSegment.cs" />
+    <Compile Include="NiconicoWebTextSegmentBase.cs" />
     <Compile Include="NiconicoWebTextSegmentCollection.cs" />
     <Compile Include="NiconicoWebTextSegmenter.cs" />
     <Compile Include="NiconicoTextPatterns.cs">

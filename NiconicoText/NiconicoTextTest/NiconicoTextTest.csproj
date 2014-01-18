@@ -133,8 +133,8 @@
     <Compile Include="..\NiconicoText\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoWebTextSegment.cs">
-      <Link>NiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\NiconicoWebTextSegmentBase.cs">
+      <Link>NiconicoWebTextSegmentBase.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentCollection.cs">
       <Link>NiconicoWebTextSegmentCollection.cs</Link>
