@@ -145,6 +145,9 @@
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentType.cs">
       <Link>NiconicoWebTextSegmentType.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\PlainNiconicoWebTextSegment.cs">
+      <Link>PlainNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
