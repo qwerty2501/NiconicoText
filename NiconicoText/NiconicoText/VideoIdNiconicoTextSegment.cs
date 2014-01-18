@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    class VideoIdNiconicoTextSegment
+    internal sealed class VideoIdNiconicoTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
     {
+        protected internal override Uri OnCreateUrlAssosiatedId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
