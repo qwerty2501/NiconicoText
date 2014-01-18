@@ -111,6 +111,16 @@ namespace NiconicoText
 
 
 			
+		internal const string numberAnchorPattern=@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?";
+
+
+		internal const string numberAnchor="numberAnchor";
+
+
+		internal const string numberAnchorGroupPattern=@"(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)";
+
+
+			
 		internal const string htmlFontPattern=@"<(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>";
 
 
@@ -181,7 +191,7 @@ namespace NiconicoText
 
 
 			
-		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int communityIdGroupNumber=1;
@@ -224,63 +234,71 @@ namespace NiconicoText
 
 
 				
-		internal const int htmlFontGroupNumber=11;
+		internal const int numberAnchorGroupNumber=11;
 
 
 				
-		internal const int colorCodeGroupNumber=12;
+		internal const int secondAnchorGroupNumber=12;
 
 
 				
-		internal const int colorNameGroupNumber=13;
+		internal const int htmlFontGroupNumber=13;
 
 
 				
-		internal const int sizeGroupNumber=14;
+		internal const int colorCodeGroupNumber=14;
 
 
 				
-		internal const int fontTextGroupNumber=15;
+		internal const int colorNameGroupNumber=15;
 
 
 				
-		internal const int lineBreakGroupNumber=16;
+		internal const int sizeGroupNumber=16;
 
 
 				
-		internal const int htmlBoldGroupNumber=17;
+		internal const int fontTextGroupNumber=17;
 
 
 				
-		internal const int boldTextGroupNumber=18;
+		internal const int lineBreakGroupNumber=18;
 
 
 				
-		internal const int htmlItalicGroupNumber=19;
+		internal const int htmlBoldGroupNumber=19;
 
 
 				
-		internal const int italicTextGroupNumber=20;
+		internal const int boldTextGroupNumber=20;
 
 
 				
-		internal const int htmlStrikeGroupNumber=21;
+		internal const int htmlItalicGroupNumber=21;
 
 
 				
-		internal const int strikeTextGroupNumber=22;
+		internal const int italicTextGroupNumber=22;
 
 
 				
-		internal const int htmlUnderLineGroupNumber=23;
+		internal const int htmlStrikeGroupNumber=23;
 
 
 				
-		internal const int underLineTextGroupNumber=24;
+		internal const int strikeTextGroupNumber=24;
 
 
 				
-		internal const int invalidHtmlElementGroupNumber=25;
+		internal const int htmlUnderLineGroupNumber=25;
+
+
+				
+		internal const int underLineTextGroupNumber=26;
+
+
+				
+		internal const int invalidHtmlElementGroupNumber=27;
 
 
 				    }
@@ -290,16 +308,6 @@ namespace NiconicoText
 		{
 			
 	
-		internal const string numberAnchorPattern=@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?";
-
-
-		internal const string numberAnchor="numberAnchor";
-
-
-		internal const string numberAnchorGroupPattern=@"(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)";
-
-
-			
 		internal const string htmlAnchorPattern=@"<[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>";
 
 
@@ -319,70 +327,70 @@ namespace NiconicoText
 		internal const string attoMarkNameGroupPattern=@"(?<attoMarkName>@[^@^\s]+)";
 
 
-					internal const string niconicoCommentTextParsePattern = @"(?:(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+					internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
-		internal const int numberAnchorGroupNumber=1;
-
-
-				
-		internal const int secondAnchorGroupNumber=2;
+		internal const int htmlAnchorGroupNumber=1;
 
 
 				
-		internal const int htmlAnchorGroupNumber=3;
+		internal const int hrefGroupNumber=2;
 
 
 				
-		internal const int hrefGroupNumber=4;
+		internal const int anchorTextGroupNumber=3;
 
 
 				
-		internal const int anchorTextGroupNumber=5;
+		internal const int attoMarkNameGroupNumber=4;
 
 
 				
-		internal const int attoMarkNameGroupNumber=6;
+		internal const int communityIdGroupNumber=5;
 
 
 				
-		internal const int communityIdGroupNumber=7;
+		internal const int channelIdGroupNumber=6;
 
 
 				
-		internal const int channelIdGroupNumber=8;
+		internal const int videoIdGroupNumber=7;
 
 
 				
-		internal const int videoIdGroupNumber=9;
+		internal const int articleIdGroupNumber=8;
 
 
 				
-		internal const int articleIdGroupNumber=10;
+		internal const int materialIdGroupNumber=9;
 
 
 				
-		internal const int materialIdGroupNumber=11;
+		internal const int marketItemIdGroupNumber=10;
 
 
 				
-		internal const int marketItemIdGroupNumber=12;
+		internal const int liveIdGroupNumber=11;
 
 
 				
-		internal const int liveIdGroupNumber=13;
+		internal const int watchStillImageIdGroupNumber=12;
 
 
 				
-		internal const int watchStillImageIdGroupNumber=14;
+		internal const int stillImageIdGroupNumber=13;
 
 
 				
-		internal const int stillImageIdGroupNumber=15;
+		internal const int urlGroupNumber=14;
 
 
 				
-		internal const int urlGroupNumber=16;
+		internal const int numberAnchorGroupNumber=15;
+
+
+				
+		internal const int secondAnchorGroupNumber=16;
 
 
 				

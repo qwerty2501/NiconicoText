@@ -108,7 +108,7 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("watchStillImageId",@"(?:[sm]g|im)\d{1,14}");
 			niconicoTextPatterns.Add("stillImageId",@"im\d{1,14}");
 			niconicoTextPatterns.Add("url",@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?");
-			
+			niconicoTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
 			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>");
 			niconicoTextPatterns.Add("lineBreak",@"(?:\r?\n|<(?i:br)\s*?/?>)");
 			niconicoTextPatterns.Add("htmlBold",@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>");
@@ -133,7 +133,6 @@ namespace NiconicoText
 		{
 			<#
 				var niconicoCommentTextPatterns = new Dictionary<string,string>();
-				niconicoCommentTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
 				niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>");
 				niconicoCommentTextPatterns.Add("attoMarkName",@"@[^@^\s]+");
 				var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;

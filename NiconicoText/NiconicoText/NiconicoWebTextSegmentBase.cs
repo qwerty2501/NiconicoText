@@ -88,5 +88,16 @@ namespace NiconicoText
         {
             get { throw new NotImplementedException(); }
         }
+
+
+        public bool HasNumberAnchor
+        {
+            get { return false; }
+        }
+
+        public NiconicoWebTextNumberAnchorRange NumberAnchor
+        {
+            get { return default(NiconicoWebTextNumberAnchorRange); }
+        }
     }
 }

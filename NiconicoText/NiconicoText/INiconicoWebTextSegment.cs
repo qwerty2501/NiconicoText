@@ -32,6 +32,16 @@ namespace NiconicoText
         INiconicoWebTextSegmentCollection ChildSegments { get; }
 
         /// <summary>
+        /// Determine wheter has number anchor.
+        /// </summary>
+        bool HasNumberAnchor { get; }
+
+        /// <summary>
+        /// Get, number anchor
+        /// </summary>
+        NiconicoWebTextNumberAnchorRange NumberAnchor { get; }
+
+        /// <summary>
         /// Size attribute of font element
         /// </summary>
         byte FontElementSize { get; }

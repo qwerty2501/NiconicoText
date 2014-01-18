@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 namespace NiconicoText
 {
     /// <summary>
-    /// 
+    /// Number anchor range in Niconico web text.
     /// </summary>
     public struct NiconicoWebTextNumberAnchorRange
     {
-        internal NiconicoWebTextNumberAnchorRange(uint startNumber)
-        {
-            this.StartNumber = startNumber;
-            this.EndNumber = 0;
-        }
+        /// <summary>
+        /// Start number.
+        /// </summary>
+        public int StartNumber;
 
-        public uint StartNumber;
-
-        public uint EndNumber;
+        /// <summary>
+        /// End number.
+        /// If this value is 0, the number anchor is single anchor.
+        /// </summary>
+        public int EndNumber;
 
     }
 }
