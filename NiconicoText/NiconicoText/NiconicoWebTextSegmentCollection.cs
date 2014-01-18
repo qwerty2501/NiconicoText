@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentCollection : Collection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection
+    internal class NiconicoWebTextSegmentCollection<C,T>
+        where C:IList<T>
+        where T:INiconicoWebTextSegment
+        
     {
     }
 }

@@ -71,7 +71,15 @@ namespace NiconicoText
         /// </summary>
         UserName,
 
+        /// <summary>
+        /// Number anchor.
+        /// </summary>
+        NumberAnchor,
 
+        /// <summary>
+        /// Comment command.
+        /// </summary>
+        Command,
 
         /// <summary>
         /// Html anchor element.
