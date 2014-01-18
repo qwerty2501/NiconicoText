@@ -17,6 +17,16 @@ namespace NiconicoText
         bool HasUrl { get; }
 
         /// <summary>
+        /// Determine wheter has child test sements.
+        /// </summary>
+        bool HasChild { get; }
+
+        /// <summary>
+        /// child segments of this text segment.
+        /// </summary>
+        INiconicoWebTextSgmentCollection ChildSegments { get; }
+
+        /// <summary>
         /// Size attribute of font element
         /// </summary>
         byte FontSize { get; }
