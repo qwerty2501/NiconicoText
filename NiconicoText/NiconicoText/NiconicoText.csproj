@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INiconicoTextSegment.cs" />
-    <Compile Include="INiconicoWebTextSgmentCollection.cs" />
+    <Compile Include="INiconicoWebTextSegmentCollection.cs" />
     <Compile Include="INiconicoWebTextSegment.cs" />
     <Compile Include="NiconicoTextColor.cs" />
     <Compile Include="NiconicoWebTextSegmentCollection.cs" />

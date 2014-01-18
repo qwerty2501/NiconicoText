@@ -24,7 +24,7 @@ namespace NiconicoText
         /// <summary>
         /// child segments of this text segment.
         /// </summary>
-        INiconicoWebTextSgmentCollection ChildSegments { get; }
+        INiconicoWebTextSegmentCollection ChildSegments { get; }
 
         /// <summary>
         /// Size attribute of font element

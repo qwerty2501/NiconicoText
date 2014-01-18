@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    class NiconicoWebTextSegmentCollection
+    public class NiconicoWebTextSegmentCollection:List<INiconicoWebTextSegment> ,INiconicoWebTextSegmentCollection
     {
     }
 }
