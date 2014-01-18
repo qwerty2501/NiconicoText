@@ -10,25 +10,34 @@ namespace NiconicoText
     {
 
 
+        private bool hasParent
+        {
+            get
+            {
+                return this.Parent != null;
+            }
+        }
+
+   
 
         public bool HasUrl
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.HasUrl : false; }
         }
 
         public bool HasChild
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.HasChild : false; }
         }
 
         public INiconicoWebTextSegmentCollection ChildSegments
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         public byte FontSize
         {
-            get { throw new NotImplementedException(); }
+            get { return this.hasParent ? this.Parent.FontSize : defaultFontSize; }
         }
 
         public bool AssociatedUnderLine
@@ -53,7 +62,8 @@ namespace NiconicoText
 
         public INiconicoWebTextSegment Parent
         {
-            get { throw new NotImplementedException(); }
+            get;
+            internal protected set;
         }
 
         public string Text

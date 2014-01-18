@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class PlainNiconicoWebTextSegment : NiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    class FontElementSize
     {
-        
     }
 }
