@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class NumberAnchorNicnicoWebTextSegment:NiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class NumberAnchorNiconicoWebTextSegment:NiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal NumberAnchorNicnicoWebTextSegment(NiconicoWebTextNumberAnchorRange range)
+        internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range)
         {
             this.range_ = range;
             this.rangeCash_ = null;
