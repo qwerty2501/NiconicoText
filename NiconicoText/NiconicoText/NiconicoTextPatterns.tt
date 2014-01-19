@@ -164,9 +164,16 @@ namespace NiconicoText
 
 		internal const string niconicoTextParsePattern = @"<#= niconicoTextParsePattern #>";
 
-<# writePatternNumber(niconicoTextParsePattern); #>
+
 
     }
+
+	internals static class NiconicoWebTextPatternIndexs
+	{
+
+<# writePatternNumber(niconicoTextParsePattern); #>
+	}
+
 
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
@@ -181,7 +188,7 @@ namespace NiconicoText
 			{
 			<#
 
-			writeParseCases(niconicoTextPatterns,"NiconicoWebTextPatterns","ParseWebText");
+			writeParseCases(niconicoTextPatterns,"NiconicoWebTextPatternIndexs","ParseWebText");
 			#>
 
 			<#= @"default:
