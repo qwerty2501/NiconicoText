@@ -28,36 +28,5 @@ namespace NiconicoText.Utils
             return new Uri(string.Format(NiconicoTextPatterns.niconicoChannelUrlFormat, chanelId));
         }
 
-        internal static Func<string, Uri> CreateNiconicoVideoUrl
-        {
-            get
-            { 
-                return CreateNiconicoVideoWatchUrl; 
-            }
-        }
-
-        internal static Func<string, Uri> CraeteNiconicoLiveUrl
-        {
-            get 
-            { 
-                return CraeteNiconicoLiveWatchUrl; 
-            }
-        }
-
-        internal static Func<string, Uri> CreateNiconicoCommunityUrl
-        {
-            get
-            {
-                return CreateNiconicoCommunityTopPageUrl;
-            }
-        }
-
-        internal static Func<string, Uri> CreateNiconicoChannelUrl
-        {
-            get
-            {
-                return CreateNiconicoChannelTopPageUrl;
-            }
-        }
     }
 }
