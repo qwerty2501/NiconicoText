@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    class UserNameNiconicoWebTextSegment
+    internal sealed class UserNameNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
+        internal UserNameNiconicoWebTextSegment(string userName) : base(userName) { }
+
+        public override NiconicoWebTextSegmentType SegmentType
+        {
+            get { return NiconicoWebTextSegmentType.UserName; }
+        }
     }
 }
