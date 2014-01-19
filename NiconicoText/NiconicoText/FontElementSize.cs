@@ -8,6 +8,20 @@ namespace NiconicoText
 {
     internal struct FontElementSize
     {
+        internal FontElementSize(byte size)
+        {
+            this.size_ = size;
+        }
+
+        public static implicit operator FontElementSize(byte size)
+        {
+            if (size < 0 || size > 7)
+                throw new InvalidOperationException("Font element size must be less than 7 and 1 or more.");
+
+            return new FontElementSize(size);
+        }
+
+        private byte size_;
 
         internal const byte defaultSize = 3;
     }
