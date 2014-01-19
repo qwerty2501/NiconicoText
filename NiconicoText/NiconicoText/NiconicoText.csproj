@@ -114,6 +114,7 @@
     <Compile Include="FontElementSize.cs" />
     <Compile Include="HtmlAnchorElementNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlFontElementNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlItalicElementNiconicoWebTextSegment.cs" />
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />
