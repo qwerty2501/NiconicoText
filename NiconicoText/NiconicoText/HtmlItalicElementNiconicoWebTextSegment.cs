@@ -18,6 +18,14 @@ namespace NiconicoText
             }
         }
 
+        public override string Text
+        {
+            get
+            {
+                return string.Concat("<u>", base.Text, "</u>");
+            }
+        }
+
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.HtmlItalicElement; }
