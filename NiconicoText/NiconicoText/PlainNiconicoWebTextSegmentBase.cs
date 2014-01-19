@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal abstract class PlainNiconicoWebTextSegmentBase : NiconicoWebTextSegmentBase, INiconicoWebTextSegment
+    internal abstract class PlainNiconicoWebTextSegmentBase : NiconicoWebTextSegmentBase, INiconicoWebTextSegment, INiconicoTextSegment
     {
         internal PlainNiconicoWebTextSegmentBase(string text)
         {

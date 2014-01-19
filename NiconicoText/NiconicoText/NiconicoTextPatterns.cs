@@ -81,23 +81,23 @@ namespace NiconicoText
 
 
 			
-		internal const string watchStillImageIdPattern=@"(?:[sm]g|im)\d{1,14}";
+		internal const string watchPictureIdPattern=@"(?:[sm]g|im)\d{1,14}";
 
 
-		internal const string watchStillImageId="watchStillImageId";
+		internal const string watchPictureId="watchPictureId";
 
 
-		internal const string watchStillImageIdGroupPattern=@"(?<watchStillImageId>(?:[sm]g|im)\d{1,14})";
+		internal const string watchPictureIdGroupPattern=@"(?<watchPictureId>(?:[sm]g|im)\d{1,14})";
 
 
 			
-		internal const string stillImageIdPattern=@"im\d{1,14}";
+		internal const string pictureIdPattern=@"im\d{1,14}";
 
 
-		internal const string stillImageId="stillImageId";
+		internal const string PictureId="PictureId";
 
 
-		internal const string stillImageIdGroupPattern=@"(?<stillImageId>im\d{1,14})";
+		internal const string PictureIdGroupPattern=@"(?<PictureId>im\d{1,14})";
 
 
 			
@@ -191,7 +191,7 @@ namespace NiconicoText
 
 
 			
-		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int communityIdGroupNumber=1;
@@ -222,11 +222,11 @@ namespace NiconicoText
 
 
 				
-		internal const int watchStillImageIdGroupNumber=8;
+		internal const int watchPictureIdGroupNumber=8;
 
 
 				
-		internal const int stillImageIdGroupNumber=9;
+		internal const int PictureIdGroupNumber=9;
 
 
 				
@@ -327,7 +327,7 @@ namespace NiconicoText
 		internal const string attoMarkNameGroupPattern=@"(?<attoMarkName>@[^@^\s]+)";
 
 
-					internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchStillImageId>(?:[sm]g|im)\d{1,14})|(?<stillImageId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+					internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>(?:\r?\n|<(?i:br)\s*?/?>))|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int htmlAnchorGroupNumber=1;
@@ -374,11 +374,11 @@ namespace NiconicoText
 
 
 				
-		internal const int watchStillImageIdGroupNumber=12;
+		internal const int watchPictureIdGroupNumber=12;
 
 
 				
-		internal const int stillImageIdGroupNumber=13;
+		internal const int PictureIdGroupNumber=13;
 
 
 				

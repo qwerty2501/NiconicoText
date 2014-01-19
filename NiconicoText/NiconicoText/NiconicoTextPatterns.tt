@@ -105,8 +105,8 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("materialId",@"nc\d{1,14}");
 			niconicoTextPatterns.Add("marketItemId",@"(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+)");
 			niconicoTextPatterns.Add("liveId",@"lv\d{1,14}");
-			niconicoTextPatterns.Add("watchStillImageId",@"(?:[sm]g|im)\d{1,14}");
-			niconicoTextPatterns.Add("stillImageId",@"im\d{1,14}");
+			niconicoTextPatterns.Add("watchPictureId",@"(?:[sm]g|im)\d{1,14}");
+			niconicoTextPatterns.Add("PictureId",@"im\d{1,14}");
 			niconicoTextPatterns.Add("url",@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?");
 			niconicoTextPatterns.Add("numberAnchor",@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?");
 			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>");

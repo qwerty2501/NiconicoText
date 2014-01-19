@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase:INiconicoWebTextSegment
+    internal abstract class NiconicoWebTextSegmentBase:INiconicoWebTextSegment,INiconicoTextSegment
     {
 
 

@@ -47,7 +47,7 @@ namespace NiconicoText
         ArticleId,
 
         /// <summary>
-        /// Niconico material id.
+        /// Niconico commons's material id.
         /// </summary>
         MaterialId,
 
@@ -59,7 +59,7 @@ namespace NiconicoText
         /// <summary>
         /// Niconico seiga id.
         /// </summary>
-        StillImageId,
+        PictureId,
 
         /// <summary>
         /// Line break.
