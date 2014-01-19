@@ -112,6 +112,7 @@
     <Compile Include="ChannelIdNiconicoWebTextSegment.cs" />
     <Compile Include="CommunityIdNiconicoWebTextSegment.cs" />
     <Compile Include="FontElementSize.cs" />
+    <Compile Include="HtmlAnchorElementNiconicoWebTextSegment.cs" />
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />

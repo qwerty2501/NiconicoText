@@ -10,23 +10,21 @@ namespace NiconicoText
     {
         internal SegmentsProsessionNiconicoWebTextSegmentBase(INiconicoWebTextSegmentCollection segments)
         {
-            this.segments_ = segments;
+            this.Segments = segments;
         }
 
 
         public new INiconicoWebTextSegmentCollection Segments
         {
-            get
-            {
-                return this.segments_;
-            }
+            get;
+            private set;
         }
 
         public override string Text
         {
             get
             {
-                return this.segments_.ToString();
+                return this.Segments.ToString();
             }
         }
 
@@ -34,11 +32,9 @@ namespace NiconicoText
         {
             get
             {
-                return this.segments_.ToFriendlyString();
+                return this.Segments.ToFriendlyString();
             }
         }
-
-        private INiconicoWebTextSegmentCollection segments_;
 
 
 
