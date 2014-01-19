@@ -13,6 +13,13 @@ namespace NiconicoText
             this.Segments = segments;
         }
 
+        public new bool HasSegments
+        {
+            get
+            {
+                return true;
+            }
+        }
 
         public new INiconicoWebTextSegmentCollection Segments
         {
