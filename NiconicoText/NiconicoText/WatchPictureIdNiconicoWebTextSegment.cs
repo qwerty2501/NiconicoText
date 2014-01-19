@@ -5,7 +5,13 @@ using System.Text;
 
 namespace NiconicoText
 {
-    class WatchPictureIdNiconicoWebTextSegment
+    internal sealed class WatchPictureIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
+        internal WatchPictureIdNiconicoWebTextSegment(string pictureId) : base(pictureId) { }
+
+        public override NiconicoWebTextSegmentType SegmentType
+        {
+            get { return NiconicoWebTextSegmentType.PictureId; }
+        }
     }
 }
