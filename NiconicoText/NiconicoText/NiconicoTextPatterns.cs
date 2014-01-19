@@ -4,7 +4,7 @@ namespace NiconicoText
 	using System.Text.RegularExpressions;
 	using System.Linq;
 
-    internal static partial class NiconicoTextPatterns
+    internal static partial class NiconicoWebTextPatterns
     {
 
 		
@@ -112,23 +112,23 @@ namespace NiconicoText
 
 
 			
-		internal const string numberAnchorPattern=@">>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?";
+		internal const string numberAnchorPattern=@">>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?";
 
 
 		internal const string numberAnchor="numberAnchor";
 
 
-		internal const string numberAnchorGroupPattern=@"(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)";
+		internal const string numberAnchorGroupPattern=@"(?<numberAnchor>>>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?)";
 
 
 			
-		internal const string htmlFontPattern=@"<(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>";
+		internal const string htmlFontPattern=@"<(?i:font)\s+?(?:.*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>";
 
 
 		internal const string htmlFont="htmlFont";
 
 
-		internal const string htmlFontGroupPattern=@"(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)";
+		internal const string htmlFontGroupPattern=@"(?<htmlFont><(?i:font)\s+?(?:.*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>)";
 
 
 			
@@ -152,43 +152,43 @@ namespace NiconicoText
 
 
 			
-		internal const string htmlBoldPattern=@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>";
+		internal const string htmlBoldPattern=@"<[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>";
 
 
 		internal const string htmlBold="htmlBold";
 
 
-		internal const string htmlBoldGroupPattern=@"(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)";
+		internal const string htmlBoldGroupPattern=@"(?<htmlBold><[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>)";
 
 
 			
-		internal const string htmlItalicPattern=@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>";
+		internal const string htmlItalicPattern=@"<[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>";
 
 
 		internal const string htmlItalic="htmlItalic";
 
 
-		internal const string htmlItalicGroupPattern=@"(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)";
+		internal const string htmlItalicGroupPattern=@"(?<htmlItalic><[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>)";
 
 
 			
-		internal const string htmlStrikePattern=@"<[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>";
+		internal const string htmlStrikePattern=@"<[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>";
 
 
 		internal const string htmlStrike="htmlStrike";
 
 
-		internal const string htmlStrikeGroupPattern=@"(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)";
+		internal const string htmlStrikeGroupPattern=@"(?<htmlStrike><[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>)";
 
 
 			
-		internal const string htmlUnderLinePattern=@"<[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>";
+		internal const string htmlUnderLinePattern=@"<[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>";
 
 
 		internal const string htmlUnderLine="htmlUnderLine";
 
 
-		internal const string htmlUnderLineGroupPattern=@"(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)";
+		internal const string htmlUnderLineGroupPattern=@"(?<htmlUnderLine><[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>)";
 
 
 			
@@ -202,7 +202,7 @@ namespace NiconicoText
 
 
 			
-		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+		internal const string niconicoTextParsePattern = @"(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:.*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int communityIdGroupNumber=1;
@@ -249,71 +249,75 @@ namespace NiconicoText
 
 
 				
-		internal const int secondAnchorGroupNumber=12;
+		internal const int firstAnchorGroupNumber=12;
 
 
 				
-		internal const int htmlFontGroupNumber=13;
+		internal const int secondAnchorGroupNumber=13;
 
 
 				
-		internal const int colorCodeGroupNumber=14;
+		internal const int htmlFontGroupNumber=14;
 
 
 				
-		internal const int colorNameGroupNumber=15;
+		internal const int colorCodeGroupNumber=15;
 
 
 				
-		internal const int sizeGroupNumber=16;
+		internal const int colorNameGroupNumber=16;
 
 
 				
-		internal const int fontTextGroupNumber=17;
+		internal const int sizeGroupNumber=17;
 
 
 				
-		internal const int lineBreakGroupNumber=18;
+		internal const int fontTextGroupNumber=18;
 
 
 				
-		internal const int htmlBreakGroupNumber=19;
+		internal const int lineBreakGroupNumber=19;
 
 
 				
-		internal const int htmlBoldGroupNumber=20;
+		internal const int htmlBreakGroupNumber=20;
 
 
 				
-		internal const int boldTextGroupNumber=21;
+		internal const int htmlBoldGroupNumber=21;
 
 
 				
-		internal const int htmlItalicGroupNumber=22;
+		internal const int boldTextGroupNumber=22;
 
 
 				
-		internal const int italicTextGroupNumber=23;
+		internal const int htmlItalicGroupNumber=23;
 
 
 				
-		internal const int htmlStrikeGroupNumber=24;
+		internal const int italicTextGroupNumber=24;
 
 
 				
-		internal const int strikeTextGroupNumber=25;
+		internal const int htmlStrikeGroupNumber=25;
 
 
 				
-		internal const int htmlUnderLineGroupNumber=26;
+		internal const int strikeTextGroupNumber=26;
 
 
 				
-		internal const int underLineTextGroupNumber=27;
+		internal const int htmlUnderLineGroupNumber=27;
 
 
 				
-		internal const int invalidHtmlElementGroupNumber=28;
+		internal const int underLineTextGroupNumber=28;
+
+
+				
+		internal const int invalidHtmlElementGroupNumber=29;
 
 
 				
@@ -322,7 +326,7 @@ namespace NiconicoText
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
 		
-		internal static INiconicoWebTextSegment Parse(Match match)
+		internal static INiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter)
 		{
 			
 			int matchIndex;
@@ -336,62 +340,62 @@ namespace NiconicoText
 			switch(matchIndex)
 			{
 			
-				case NiconicoTextPatterns.communityIdGroupNumber:
-		return CommunityIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.communityIdGroupNumber:
+		return CommunityIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.channelIdGroupNumber:
-		return ChannelIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.channelIdGroupNumber:
+		return ChannelIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.videoIdGroupNumber:
-		return VideoIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.videoIdGroupNumber:
+		return VideoIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.articleIdGroupNumber:
-		return ArticleIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.articleIdGroupNumber:
+		return ArticleIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.materialIdGroupNumber:
-		return MaterialIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.materialIdGroupNumber:
+		return MaterialIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.marketItemIdGroupNumber:
-		return MarketItemIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.marketItemIdGroupNumber:
+		return MarketItemIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.liveIdGroupNumber:
-		return LiveIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.liveIdGroupNumber:
+		return LiveIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.watchPictureIdGroupNumber:
-		return WatchPictureIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.watchPictureIdGroupNumber:
+		return WatchPictureIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.PictureIdGroupNumber:
-		return PictureIdNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.PictureIdGroupNumber:
+		return PictureIdNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.urlGroupNumber:
-		return UrlNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.urlGroupNumber:
+		return UrlNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.numberAnchorGroupNumber:
-		return NumberAnchorNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.numberAnchorGroupNumber:
+		return NumberAnchorNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlFontGroupNumber:
-		return HtmlFontNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlFontGroupNumber:
+		return HtmlFontNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.lineBreakGroupNumber:
-		return LineBreakNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.lineBreakGroupNumber:
+		return LineBreakNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlBreakGroupNumber:
-		return HtmlBreakNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlBreakGroupNumber:
+		return HtmlBreakNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlBoldGroupNumber:
-		return HtmlBoldNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlBoldGroupNumber:
+		return HtmlBoldNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlItalicGroupNumber:
-		return HtmlItalicNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlItalicGroupNumber:
+		return HtmlItalicNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlStrikeGroupNumber:
-		return HtmlStrikeNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlStrikeGroupNumber:
+		return HtmlStrikeNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.htmlUnderLineGroupNumber:
-		return HtmlUnderLineNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.htmlUnderLineGroupNumber:
+		return HtmlUnderLineNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
-				case NiconicoTextPatterns.invalidHtmlElementGroupNumber:
-		return InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match);
+				case NiconicoWebTextPatterns.invalidHtmlElementGroupNumber:
+		return InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match,segmenter);
 
 
 			default:
@@ -407,13 +411,13 @@ namespace NiconicoText
 		{
 			
 	
-		internal const string htmlAnchorPattern=@"<[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>";
+		internal const string htmlAnchorPattern=@"<[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s?.*?>(?<anchorText>.*?)</[aA]\s*?>";
 
 
 		internal const string htmlAnchor="htmlAnchor";
 
 
-		internal const string htmlAnchorGroupPattern=@"(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)";
+		internal const string htmlAnchorGroupPattern=@"(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s?.*?>(?<anchorText>.*?)</[aA]\s*?>)";
 
 
 			
@@ -427,7 +431,7 @@ namespace NiconicoText
 
 
 			
-		internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s*?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>[0-9]+?(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?)*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
+		internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:.*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
 		internal const int htmlAnchorGroupNumber=1;
@@ -490,71 +494,75 @@ namespace NiconicoText
 
 
 				
-		internal const int secondAnchorGroupNumber=16;
+		internal const int firstAnchorGroupNumber=16;
 
 
 				
-		internal const int htmlFontGroupNumber=17;
+		internal const int secondAnchorGroupNumber=17;
 
 
 				
-		internal const int colorCodeGroupNumber=18;
+		internal const int htmlFontGroupNumber=18;
 
 
 				
-		internal const int colorNameGroupNumber=19;
+		internal const int colorCodeGroupNumber=19;
 
 
 				
-		internal const int sizeGroupNumber=20;
+		internal const int colorNameGroupNumber=20;
 
 
 				
-		internal const int fontTextGroupNumber=21;
+		internal const int sizeGroupNumber=21;
 
 
 				
-		internal const int lineBreakGroupNumber=22;
+		internal const int fontTextGroupNumber=22;
 
 
 				
-		internal const int htmlBreakGroupNumber=23;
+		internal const int lineBreakGroupNumber=23;
 
 
 				
-		internal const int htmlBoldGroupNumber=24;
+		internal const int htmlBreakGroupNumber=24;
 
 
 				
-		internal const int boldTextGroupNumber=25;
+		internal const int htmlBoldGroupNumber=25;
 
 
 				
-		internal const int htmlItalicGroupNumber=26;
+		internal const int boldTextGroupNumber=26;
 
 
 				
-		internal const int italicTextGroupNumber=27;
+		internal const int htmlItalicGroupNumber=27;
 
 
 				
-		internal const int htmlStrikeGroupNumber=28;
+		internal const int italicTextGroupNumber=28;
 
 
 				
-		internal const int strikeTextGroupNumber=29;
+		internal const int htmlStrikeGroupNumber=29;
 
 
 				
-		internal const int htmlUnderLineGroupNumber=30;
+		internal const int strikeTextGroupNumber=30;
 
 
 				
-		internal const int underLineTextGroupNumber=31;
+		internal const int htmlUnderLineGroupNumber=31;
 
 
 				
-		internal const int invalidHtmlElementGroupNumber=32;
+		internal const int underLineTextGroupNumber=32;
+
+
+				
+		internal const int invalidHtmlElementGroupNumber=33;
 
 
 				

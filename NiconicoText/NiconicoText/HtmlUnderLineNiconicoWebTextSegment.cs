@@ -10,7 +10,7 @@ namespace NiconicoText
     {
         internal HtmlUnderLineNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
-        public new bool AssociatedUnderLine
+        public new bool DecoratedUnderLine
         {
             get
             {

@@ -13,5 +13,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.PictureId; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new WatchPictureIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatterns.watchPictureIdGroupNumber].Value);
+        }
     }
 }

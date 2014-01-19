@@ -10,7 +10,7 @@ namespace NiconicoText
     {
         internal HtmlItalicNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
-        public new bool AssociatedItalic
+        public new bool DecoratedItalic
         {
             get
             {

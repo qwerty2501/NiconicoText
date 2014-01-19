@@ -18,5 +18,10 @@ namespace NiconicoText
         }
 
 
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new VideoIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatterns.videoIdGroupNumber].Value);
+        }
     }
 }

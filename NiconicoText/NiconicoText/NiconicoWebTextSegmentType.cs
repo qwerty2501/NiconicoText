@@ -97,6 +97,11 @@ namespace NiconicoText
         HtmlFontElement,
 
         /// <summary>
+        /// Html bold element.
+        /// </summary>
+        HtmlBoldElement,
+
+        /// <summary>
         /// Html italic element.
         /// </summary>
         HtmlItalicElement,

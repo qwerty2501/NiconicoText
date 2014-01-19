@@ -47,19 +47,24 @@ namespace NiconicoText
         byte FontElementSize { get; }
 
         /// <summary>
-        /// Determine wheter decorated text segment by underline.
+        /// Determine whether decorated text segment by underline.
         /// </summary>
-        bool AssociatedUnderLine { get; }
+        bool DecoratedUnderLine { get; }
 
         /// <summary>
-        /// Determine wheter decorated text segment by strike.
+        /// Determine whether decorated text segment by bold.
         /// </summary>
-        bool AssociatedStrike { get; }
+        bool DecoratedBold { get; }
+
+        /// <summary>
+        /// Determine whether decorated text segment by strike.
+        /// </summary>
+        bool DecoratedStrike { get; }
 
         /// <summary>
         /// Determine wheter decorated text segment by italic.
         /// </summary>
-        bool AssociatedItalic { get; }
+        bool DecoratedItalic { get; }
 
         /// <summary>
         /// Url Associated with this text segment.

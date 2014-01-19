@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal static partial class NiconicoTextPatterns
+    internal static partial class NiconicoWebTextPatterns
     {
         internal const string partialNiconicoDomain = "nicovideo.jp";
 

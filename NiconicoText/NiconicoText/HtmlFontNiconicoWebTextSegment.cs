@@ -107,5 +107,48 @@ namespace NiconicoText
 
         
         private FontElementSize fontElementSize_;
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match,NiconicoWebTextSegmenter segmenter)
+        {
+            var fontElementSizeGroup = match.Groups[NiconicoWebTextPatterns.sizeGroupNumber];
+            var colorCodeGroup = match.Groups[NiconicoWebTextPatterns.colorCodeGroupNumber];
+            var colorNameGroup = match.Groups[NiconicoWebTextPatterns.colorNameGroupNumber];
+            var codeColor = new Color();
+            var nameColor = new Color();
+            var segments = segmenter.Parse(match.Groups[NiconicoWebTextPatterns.fontTextGroupNumber].Value);
+            if (colorCodeGroup.Success)
+            {
+                codeColor = NiconicoTextColorExtention.FromColorCode(colorCodeGroup.Value);
+            }
+
+            if (colorNameGroup.Success)
+            {
+                nameColor = NiconicoTextColorExtention.FromeColorName(colorNameGroup.Value);
+            }
+            FontElementSize fontSize = new FontElementSize();
+
+            if (fontElementSizeGroup.Success)
+            {
+                fontSize = new FontElementSize( byte.Parse(fontElementSizeGroup.Value));
+
+               
+            }
+
+            if (colorCodeGroup.Success)
+            {
+                return new HtmlFontNiconicoWebTextSegment(fontSize, codeColor, segments);
+            }
+            else if (colorNameGroup.Success)
+            {
+                return new HtmlFontNiconicoWebTextSegment(fontSize, nameColor, segments);
+            }
+            else
+            {
+                return new HtmlFontNiconicoWebTextSegment(fontSize, segments);
+            }
+            
+
+
+        }
     }
 }

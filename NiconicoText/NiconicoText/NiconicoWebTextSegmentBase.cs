@@ -42,19 +42,24 @@ namespace NiconicoText
             get { return this.HasParent ? this.Parent.FontElementSize : NiconicoText.FontElementSize.defaultSize; }
         }
 
-        public bool AssociatedUnderLine
+        public bool DecoratedUnderLine
         {
-            get { return this.HasParent ? this.Parent.AssociatedUnderLine : false; }
+            get { return this.HasParent ? this.Parent.DecoratedUnderLine : false; }
         }
 
-        public bool AssociatedStrike
+        public bool DecoratedBold
         {
-            get { return this.HasParent ? this.Parent.AssociatedStrike : false; }
+            get { return this.HasParent ? this.Parent.DecoratedBold : false; }
         }
 
-        public bool AssociatedItalic
+        public bool DecoratedStrike
         {
-            get { return this.HasParent ? this.Parent.AssociatedItalic : false; }
+            get { return this.HasParent ? this.Parent.DecoratedStrike : false; }
+        }
+
+        public bool DecoratedItalic
+        {
+            get { return this.HasParent ? this.Parent.DecoratedItalic : false; }
         }
 
         public Uri Url

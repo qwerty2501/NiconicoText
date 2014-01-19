@@ -20,7 +20,12 @@ namespace NiconicoText
         public NiconicoWebTextSegmenter()
         {
            
-            this.regex_ = new Regex(NiconicoTextPatterns.niconicoTextParsePattern);
+            this.regex_ = new Regex(NiconicoWebTextPatterns.niconicoTextParsePattern);
+        }
+
+        public INiconicoWebTextSegmentCollection Parse(string text)
+        {
+            throw new NotImplementedException();
         }
 
         private Regex regex_;

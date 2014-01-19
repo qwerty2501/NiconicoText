@@ -10,7 +10,7 @@ namespace NiconicoText
     {
         internal HtmlStrikeNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
-        public new bool AssociatedStrike
+        public new bool DecoratedStrike
         {
             get { return true; }
         }

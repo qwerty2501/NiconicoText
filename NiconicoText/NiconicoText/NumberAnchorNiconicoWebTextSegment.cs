@@ -49,5 +49,21 @@ namespace NiconicoText
         private NiconicoWebTextNumberAnchorRange range_;
 
         private string rangeCash_;
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            var secondGroup = match.Groups[NiconicoWebTextPatterns.secondAnchorGroupNumber];
+
+            if(secondGroup.Success)
+            {
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatterns.firstAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
+            }
+            else
+            {
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatterns.firstAnchorGroupNumber].Value) });
+            }
+
+            
+        }
     }
 }

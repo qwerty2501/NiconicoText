@@ -16,5 +16,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.LiveId; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new LiveIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatterns.liveIdGroupNumber].Value);
+        }
     }
 }

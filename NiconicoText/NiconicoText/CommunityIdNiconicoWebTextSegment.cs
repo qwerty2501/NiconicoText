@@ -15,5 +15,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.CommunityId; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match,NiconicoWebTextSegmenter segmenter)
+        {
+            return new CommunityIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatterns.communityIdGroupNumber].Value);
+        }
     }
 }
