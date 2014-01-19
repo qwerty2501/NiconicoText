@@ -93,5 +93,10 @@ namespace NiconicoText
         {
             get { return default(NiconicoWebTextNumberAnchorRange); }
         }
+
+        public override string ToString()
+        {
+            return this.Text;
+        }
     }
 }

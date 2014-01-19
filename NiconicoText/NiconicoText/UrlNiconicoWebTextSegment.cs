@@ -10,15 +10,13 @@ namespace NiconicoText
     {
         internal UrlNiconicoWebTextSegment(Uri url)
         {
-            this.url_ = url;
+            this.Url = url;
         }
 
         public new Uri Url
         {
-            get
-            {
-                return this.url_;
-            }
+            get;
+            private set;
         }
 
         public override NiconicoWebTextSegmentType SegmentType
@@ -28,10 +26,9 @@ namespace NiconicoText
 
         public override string Text
         {
-            get { return this.url_.OriginalString; }
+            get { return this.Url.OriginalString; }
         }
 
-        private Uri url_;
 
     }
 }
