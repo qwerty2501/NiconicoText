@@ -17,7 +17,7 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            return new PictureIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatterns.PictureIdGroupNumber].Value);
+            return new PictureIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.PictureIdGroupNumber].Value);
         }
     }
 }

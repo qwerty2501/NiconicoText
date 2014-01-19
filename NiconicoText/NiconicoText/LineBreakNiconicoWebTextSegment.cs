@@ -29,6 +29,11 @@ namespace NiconicoText
         {
             get { return Environment.NewLine; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new LineBreakNiconicoWebTextSegment();
+        }
     }
 
     internal sealed class HtmlBreakNiconicoWebTextSegment : LineBreakNiconicoWebTextSegmentBase, INiconicoWebTextSegment, INiconicoTextSegment
@@ -37,6 +42,11 @@ namespace NiconicoText
         public override string Text
         {
             get { return "<br>"; }
+        }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new HtmlBreakNiconicoWebTextSegment();
         }
     }
 }

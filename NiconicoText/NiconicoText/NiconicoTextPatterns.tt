@@ -51,7 +51,7 @@ namespace NiconicoText
 			{
 			#>
 
-<#= @"			int matchIndex;
+<#= @"			int matchIndex = 0;
 			foreach(Group group in match.Groups)
 			{
 				if(group.Success)
@@ -168,7 +168,7 @@ namespace NiconicoText
 
     }
 
-	internals static class NiconicoWebTextPatternIndexs
+	internal static class NiconicoWebTextPatternIndexs
 	{
 
 <# writePatternNumber(niconicoTextParsePattern); #>

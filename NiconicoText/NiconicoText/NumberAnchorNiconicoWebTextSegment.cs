@@ -52,7 +52,7 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            var secondGroup = match.Groups[NiconicoWebTextPatterns.secondAnchorGroupNumber];
+            var secondGroup = match.Groups[NiconicoWebTextPatternIndexs.secondAnchorGroupNumber];
 
             if(secondGroup.Success)
             {

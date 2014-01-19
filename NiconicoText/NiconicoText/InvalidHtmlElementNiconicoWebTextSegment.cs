@@ -23,5 +23,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.HtmlInvalidElement; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new InvalidHtmlElementNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value);
+        }
     }
 }

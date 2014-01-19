@@ -208,7 +208,7 @@ namespace NiconicoText
 
     }
 
-	internals static class NiconicoWebTextPatternIndexs
+	internal static class NiconicoWebTextPatternIndexs
 	{
 
 
@@ -336,7 +336,7 @@ namespace NiconicoText
 		internal static INiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter)
 		{
 			
-			int matchIndex;
+			int matchIndex = 0;
 			foreach(Group group in match.Groups)
 			{
 				if(group.Success)

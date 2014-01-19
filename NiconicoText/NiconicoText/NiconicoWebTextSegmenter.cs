@@ -23,7 +23,7 @@ namespace NiconicoText
             this.regex_ = new Regex(NiconicoWebTextPatterns.niconicoTextParsePattern);
         }
 
-        public INiconicoWebTextSegmentCollection Parse(string text)
+        public INiconicoWebTextSegmentCollection GetTokens(string text)
         {
             throw new NotImplementedException();
         }

@@ -27,5 +27,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.HtmlStrikeElement; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new HtmlStrikeNiconicoWebTextSegment(segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.strikeTextGroupNumber].Value));
+        }
     }
 }

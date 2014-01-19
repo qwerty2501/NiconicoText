@@ -110,12 +110,12 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match,NiconicoWebTextSegmenter segmenter)
         {
-            var fontElementSizeGroup = match.Groups[NiconicoWebTextPatterns.sizeGroupNumber];
-            var colorCodeGroup = match.Groups[NiconicoWebTextPatterns.colorCodeGroupNumber];
-            var colorNameGroup = match.Groups[NiconicoWebTextPatterns.colorNameGroupNumber];
+            var fontElementSizeGroup = match.Groups[NiconicoWebTextPatternIndexs.sizeGroupNumber];
+            var colorCodeGroup = match.Groups[NiconicoWebTextPatternIndexs.colorCodeGroupNumber];
+            var colorNameGroup = match.Groups[NiconicoWebTextPatternIndexs.colorNameGroupNumber];
             var codeColor = new Color();
             var nameColor = new Color();
-            var segments = segmenter.Parse(match.Groups[NiconicoWebTextPatterns.fontTextGroupNumber].Value);
+            var segments = segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
             if (colorCodeGroup.Success)
             {
                 codeColor = NiconicoTextColorExtention.FromColorCode(colorCodeGroup.Value);
@@ -123,7 +123,7 @@ namespace NiconicoText
 
             if (colorNameGroup.Success)
             {
-                nameColor = NiconicoTextColorExtention.FromeColorName(colorNameGroup.Value);
+                nameColor = NiconicoTextColorExtention.FromColorName(colorNameGroup.Value);
             }
             FontElementSize fontSize = new FontElementSize();
 

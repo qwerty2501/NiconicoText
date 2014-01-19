@@ -30,5 +30,10 @@ namespace NiconicoText
         {
             get { return NiconicoWebTextSegmentType.HtmlItalicElement; }
         }
+
+        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        {
+            return new HtmlItalicNiconicoWebTextSegment(segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.italicTextGroupNumber].Value));
+        }
     }
 }
