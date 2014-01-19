@@ -133,6 +133,9 @@
     <Compile Include="..\NiconicoText\HtmlItalicElementNiconicoWebTextSegment.cs">
       <Link>HtmlItalicElementNiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\HtmlStrikeElementNiconicoWebTextSegment.cs">
+      <Link>HtmlStrikeElementNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\IdNiconicoWebTextSegmentBase.cs">
       <Link>IdNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
