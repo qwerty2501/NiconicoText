@@ -10,6 +10,11 @@ namespace NiconicoText
     {
         internal HtmlStrikeElementNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
+        public new bool AssociatedStrike
+        {
+            get { return true; }
+        }
+
         public override string Text
         {
             get
