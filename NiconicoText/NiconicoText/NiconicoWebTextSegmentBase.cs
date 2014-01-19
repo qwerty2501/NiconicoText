@@ -98,5 +98,11 @@ namespace NiconicoText
         {
             return this.Text;
         }
+
+
+        public bool AssociatedColor
+        {
+            get { return false; }
+        }
     }
 }

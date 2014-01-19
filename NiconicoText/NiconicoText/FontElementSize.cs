@@ -21,6 +21,11 @@ namespace NiconicoText
             return new FontElementSize(size);
         }
 
+        public static implicit operator byte(FontElementSize size)
+        {
+            return size.size_;
+        }
+
         private byte size_;
 
         internal const byte defaultSize = 3;

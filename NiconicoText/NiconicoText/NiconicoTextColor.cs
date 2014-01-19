@@ -4,11 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if NETFX_CORE
-
-using Color = Windows.UI.Color;
-
-#endif
 
 namespace NiconicoText
 {
@@ -32,5 +27,13 @@ namespace NiconicoText
         /// </summary>
         public byte B;
 
+    }
+
+    public static class NiconicoTextColorExtention
+    {
+        public static string ToColorCode(this NiconicoTextColor self)
+        {
+            return string.Concat("#", Convert.ToString(self.R, 16), Convert.ToString(self.G, 16), Convert.ToString(self.B, 16));
+        }
     }
 }
