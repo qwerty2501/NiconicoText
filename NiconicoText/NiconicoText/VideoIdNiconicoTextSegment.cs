@@ -17,9 +17,6 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.VideoId; } 
         }
 
-        protected internal override Uri OnCreateUrl()
-        {
-            return NiconicoTextUrlUtility.CreateNiconicoVideoUrl(this.text_);
-        }
+
     }
 }

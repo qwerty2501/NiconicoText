@@ -11,11 +11,6 @@ namespace NiconicoText
     {
         internal CommunityIdNiconicoWebTextSegment(string communityId) : base(communityId) { }
 
-        protected internal override Uri OnCreateUrl()
-        {
-            return NiconicoTextUrlUtility.CreateNiconicoVideoUrl(this.text_);
-        }
-
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.CommunityId; }

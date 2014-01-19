@@ -6,25 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal abstract class IdNiconicoWebTextSegmentBase:PlainNiconicoWebTextSegmentWithUrlBase
+    internal abstract class IdNiconicoWebTextSegmentBase:PlainNiconicoWebTextSegmentBase
     {
         internal IdNiconicoWebTextSegmentBase(string id): base(id) { }
-
-        public new Uri Url
-        {
-            get
-            {
-                if (this.HasParent)
-                {
-                    return this.Parent.Url;
-                }
-                else
-                {
-                    return this.OnCreateUrl();
-                }
-            }
-
-        }
 
 
 

@@ -11,10 +11,6 @@ namespace NiconicoText
     {
         internal LiveIdNiconicoWebTextSegment(string liveId) : base(liveId) { }
 
-        protected internal override Uri OnCreateUrl()
-        {
-            return NiconicoTextUrlUtility.CraeteNiconicoLiveUrl(this.text_);
-        }
 
         public override NiconicoWebTextSegmentType SegmentType
         {

@@ -11,11 +11,6 @@ namespace NiconicoText
     {
         internal ChannelIdNiconicoWebTextSegment(string chanelId) : base(chanelId) { }
 
-        protected internal override Uri OnCreateUrl()
-        {
-            return NiconicoTextUrlUtility.CreateNiconicoChannelUrl(this.text_);
-        }
-
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.ChanelId; }
