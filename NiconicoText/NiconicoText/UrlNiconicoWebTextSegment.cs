@@ -6,28 +6,18 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class UrlNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal sealed class UrlNiconicoWebTextSegment:NiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal UrlNiconicoWebTextSegment(string url) : base(url) 
-        { 
-            this.urlRef_ = new WeakReference<Uri>(null);
+        internal UrlNiconicoWebTextSegment(Uri url)
+        {
+            this.url_ = url;
         }
 
         public new Uri Url
         {
             get
             {
-                Uri url;
-                if (this.urlRef_.TryGetTarget(out url))
-                {
-                    return url;
-                }
-                else
-                {
-                    url = new Uri(this.text_);
-                    this.urlRef_.SetTarget(url);
-                    return url;
-                }
+                return this.url_;
             }
         }
 
@@ -36,7 +26,12 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.Url; }
         }
 
+        public override string Text
+        {
+            get { return this.url_.OriginalString; }
+        }
 
-        private WeakReference<Uri> urlRef_;
+        private Uri url_;
+
     }
 }

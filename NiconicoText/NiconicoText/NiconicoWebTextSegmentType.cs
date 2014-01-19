@@ -79,7 +79,12 @@ namespace NiconicoText
         /// <summary>
         /// Comment command.
         /// </summary>
-        Command,
+        //Command,
+
+        /// <summary>
+        /// Comment command arg.
+        /// </summary>
+        //CommandArg,
 
         /// <summary>
         /// Html anchor element.

@@ -17,19 +17,19 @@ namespace NiconicoText
         bool HasUrl { get; }
 
         /// <summary>
-        /// Determine wheter has child test sements.
+        /// Determine wheter has children sements.
         /// </summary>
-        bool HasChild { get; }
+        bool HasSegments { get; }
 
         /// <summary>
-        /// Get, this text segment type.
+        /// this text segment type.
         /// </summary>
         NiconicoWebTextSegmentType SegmentType { get; }
 
         /// <summary>
-        /// child segments of this text segment.
+        /// children segments of this text segment.
         /// </summary>
-        INiconicoWebTextSegmentCollection ChildSegments { get; }
+        INiconicoWebTextSegmentCollection Segments { get; }
 
         /// <summary>
         /// Determine wheter has number anchor.

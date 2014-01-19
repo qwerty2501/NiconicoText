@@ -27,12 +27,12 @@ namespace NiconicoText
             get { return this.HasParent ? this.Parent.HasUrl : false; }
         }
 
-        public bool HasChild
+        public bool HasSegments
         {
-            get { return this.HasParent ? this.Parent.HasChild : false; }
+            get { return this.HasParent ? this.Parent.HasSegments : false; }
         }
 
-        public INiconicoWebTextSegmentCollection ChildSegments
+        public INiconicoWebTextSegmentCollection Segments
         {
             get { return null; }
         }
@@ -73,7 +73,7 @@ namespace NiconicoText
 
         public string FriendlyText
         {
-            get { return string.Empty; }
+            get { return this.Text; }
         }
 
         public Color Color

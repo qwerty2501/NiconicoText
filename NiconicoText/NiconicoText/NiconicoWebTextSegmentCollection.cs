@@ -11,5 +11,14 @@ namespace NiconicoText
 {
     internal class NiconicoWebTextSegmentCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public string ToFriendlyString()
+        {
+            return string.Empty;
+        }
     }
 }

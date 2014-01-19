@@ -10,7 +10,7 @@ namespace NiconicoText
 {
     public interface INiconicoWebTextSegmentCollection : IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
-
+        string ToFriendlyString();
     }
 
 

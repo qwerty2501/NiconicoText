@@ -23,14 +23,6 @@ namespace NiconicoText
             }
         }
 
-        public new string FriendlyText
-        {
-            get
-            {
-                return this.text_;
-            }
-        }
-
         public override string ToString()
         {
             return this.text_;
