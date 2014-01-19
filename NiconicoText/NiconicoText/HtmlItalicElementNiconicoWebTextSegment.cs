@@ -22,7 +22,7 @@ namespace NiconicoText
         {
             get
             {
-                return string.Concat("<u>", base.Text, "</u>");
+                return string.Concat("<i>", base.Text, "</i>");
             }
         }
 
