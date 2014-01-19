@@ -112,12 +112,12 @@
     <Compile Include="ChannelIdNiconicoWebTextSegment.cs" />
     <Compile Include="CommunityIdNiconicoWebTextSegment.cs" />
     <Compile Include="FontElementSize.cs" />
-    <Compile Include="HtmlAnchorElementNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlAnchorNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlFontNiconicoWebTextSegment.cs" />
-    <Compile Include="HtmlInvalidElementNiconicoWebTextSegment.cs" />
-    <Compile Include="HtmlItalicElementNiconicoWebTextSegment.cs" />
-    <Compile Include="HtmlStrikeElementNiconicoWebTextSegment.cs" />
-    <Compile Include="HtmlUnderLineElementNiconicoWebTextSegment.cs" />
+    <Compile Include="InvalidHtmlElementNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlItalicNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlStrikeNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlUnderLineNiconicoWebTextSegment.cs" />
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />

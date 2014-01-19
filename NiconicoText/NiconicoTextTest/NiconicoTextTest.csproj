@@ -124,23 +124,20 @@
     <Compile Include="..\NiconicoText\FontElementSize.cs">
       <Link>FontElementSize.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\HtmlAnchorElementNiconicoWebTextSegment.cs">
-      <Link>HtmlAnchorElementNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\HtmlAnchorNiconicoWebTextSegment.cs">
+      <Link>HtmlAnchorNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\HtmlFontNiconicoWebTextSegment.cs">
       <Link>HtmlFontNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\HtmlInvalidElementNiconicoWebTextSegment.cs">
-      <Link>HtmlInvalidElementNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\HtmlItalicNiconicoWebTextSegment.cs">
+      <Link>HtmlItalicNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\HtmlItalicElementNiconicoWebTextSegment.cs">
-      <Link>HtmlItalicElementNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\HtmlStrikeNiconicoWebTextSegment.cs">
+      <Link>HtmlStrikeNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\HtmlStrikeElementNiconicoWebTextSegment.cs">
-      <Link>HtmlStrikeElementNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\NiconicoText\HtmlUnderLineElementNiconicoWebTextSegment.cs">
-      <Link>HtmlUnderLineElementNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\HtmlUnderLineNiconicoWebTextSegment.cs">
+      <Link>HtmlUnderLineNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\IdNiconicoWebTextSegmentBase.cs">
       <Link>IdNiconicoWebTextSegmentBase.cs</Link>
@@ -153,6 +150,9 @@
     </Compile>
     <Compile Include="..\NiconicoText\INiconicoWebTextSegmentCollection.cs">
       <Link>INiconicoWebTextSegmentCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\NiconicoText\InvalidHtmlElementNiconicoWebTextSegment.cs">
+      <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\LineBreakNiconicoWebTextSegment.cs">
       <Link>LineBreakNiconicoWebTextSegment.cs</Link>

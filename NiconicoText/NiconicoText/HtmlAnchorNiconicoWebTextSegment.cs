@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class HtmlAnchorElementNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlAnchorNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
 
-        internal HtmlAnchorElementNiconicoWebTextSegment(Uri url, INiconicoWebTextSegmentCollection segments) : base(segments) 
+        internal HtmlAnchorNiconicoWebTextSegment(Uri url, INiconicoWebTextSegmentCollection segments) : base(segments) 
         {
             this.Url = url;
         }

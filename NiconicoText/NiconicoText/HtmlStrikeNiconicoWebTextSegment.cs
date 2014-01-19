@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class HtmlStrikeElementNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlStrikeNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlStrikeElementNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlStrikeNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
         public new bool AssociatedStrike
         {

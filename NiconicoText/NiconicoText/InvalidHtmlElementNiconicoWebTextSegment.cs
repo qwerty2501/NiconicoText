@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class HtmlInvalidElementNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class InvalidHtmlElementNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlInvalidElementNiconicoWebTextSegment(string text) : base(text) { }
+        internal InvalidHtmlElementNiconicoWebTextSegment(string text) : base(text) { }
 
 
         public new string FriendlyText

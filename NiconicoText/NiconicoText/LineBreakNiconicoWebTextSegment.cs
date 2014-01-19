@@ -31,7 +31,7 @@ namespace NiconicoText
         }
     }
 
-    internal sealed class HtmlBreakElementNiconicoWebTextSegment : LineBreakNiconicoWebTextSegmentBase, INiconicoWebTextSegment, INiconicoTextSegment
+    internal sealed class HtmlBreakNiconicoWebTextSegment : LineBreakNiconicoWebTextSegmentBase, INiconicoWebTextSegment, INiconicoTextSegment
     {
 
         public override string Text

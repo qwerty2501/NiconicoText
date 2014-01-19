@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class HtmlUnderLineElementNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlUnderLineNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlUnderLineElementNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlUnderLineNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
         public new bool AssociatedUnderLine
         {

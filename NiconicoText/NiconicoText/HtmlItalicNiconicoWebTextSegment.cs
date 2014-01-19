@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class HtmlItalicElementNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlItalicNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlItalicElementNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlItalicNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
 
         public new bool AssociatedItalic
         {
