@@ -113,6 +113,7 @@
     <Compile Include="CommunityIdNiconicoWebTextSegment.cs" />
     <Compile Include="FontElementSize.cs" />
     <Compile Include="HtmlAnchorNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlBoldNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlFontNiconicoWebTextSegment.cs" />
     <Compile Include="InvalidHtmlElementNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlItalicNiconicoWebTextSegment.cs" />
