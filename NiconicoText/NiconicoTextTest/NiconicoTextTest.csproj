@@ -127,8 +127,8 @@
     <Compile Include="..\NiconicoText\HtmlAnchorElementNiconicoWebTextSegment.cs">
       <Link>HtmlAnchorElementNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\HtmlFontElementNiconicoWebTextSegment.cs">
-      <Link>HtmlFontElementNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\HtmlFontNiconicoWebTextSegment.cs">
+      <Link>HtmlFontNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\HtmlInvalidElementNiconicoWebTextSegment.cs">
       <Link>HtmlInvalidElementNiconicoWebTextSegment.cs</Link>
