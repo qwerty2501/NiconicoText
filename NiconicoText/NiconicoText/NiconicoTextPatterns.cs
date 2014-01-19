@@ -1,7 +1,8 @@
 ﻿
 namespace NiconicoText
 {
-	
+	using System.Text.RegularExpressions;
+	using System.Linq;
 
     internal static partial class NiconicoTextPatterns
     {
@@ -315,9 +316,93 @@ namespace NiconicoText
 		internal const int invalidHtmlElementGroupNumber=28;
 
 
-				    }
+				
+    }
+
+	internal static class NiconicoWebTextSegmentMatchParser
+	{
+		
+		internal static INiconicoWebTextSegment Parse(Match match)
+		{
+			
+			int matchIndex;
+			foreach(Group group in match.Groups)
+			{
+				if(group.Success)
+					break;
+				++matchIndex;
+			}
+			
+			switch(matchIndex)
+			{
+			
+				case NiconicoTextPatterns.communityIdGroupNumber:
+		return CommunityIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.channelIdGroupNumber:
+		return ChannelIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.videoIdGroupNumber:
+		return VideoIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.articleIdGroupNumber:
+		return ArticleIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.materialIdGroupNumber:
+		return MaterialIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.marketItemIdGroupNumber:
+		return MarketItemIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.liveIdGroupNumber:
+		return LiveIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.watchPictureIdGroupNumber:
+		return WatchPictureIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.PictureIdGroupNumber:
+		return PictureIdNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.urlGroupNumber:
+		return UrlNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.numberAnchorGroupNumber:
+		return NumberAnchorNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlFontGroupNumber:
+		return HtmlFontNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.lineBreakGroupNumber:
+		return LineBreakNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlBreakGroupNumber:
+		return HtmlBreakNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlBoldGroupNumber:
+		return HtmlBoldNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlItalicGroupNumber:
+		return HtmlItalicNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlStrikeGroupNumber:
+		return HtmlStrikeNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.htmlUnderLineGroupNumber:
+		return HtmlUnderLineNiconicoWebTextSegment.ParseWebText(match);
+
+				case NiconicoTextPatterns.invalidHtmlElementGroupNumber:
+		return InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match);
+
+
+			default:
+					return new PlainNiconicoWebTextSegment(match.Value);
+			}
+		}
+
+	}
 
 	namespace Comments{
+
 		internal static class NiconicoCommentTextPatterns
 		{
 			

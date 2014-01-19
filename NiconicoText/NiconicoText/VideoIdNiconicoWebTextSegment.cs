@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class VideoIdNiconicoTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal sealed class VideoIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
     {
-        internal VideoIdNiconicoTextSegment(string videoId) : base(videoId) { }
+        internal VideoIdNiconicoWebTextSegment(string videoId) : base(videoId) { }
 
 
         public override NiconicoWebTextSegmentType SegmentType
