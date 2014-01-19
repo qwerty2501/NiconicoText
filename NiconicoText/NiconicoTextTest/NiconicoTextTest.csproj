@@ -160,8 +160,8 @@
     <Compile Include="..\NiconicoText\LiveIdNiconicoWebTextSegment.cs">
       <Link>LiveIdNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\MarketIdNiconicoWebTextSegment.cs">
-      <Link>MarketIdNiconicoWebTextSegment.cs</Link>
+    <Compile Include="..\NiconicoText\MarketItemIdNiconicoWebTextSegment.cs">
+      <Link>MarketItemIdNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\NiconicoText\MaterialIdNiconicoWebTextSegment.cs">
       <Link>MaterialIdNiconicoWebTextSegment.cs</Link>

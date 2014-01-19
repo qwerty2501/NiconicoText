@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class MarketIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal sealed class MarketItemIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
     {
-        internal MarketIdNiconicoWebTextSegment(string marketId) : base(marketId) { }
+        internal MarketItemIdNiconicoWebTextSegment(string marketId) : base(marketId) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {

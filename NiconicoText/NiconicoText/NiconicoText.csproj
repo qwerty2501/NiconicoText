@@ -124,7 +124,7 @@
     <Compile Include="INiconicoWebTextSegment.cs" />
     <Compile Include="LineBreakNiconicoWebTextSegment.cs" />
     <Compile Include="LiveIdNiconicoWebTextSegment.cs" />
-    <Compile Include="MarketIdNiconicoWebTextSegment.cs" />
+    <Compile Include="MarketItemIdNiconicoWebTextSegment.cs" />
     <Compile Include="MaterialIdNiconicoWebTextSegment.cs" />
     <Compile Include="NiconicoTextColor.cs" />
     <Compile Include="NiconicoWebTextSegmentBase.cs" />
