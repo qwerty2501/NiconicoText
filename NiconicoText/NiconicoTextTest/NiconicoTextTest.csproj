@@ -175,6 +175,9 @@
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentType.cs">
       <Link>NiconicoWebTextSegmentType.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\NumberAnchorNicnicoWebTextSegment.cs">
+      <Link>NumberAnchorNicnicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\PictureIdNiconicoWebTextSegment.cs">
       <Link>PictureIdNiconicoWebTextSegment.cs</Link>
     </Compile>

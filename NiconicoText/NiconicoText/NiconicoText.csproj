@@ -132,6 +132,7 @@
     <Compile Include="NiconicoTextPatterns.partial.cs" />
     <Compile Include="NiconicoWebTextNumberAnchorRange.cs" />
     <Compile Include="NiconicoWebTextSegmentType.cs" />
+    <Compile Include="NumberAnchorNicnicoWebTextSegment.cs" />
     <Compile Include="PictureIdNiconicoWebTextSegment.cs" />
     <Compile Include="PlainNiconicoWebTextSegment.cs" />
     <Compile Include="PlainNiconicoWebTextSegmentBase.cs" />
