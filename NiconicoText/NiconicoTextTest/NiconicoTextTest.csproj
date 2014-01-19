@@ -136,6 +136,9 @@
     <Compile Include="..\NiconicoText\INiconicoWebTextSegmentCollection.cs">
       <Link>INiconicoWebTextSegmentCollection.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\LineBreakNiconicoWebTextSegment.cs">
+      <Link>LineBreakNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\LiveIdNiconicoWebTextSegment.cs">
       <Link>LiveIdNiconicoWebTextSegment.cs</Link>
     </Compile>
