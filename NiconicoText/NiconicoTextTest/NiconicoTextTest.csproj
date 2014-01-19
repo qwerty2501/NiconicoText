@@ -139,6 +139,9 @@
     <Compile Include="..\NiconicoText\LiveIdNiconicoWebTextSegment.cs">
       <Link>LiveIdNiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\NiconicoText\MarketIdNiconicoWebTextSegment.cs">
+      <Link>MarketIdNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\NiconicoText\MaterialIdNiconicoWebTextSegment.cs">
       <Link>MaterialIdNiconicoWebTextSegment.cs</Link>
     </Compile>
