@@ -137,6 +137,7 @@
     <Compile Include="PlainNiconicoWebTextSegmentBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UrlNiconicoWebTextSegment.cs" />
+    <Compile Include="UserNameNiconicoWebTextSegment.cs" />
     <Compile Include="Utils\NiconicoTextUrlUtility.cs" />
     <Compile Include="VideoIdNiconicoTextSegment.cs" />
   </ItemGroup>
