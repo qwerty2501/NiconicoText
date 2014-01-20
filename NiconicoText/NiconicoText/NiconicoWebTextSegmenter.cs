@@ -31,8 +31,26 @@ namespace NiconicoText
         internal NiconicoWebTextSegmentCollection GetTokensInternal(string text)
         {
             var segments = new NiconicoWebTextSegmentCollection();
+            int matchIndex = 0;
+            foreach(Match match in this.regex_.Matches(text))
+            {
+                
+                if (matchIndex < match.Index)
+                {
+                    segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex, match.Index - matchIndex)));
+                }
+
+                segments.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this));
+
+                matchIndex = match.Index + match.Length;
+               
+            }
 
 
+            if (matchIndex < text.Length)
+            {
+                segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex)));
+            }
 
             return segments;
         }
