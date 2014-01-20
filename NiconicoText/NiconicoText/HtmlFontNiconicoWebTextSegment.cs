@@ -10,13 +10,13 @@ namespace NiconicoText
 
     internal sealed class HtmlFontNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, INiconicoWebTextSegmentCollection segments) : this(fontElementSize, default(Color), false, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, NiconicoWebTextSegmentCollection segments) : this(fontElementSize, default(Color), false, segments) { }
 
-        internal HtmlFontNiconicoWebTextSegment(Color color, INiconicoWebTextSegmentCollection segments) : this(new FontElementSize(0), color, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(Color color, NiconicoWebTextSegmentCollection segments) : this(new FontElementSize(0), color, segments) { }
 
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, INiconicoWebTextSegmentCollection segments) : this(fontElementSize, color, true, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, NiconicoWebTextSegmentCollection segments) : this(fontElementSize, color, true, segments) { }
 
-        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize,Color color,bool associatedColor, INiconicoWebTextSegmentCollection segments)
+        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, NiconicoWebTextSegmentCollection segments)
             : base(segments)
         {
             this.fontElementSize_ = fontElementSize;
@@ -115,7 +115,7 @@ namespace NiconicoText
             var colorNameGroup = match.Groups[NiconicoWebTextPatternIndexs.colorNameGroupNumber];
             var codeColor = new Color();
             var nameColor = new Color();
-            var segments = segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
+            var segments = segmenter.GetTokensInternal(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
             if (colorCodeGroup.Success)
             {
                 codeColor = NiconicoTextColorExtention.FromColorCode(colorCodeGroup.Value);

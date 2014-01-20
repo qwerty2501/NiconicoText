@@ -11,6 +11,15 @@ namespace NiconicoText
 {
     internal class NiconicoWebTextSegmentCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
+        internal NiconicoWebTextSegmentCollection() : base() { }
+        internal NiconicoWebTextSegmentCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
+
+        internal INiconicoWebTextSegment Owner
+        {
+            get;
+            set;
+        }
+
         public override string ToString()
         {
             return base.ToString();

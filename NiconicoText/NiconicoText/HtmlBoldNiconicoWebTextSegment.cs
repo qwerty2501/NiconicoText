@@ -7,7 +7,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlBoldNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlBoldNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlBoldNiconicoWebTextSegment(NiconicoWebTextSegmentCollection segments) : base(segments) { }
 
         public new bool DecoratedBold
         {
@@ -32,7 +32,7 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            return new HtmlBoldNiconicoWebTextSegment(segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.boldTextGroupNumber].Value));
+            return new HtmlBoldNiconicoWebTextSegment(segmenter.GetTokensInternal(match.Groups[NiconicoWebTextPatternIndexs.boldTextGroupNumber].Value));
         }
     }
 }

@@ -25,7 +25,16 @@ namespace NiconicoText
 
         public INiconicoWebTextSegmentCollection GetTokens(string text)
         {
-            throw new NotImplementedException();
+            return this.GetTokensInternal(text);
+        }
+
+        internal NiconicoWebTextSegmentCollection GetTokensInternal(string text)
+        {
+            var segments = new NiconicoWebTextSegmentCollection();
+
+
+
+            return segments;
         }
 
         private Regex regex_;

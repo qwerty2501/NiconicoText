@@ -8,9 +8,10 @@ namespace NiconicoText
 {
     internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal SegmentsProsessionNiconicoWebTextSegmentBase(INiconicoWebTextSegmentCollection segments)
+        internal SegmentsProsessionNiconicoWebTextSegmentBase(NiconicoWebTextSegmentCollection segments)
         {
-            this.Segments = segments;
+            this.segments_ = segments;
+            this.segments_.Owner = this;
         }
 
         public new bool HasSegments
@@ -21,10 +22,14 @@ namespace NiconicoText
             }
         }
 
+        private NiconicoWebTextSegmentCollection segments_;
+
         public new INiconicoWebTextSegmentCollection Segments
         {
-            get;
-            private set;
+            get
+            {
+                return this.segments_;
+            }
         }
 
         public override string Text

@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlUnderLineNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlUnderLineNiconicoWebTextSegment(INiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlUnderLineNiconicoWebTextSegment(NiconicoWebTextSegmentCollection segments) : base(segments) { }
 
         public new bool DecoratedUnderLine
         {
@@ -33,7 +33,7 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            return new HtmlUnderLineNiconicoWebTextSegment(segmenter.GetTokens(match.Groups[NiconicoWebTextPatternIndexs.underLineTextGroupNumber].Value));
+            return new HtmlUnderLineNiconicoWebTextSegment(segmenter.GetTokensInternal(match.Groups[NiconicoWebTextPatternIndexs.underLineTextGroupNumber].Value));
         }
     }
 }
