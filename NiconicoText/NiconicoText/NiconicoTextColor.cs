@@ -136,6 +136,8 @@ namespace NiconicoText
             get { return new NiconicoTextColor { R = 0x66, G = 0x66, B = 0x66 }; }
         }
 
+
+
         internal static NiconicoTextColor FromColorCode(string code)
         {
             return new NiconicoTextColor {
@@ -143,6 +145,72 @@ namespace NiconicoText
                                             G = byte.Parse(code.Substring(3,2),NumberStyles.HexNumber),
                                             B = byte.Parse(code.Substring(5,2),NumberStyles.HexNumber) 
                                         };
+        }
+
+        internal static NiconicoTextColor FromCommentColorName(string name)
+        {
+            switch (name.ToLower())
+            {
+                case "black":
+                    return CommentColorBlack;
+
+                case "white":
+                    return CommentColorWhite;
+
+                case "red":
+                    return CommentColorOrange;
+
+                case "pink":
+                    return CommentColorPink;
+
+                case "yellow":
+                    return CommentColorYellow;
+
+                case "green":
+                    return CommentColorGreen;
+
+                case "cyan":
+                    return CommentColorCyan;
+
+                case "purple":
+                    return CommentColorPurple;
+
+                case "white2":
+                case "niconicowhite":
+                    return CommentColorWhite2;
+
+                case "red2":
+                case "truered":
+                    return CommentColorRed2;
+
+                case "pink2":
+                    return CommentColorPink2;
+
+                case "orange2":
+                case "passionorange":
+                    return CommentColorOrange2;
+
+                case "green2":
+                case "elementalgreen":
+                    return CommentColorGreen2;
+
+                case "cyan2":
+                    return CommentColorCyan2;
+
+                case "blue2":
+                    return CommentColorBlue2;
+
+                case "purple2":
+                case "nobleviolet":
+                    return CommentColorPurple2;
+
+                case "black2":
+                    return CommentColorBlack2;
+
+                default:
+                    return CommentColorWhite;
+
+            }
         }
 
         internal static NiconicoTextColor FromColorName(string name)
