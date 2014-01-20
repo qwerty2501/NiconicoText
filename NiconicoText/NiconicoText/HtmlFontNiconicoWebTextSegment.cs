@@ -129,7 +129,28 @@ namespace NiconicoText
 
             if (fontElementSizeGroup.Success)
             {
-                fontSize = new FontElementSize( byte.Parse(fontElementSizeGroup.Value));
+                var firstChar = fontElementSizeGroup.Value.First();
+
+                if (firstChar == '-' || firstChar == '+')
+                {
+                    var sizeTmp = (byte)(byte.Parse(fontElementSizeGroup.Value) + 3);
+                    if (sizeTmp < 1)
+                    {
+                        sizeTmp = 1;
+                    }
+                    else if (sizeTmp > 7)
+                    {
+                        sizeTmp = 7;
+                    }
+
+                    fontSize = new FontElementSize(sizeTmp);
+                }
+                else
+                {
+                    fontSize = new FontElementSize(byte.Parse(fontElementSizeGroup.Value));
+                }
+
+                
 
                
             }
