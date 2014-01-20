@@ -10,7 +10,17 @@ namespace NiconicoText
 {
     public interface INiconicoWebTextSegmentCollection : IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Create a Friendly String.
+        /// </summary>
+        /// <returns></returns>
         string ToFriendlyString();
+
+
+        /// <summary>
+        /// Gets a IList<INiconicoWebTextSegment> wrapper around the Collection<INiconicoWebTextSegment>.
+        /// </summary>
+        IList<INiconicoWebTextSegment> Items { get; }
     }
 
 

@@ -20,5 +20,11 @@ namespace NiconicoText
         {
             return string.Empty;
         }
+
+
+        public new IList<INiconicoWebTextSegment> Items
+        {
+            get { return this.Items; }
+        }
     }
 }
