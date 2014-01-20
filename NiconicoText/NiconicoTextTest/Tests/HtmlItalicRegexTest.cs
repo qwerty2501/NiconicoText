@@ -23,7 +23,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("<i>italicText</i>","<i>italicText</i>","italicText",true)]
         public void MatchTest(string text,string formatedText,string italicText,bool succeed)
         {
-            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlItalicGroupPattern, text, formatedText, 3, succeed);
+            var match = RegexTestHelper.MatchTest(NiconicoWebTextPatterns.htmlItalicGroupPattern, text, formatedText, 3, succeed);
 
             if (succeed)
             {
@@ -35,7 +35,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.htmlItalicGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.htmlItalicGroupPattern);
         }
     }
 }

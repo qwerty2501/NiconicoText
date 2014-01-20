@@ -22,13 +22,13 @@ namespace NiconicoTextTest.Tests
         [DataRow("ofxazB00HS2GTHQccw","azB00HS2GTHQ",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.marketItemIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.marketItemIdGroupPattern, text, id, 2, succeed);
         }
 
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.marketItemIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.marketItemIdGroupPattern);
         }
     }
 }

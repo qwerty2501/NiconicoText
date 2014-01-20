@@ -24,7 +24,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("ccccev162882011?zrou", "", false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.liveIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.liveIdGroupPattern, text, id, 2, succeed);
         }
 
         [DataTestMethod]
@@ -41,7 +41,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.liveIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.liveIdGroupPattern);
         }
     }
 }

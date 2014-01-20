@@ -22,13 +22,13 @@ namespace NiconicoTextTest.Tests
         [DataRow("oflco28428ccie", "co28428", true)]
         public void MatchTest(string text, string id, bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.communityIdGroupPattern, text, id, 2, true);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.communityIdGroupPattern, text, id, 2, true);
         }
 
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.communityIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.communityIdGroupPattern);
         }
     }
 }

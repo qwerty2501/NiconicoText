@@ -23,7 +23,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("ofler407000ccie", "", false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.articleIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.articleIdGroupPattern, text, id, 2, succeed);
 
         }
 
@@ -32,7 +32,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.articleIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.articleIdGroupPattern);
         }
     }
 }

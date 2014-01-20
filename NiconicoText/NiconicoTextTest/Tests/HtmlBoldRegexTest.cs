@@ -22,7 +22,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("<b>bold</b>","<b>bold</b>","bold",true)]
         public void MatchTest(string text,string parsedText,string value,bool succeed)
         {
-            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlBoldGroupPattern, text, parsedText, 3, succeed);
+            var match = RegexTestHelper.MatchTest(NiconicoWebTextPatterns.htmlBoldGroupPattern, text, parsedText, 3, succeed);
 
             Assert.AreEqual(value, match.Groups["boldText"].Value);
 
@@ -30,7 +30,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.htmlBoldGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.htmlBoldGroupPattern);
         }
     }
 }

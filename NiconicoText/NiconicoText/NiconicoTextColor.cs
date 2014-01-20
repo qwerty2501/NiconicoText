@@ -36,6 +36,106 @@ namespace NiconicoText
             return string.Concat("#", Convert.ToString(self.R, 16), Convert.ToString(self.G, 16), Convert.ToString(self.B, 16));
         }
 
+        public static NiconicoTextColor CommentColorWhite
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0xFF, B = 0xFF }; }
+        }
+
+        public static NiconicoTextColor CommentColorBlack
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0x00, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorRed
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0x00, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorPink
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0x80, B = 0x80 }; }
+        }
+
+        public static NiconicoTextColor CommentColorOrange
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0xC0, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorYellow
+        {
+            get{return new NiconicoTextColor{ R=0xFF , G=0xFF , B=0x00 }; }   
+        }
+
+        public static NiconicoTextColor CommentColorGreen
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0xFF, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorCyan
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0xFF, B = 0xFF }; }
+        }
+
+        public static NiconicoTextColor CommentColorBlue
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0x00, B = 0xFF }; }
+        }
+
+        public static NiconicoTextColor CommentColorPurple
+        {
+            get { return new NiconicoTextColor { R = 0xC0, G = 0x00, B = 0xFF }; }
+        }
+
+        public static NiconicoTextColor CommentColorWhite2
+        {
+            get { return new NiconicoTextColor { R = 0xCC, G = 0xCC, B = 0x99 }; }
+        }
+
+        public static NiconicoTextColor CommentColorRed2
+        {
+            get { return new NiconicoTextColor { R = 0xCC, G = 0x00, B = 0x33 }; }
+        }
+
+        public static NiconicoTextColor CommentColorPink2
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0x33, B = 0xCC }; }
+        }
+
+        public static NiconicoTextColor CommentColorOrange2
+        {
+            get { return new NiconicoTextColor { R = 0xFF, G = 0x66, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorYellow2
+        {
+            get { return new NiconicoTextColor { R = 0x99, G = 0x99, B = 0x00 }; }
+        }
+
+        public static NiconicoTextColor CommentColorGreen2
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0xCC, B = 0x66 }; }
+        }
+
+        public static NiconicoTextColor CommentColorCyan2
+        {
+            get { return new NiconicoTextColor { R = 0x00, G = 0xCC, B = 0xCC }; }
+        }
+
+        public static NiconicoTextColor CommentColorBlue2
+        {
+            get { return new NiconicoTextColor { R = 0x33, G = 0x99, B = 0xFF }; }
+        }
+
+        public static NiconicoTextColor CommentColorPurple2
+        {
+            get { return new NiconicoTextColor { R = 0x66, G = 0x33, B = 0xCC }; }
+        }
+
+        public static NiconicoTextColor CommentColorBlack2
+        {
+            get { return new NiconicoTextColor { R = 0x66, G = 0x66, B = 0x66 }; }
+        }
+
         internal static NiconicoTextColor FromColorCode(string code)
         {
             return new NiconicoTextColor {

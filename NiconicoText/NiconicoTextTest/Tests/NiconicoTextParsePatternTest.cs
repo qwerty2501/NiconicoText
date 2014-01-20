@@ -80,7 +80,7 @@ namespace NiconicoTextTest.Tests
 
         private static Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.niconicoTextParsePattern);
+            return new Regex(NiconicoWebTextPatterns.niconicoTextParsePattern);
         }
     }
 }

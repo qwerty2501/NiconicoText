@@ -22,12 +22,12 @@ namespace NiconicoTextTest.Tests
         [DataRow("ceewim14567522565ccew","im14567522565",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex creteRegex()
         {
-            return new Regex(NiconicoTextPatterns.watchPictureIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.watchPictureIdGroupPattern);
         }
     }
 }

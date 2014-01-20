@@ -22,12 +22,12 @@ namespace NiconicoTextTest.Tests
         [DataRow("aacsg5548845eed","sg5548845",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.watchPictureIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.watchPictureIdGroupPattern);
         }
     }
 }

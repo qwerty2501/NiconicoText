@@ -22,7 +22,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("<u>underLineText</u>","<u>underLineText</u>","underLineText",true)]
         public void MatchTest(string text,string patterndText,string underLineText,bool succeed)
         {
-            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlUnderLineGroupPattern, text, patterndText, 3, succeed);
+            var match = RegexTestHelper.MatchTest(NiconicoWebTextPatterns.htmlUnderLineGroupPattern, text, patterndText, 3, succeed);
 
             if (succeed)
             {
@@ -32,7 +32,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.htmlUnderLineGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.htmlUnderLineGroupPattern);
         }
     }
 }

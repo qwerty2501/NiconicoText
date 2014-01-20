@@ -441,6 +441,13 @@ namespace NiconicoText
 		internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?.*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)\""\s?.*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?<communityId>co\d{1,14})|(?<channelId>ch\d{1,14})|(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})|(?<articleId>ar\d{1,14})|(?<materialId>nc\d{1,14})|(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))|(?<liveId>lv\d{1,14})|(?<watchPictureId>(?:[sm]g|im)\d{1,14})|(?<PictureId>im\d{1,14})|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?)|(?<numberAnchor>>>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:.*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<invalidHtmlElement></?.*?>))";
 
 
+
+		}
+
+		internal static class NiconicoCommentTextPatternIndexs
+		{
+
+
 		internal const int htmlAnchorGroupNumber=1;
 
 

@@ -22,12 +22,12 @@ namespace NiconicoTextTest.Tests
         [DataRow("http://www.nicovideo.jp/watch/1360359142","http://www.nicovideo.jp/watch/1360359142",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.urlGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.urlGroupPattern, text, id, 2, succeed);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.urlGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.urlGroupPattern);
         }
     }
 }

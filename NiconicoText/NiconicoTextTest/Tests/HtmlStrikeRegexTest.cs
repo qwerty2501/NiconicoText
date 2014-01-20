@@ -22,7 +22,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("<s>strikeText</s>","<s>strikeText</s>","strikeText",true)]
         public void MatchTest(string text,string parsedText,string strikeText,bool succeed)
         {
-            var match = RegexTestHelper.MatchTest(NiconicoTextPatterns.htmlStrikeGroupPattern, text, parsedText, 3, succeed);
+            var match = RegexTestHelper.MatchTest(NiconicoWebTextPatterns.htmlStrikeGroupPattern, text, parsedText, 3, succeed);
 
             if (succeed)
             {
@@ -32,7 +32,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.htmlStrikeGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.htmlStrikeGroupPattern);
         }
     }
 }

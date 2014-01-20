@@ -22,12 +22,12 @@ namespace NiconicoTextTest.Tests
         [DataRow("oflch407000ccie","ch407000",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.channelIdGroupPattern, text, id, 2, true);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.channelIdGroupPattern, text, id, 2, true);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.channelIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.channelIdGroupPattern);
         }
     }
 }

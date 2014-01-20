@@ -214,6 +214,13 @@ namespace NiconicoText
 
 		internal const string niconicoCommentTextParsePattern = @"<#= niconicoCommentTextParsePattern #>";
 
+
+
+		}
+
+		internal static class NiconicoCommentTextPatternIndexs
+		{
+
 <# writePatternNumber(niconicoCommentTextParsePattern); #>
 
 		}

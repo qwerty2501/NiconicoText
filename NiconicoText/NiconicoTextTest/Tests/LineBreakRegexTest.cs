@@ -19,15 +19,15 @@ namespace NiconicoTextTest.Tests
         }
 
         [DataTestMethod]
-        [DataRow("<br>","<br>",true)]
+        [DataRow("\r\n","\r\n",true)]
         public void MatchTest(string text,string parsedText,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.lineBreakGroupPattern,text,parsedText,2,succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.lineBreakGroupPattern,text,parsedText,2,succeed);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.lineBreakGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.lineBreakGroupPattern);
         }
     }
 }

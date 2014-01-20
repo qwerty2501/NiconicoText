@@ -56,11 +56,11 @@ namespace NiconicoText
 
             if(secondGroup.Success)
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatterns.firstAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.firstAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
             }
             else
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatterns.firstAnchorGroupNumber].Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.firstAnchorGroupNumber].Value) });
             }
 
             

@@ -22,12 +22,12 @@ namespace NiconicoTextTest.Tests
         [DataRow("ああああnc27317ああああ","nc27317",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.materialIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.materialIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoTextPatterns.materialIdGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.materialIdGroupPattern);
         }
     }
 }

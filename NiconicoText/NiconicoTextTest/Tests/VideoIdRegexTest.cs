@@ -40,7 +40,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("testmessagenb22635959","",false)]
         public void MatchTest(string text, string value, bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoTextPatterns.videoIdGroupPattern, text, value, 2,succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.videoIdGroupPattern, text, value, 2,succeed);
         }
 
 
@@ -60,7 +60,7 @@ namespace NiconicoTextTest.Tests
 
         private Regex createRegex()
         {
-            return  new Regex(NiconicoTextPatterns.videoIdGroupPattern);
+            return  new Regex(NiconicoWebTextPatterns.videoIdGroupPattern);
         }
     }
 }
