@@ -21,14 +21,14 @@ namespace NiconicoText
         {
             this.fontElementSize_ = fontElementSize;
             this.color_ = color;
-            this.AssociatedColor = associatedColor;
+            this.DecoratedColor = associatedColor;
         }
 
         public new Color Color
         {
             get
             {
-                if (this.AssociatedColor)
+                if (this.DecoratedColor)
                 {
                     return this.color_;
                 }
@@ -39,7 +39,7 @@ namespace NiconicoText
             }
         }
 
-        public new bool AssociatedColor
+        public new bool DecoratedColor
         {
             get;
             private set;
@@ -54,7 +54,7 @@ namespace NiconicoText
 
                 builder.Append("<font ");
 
-                if (this.AssociatedColor)
+                if (this.DecoratedColor)
                 {
                     builder.Append("color=\"");
                     builder.Append(this.color_.ToColorCode());
@@ -63,7 +63,7 @@ namespace NiconicoText
 
                 if (this.fontElementSize_ != 0)
                 {
-                    if (this.AssociatedColor)
+                    if (this.DecoratedColor)
                     {
                         builder.Append(" ");
                     }

@@ -162,7 +162,7 @@ namespace NiconicoText
 
 		<# writePatterns(niconicoTextPatterns); #>
 
-		internal const string niconicoTextParsePattern = @"<#= niconicoTextParsePattern #>";
+		internal const string niconicoWebTextParsePattern = @"<#= niconicoTextParsePattern #>";
 
 
 

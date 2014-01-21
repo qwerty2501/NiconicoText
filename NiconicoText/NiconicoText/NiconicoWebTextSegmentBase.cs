@@ -105,7 +105,7 @@ namespace NiconicoText
         }
 
 
-        public bool AssociatedColor
+        public bool DecoratedColor
         {
             get { return false; }
         }

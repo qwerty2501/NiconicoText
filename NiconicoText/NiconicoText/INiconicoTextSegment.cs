@@ -27,7 +27,7 @@ namespace NiconicoText
         /// <summary>
         /// Determine whether color associated with this text segment.
         /// </summary>
-        bool AssociatedColor { get; }
+        bool DecoratedColor { get; }
 
         /// <summary>
         /// Color associated with this text segment.

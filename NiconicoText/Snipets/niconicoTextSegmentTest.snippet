@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>nunit test</Title>
-			<Shortcut>tm</Shortcut>
-			<Description>nunit test snipet</Description>
+			<Title>niconicotextsegmenttest</Title>
+			<Shortcut>ntst</Shortcut>
+			<Description>niconico text segment test</Description>
 			<Author>qwerty</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -14,19 +14,158 @@
 		<Snippet>
 			<Declarations>
 				<Literal>
-					<ID>methodName</ID>
-					<ToolTip>メソッド名</ToolTip>
-					<Default>methodName</Default>
+					<ID>className</ID>
+					<ToolTip>クラス名</ToolTip>
+					<Default>className</Default>
 				</Literal>
-        
+        <Literal>
+          <ID>decoratedColorExpeted</ID>
+          <ToolTip>関連付けられた色が期待値か</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>decoratedBold</ID>
+          <ToolTip>関連付けられた太字修飾が期待値か</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>decoratedItalic</ID>
+          <ToolTip>関連付けられた太字イタリックが期待値か</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>decoratedStrike</ID>
+          <ToolTip>関連付けられた打消し線が期待値か</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>decoratedUnderLine</ID>
+          <ToolTip>関連付けられた下線が期待値か</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>hasNumberAnchor</ID>
+          <ToolTip>アンカー番号を保持しているか</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>hasSegments</ID>
+          <ToolTip>子供テキスト断片を持っているか</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>hasUrl</ID>
+          <ToolTip>Urlを持っているか</ToolTip>
+          <Default>False</Default>
+        </Literal>
+        <Literal>
+          <ID>startNumber</ID>
+          <ToolTip>アンカー開始番号</ToolTip>
+          <Default>0</Default>
+        </Literal>
+        <Literal>
+          <ID>endNumber</ID>
+          <ToolTip>アンカー終了番号</ToolTip>
+          <Default>0</Default>
+        </Literal>
 
+        <Literal>
+          <ID>parent</ID>
+          <ToolTip>親テキスト</ToolTip>
+          <Default>null</Default>
+        </Literal>
+
+        <Literal>
+          <ID>segments</ID>
+          <ToolTip>子テキスト断片</ToolTip>
+          <Default>null</Default>
+        </Literal>
+        <Literal>
+          <ID>url</ID>
+          <ToolTip>URL</ToolTip>
+          <Default>null</Default>
+        </Literal>
+
+        <Literal>
+          <ID>createdText</ID>
+          <ToolTip>生成時のテキスト</ToolTip>
+          <Default>createdText</Default>
+        </Literal>
+
+        <Literal>
+          <ID>segmentType</ID>
+          <ToolTip>断片タイプ</ToolTip>
+          <Default>Plain</Default>
+        </Literal>
+
+        <Literal>
+          <ID>fontElementSize</ID>
+          <ToolTip>フォント要素のサイズ</ToolTip>
+          <Default>3</Default>
+        </Literal>
+
+        <Literal>
+          <ID>friendlyText</ID>
+          <ToolTip>ユーザフレンドリなテキスト</ToolTip>
+          <Default>friendlyText</Default>
+        </Literal>
 			</Declarations>
 			<Code Language="csharp">
-          <![CDATA[[TestMethod]
-        public void $methodName$()
+          <![CDATA[using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using NiconicoText;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+
+namespace NiconicoTextTest.Tests
+{
+    [TestClass]
+    public class $className$Test
+    {
+        [TestMethod]
+        public void CreateTest()
         {
-          $selected$ $end$
-        }]]>
+            $className$ val = $selected$ $end$;
+
+            INiconicoWebTextSegment segment = val;
+
+            Assert.Is$decoratedColorExpeted$( segment.DecoratedColor);
+            Assert.Is$decoratedBold$(segment.DecoratedBold);
+            Assert.Is$decoratedItalic$(segment.DecoratedItalic);
+            Assert.Is$decoratedStrike$(segment.DecoratedStrike);
+            Assert.Is$decoratedUnderLine$(segment.DecoratedUnderLine);
+            Assert.Is$hasNumberAnchor$(segment.HasNumberAnchor);
+            Assert.Is$hasSegments$(segment.HasSegments);
+            Assert.Is$hasUrl$(segment.HasUrl);
+            Assert.AreEqual(new NiconicoWebTextNumberAnchorRange { StartNumber = $startNumber$,EndNumber = $endNumber$}, segment.NumberAnchor);
+            Assert.AreEqual($parent$, segment.Parent);
+            Assert.AreEqual($segments$, segment.Segments);
+            Assert.AreEqual($url$, segment.Url);
+            Assert.AreEqual("$createdText$", segment.Text);
+            Assert.AreEqual(NiconicoWebTextSegmentType.$segmentType$, segment.SegmentType);
+            Assert.AreEqual($fontElementSize$, segment.FontElementSize);
+            Assert.AreEqual("$friendlyText$", segment.FriendlyText);
+        }
+
+        [DataTestMethod]
+        [DataRow("")]
+        public void ParseWebTextTest(string text)
+        {
+            var regex = new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);
+            var segmenter = new NiconicoWebTextSegmenter();
+            var match = regex.Match(text);
+            Assert.IsTrue(match.Success);
+            INiconicoWebTextSegment segment = $className$.ParseWebText(match,segmenter);
+            Assert.AreEqual(NiconicoWebTextSegmentType.$segmentType$, segment.SegmentType);
+        }
+
+
+    }
+}]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
