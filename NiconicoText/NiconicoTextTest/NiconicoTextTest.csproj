@@ -246,6 +246,7 @@
     <Compile Include="Tests\PlainNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\RegexTestHelper.cs" />
     <Compile Include="Tests\PictureIdRegexTest.cs" />
+    <Compile Include="Tests\UrlNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\UrlRegexTest.cs" />
     <Compile Include="Tests\UserNameNiconicoWebTextSegmentText.cs" />
     <Compile Include="Tests\VideoIdNiconicoWebTextSegmentTest.cs" />
