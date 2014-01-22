@@ -242,6 +242,7 @@
     <Compile Include="Tests\MarketItemIdRegexTest.cs" />
     <Compile Include="Tests\MaterialIdRegexTest.cs" />
     <Compile Include="Tests\NiconicoTextParsePatternTest.cs" />
+    <Compile Include="Tests\NumberAnchorNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\PictureIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\PlainNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\RegexTestHelper.cs" />
