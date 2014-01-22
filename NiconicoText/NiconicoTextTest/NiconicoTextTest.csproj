@@ -250,6 +250,7 @@
     <Compile Include="Tests\VideoIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\VideoIdRegexTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\WatchPictureIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\WatchPictureIdRegexTest.cs" />
   </ItemGroup>
   <ItemGroup>
