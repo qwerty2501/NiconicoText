@@ -231,6 +231,7 @@
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
     <Compile Include="Tests\HtmlAnchorRegexTest.cs" />
     <Compile Include="Tests\HtmlBoldRegexTest.cs" />
+    <Compile Include="Tests\HtmlBreakNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlFontRegexTest.cs" />
     <Compile Include="Tests\HtmlItalicRegexTest.cs" />
     <Compile Include="Tests\HtmlStrikeRegexTest.cs" />
