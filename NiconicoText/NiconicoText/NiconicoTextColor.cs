@@ -33,7 +33,7 @@ namespace NiconicoText
     {
         public static string ToColorCode(this NiconicoTextColor self)
         {
-            return string.Concat("#", Convert.ToString(self.R, 16), Convert.ToString(self.G, 16), Convert.ToString(self.B, 16));
+            return string.Concat("#", Convert.ToString(self.R, 16).ToUpper(), Convert.ToString(self.G, 16).ToUpper(), Convert.ToString(self.B, 16).ToUpper());
         }
 
         public static NiconicoTextColor CommentColorWhite

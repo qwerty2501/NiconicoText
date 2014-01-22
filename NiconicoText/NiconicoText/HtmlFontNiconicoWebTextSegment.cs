@@ -133,7 +133,7 @@ namespace NiconicoText
 
                 if (firstChar == '-' || firstChar == '+')
                 {
-                    var sizeTmp = (byte)(byte.Parse(fontElementSizeGroup.Value) + 3);
+                    var sizeTmp = (sbyte)(sbyte.Parse(fontElementSizeGroup.Value) + 3);
                     if (sizeTmp < 1)
                     {
                         sizeTmp = 1;
@@ -143,7 +143,7 @@ namespace NiconicoText
                         sizeTmp = 7;
                     }
 
-                    fontSize = new FontElementSize(sizeTmp);
+                    fontSize = new FontElementSize((byte)sizeTmp);
                 }
                 else
                 {
