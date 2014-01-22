@@ -23,6 +23,11 @@ namespace NiconicoText
             }
         }
 
+        public new bool HasUrl
+        {
+            get { return true; }
+        }
+
         public new Uri Url
         {
             get;
