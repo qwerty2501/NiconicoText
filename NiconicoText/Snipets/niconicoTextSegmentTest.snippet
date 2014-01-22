@@ -109,6 +109,11 @@
           <ToolTip>ユーザフレンドリなテキスト</ToolTip>
           <Default>friendlyText</Default>
         </Literal>
+        <Literal>
+          <ID>testPatern1</ID>
+          <ToolTip>解析用テストパターン</ToolTip>
+          <Default>testPatern1</Default>
+        </Literal>
 			</Declarations>
 			<Code Language="csharp">
           <![CDATA[using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -152,7 +157,7 @@ namespace NiconicoTextTest.Tests
         }
 
         [DataTestMethod]
-        [DataRow("")]
+        [DataRow("$testPatern1$")]
         public void ParseWebTextTest(string text)
         {
             var regex = new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);
