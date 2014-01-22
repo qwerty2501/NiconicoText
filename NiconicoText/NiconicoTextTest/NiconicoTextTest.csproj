@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />
+    <Compile Include="Tests\CommunityIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
     <Compile Include="Tests\HtmlAnchorNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlAnchorRegexTest.cs" />
