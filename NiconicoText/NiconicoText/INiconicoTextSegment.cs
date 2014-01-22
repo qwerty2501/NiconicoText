@@ -25,7 +25,7 @@ namespace NiconicoText
         string FriendlyText { get; }
 
         /// <summary>
-        /// Determine whether color associated with this text segment.
+        /// Determines whether color associated with this text segment.
         /// </summary>
         bool DecoratedColor { get; }
 

@@ -23,7 +23,7 @@ namespace NiconicoText
         /// End number.
         /// </summary>
         /// <remarks>
-        /// If this value is 0, the number anchor is single anchor.
+        /// If this value only is 0, the number anchor is single anchor.
         /// </remarks>
         public int EndNumber;
 

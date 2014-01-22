@@ -12,12 +12,12 @@ namespace NiconicoText
     public interface INiconicoWebTextSegment:INiconicoTextSegment
     {
         /// <summary>
-        /// Determine wheter Url Associated with this text segment.
+        /// Determines wheter Url Associated with this text segment.
         /// </summary>
         bool HasUrl { get; }
 
         /// <summary>
-        /// Determine wheter has children sements.
+        /// Determines wheter has children sements.
         /// </summary>
         bool HasSegments { get; }
 
@@ -32,7 +32,7 @@ namespace NiconicoText
         INiconicoWebTextSegmentCollection Segments { get; }
 
         /// <summary>
-        /// Determine wheter has number anchor.
+        /// Determines wheter has number anchor.
         /// </summary>
         bool HasNumberAnchor { get; }
 
@@ -47,22 +47,22 @@ namespace NiconicoText
         byte FontElementSize { get; }
 
         /// <summary>
-        /// Determine whether decorated text segment by underline.
+        /// Determines whether decorated text segment by underline.
         /// </summary>
         bool DecoratedUnderLine { get; }
 
         /// <summary>
-        /// Determine whether decorated text segment by bold.
+        /// Determines whether decorated text segment by bold.
         /// </summary>
         bool DecoratedBold { get; }
 
         /// <summary>
-        /// Determine whether decorated text segment by strike.
+        /// Determines whether decorated text segment by strike.
         /// </summary>
         bool DecoratedStrike { get; }
 
         /// <summary>
-        /// Determine wheter decorated text segment by italic.
+        /// Determines wheter decorated text segment by italic.
         /// </summary>
         bool DecoratedItalic { get; }
 
