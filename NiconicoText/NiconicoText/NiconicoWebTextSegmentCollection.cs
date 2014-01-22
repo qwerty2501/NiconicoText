@@ -22,12 +22,12 @@ namespace NiconicoText
 
         public override string ToString()
         {
-            return base.ToString();
+            return string.Concat(this.Select((item) => item.Text));
         }
 
         public string ToFriendlyString()
         {
-            return string.Empty;
+            return string.Concat(this.Select((item) => item.FriendlyText));
         }
 
 
