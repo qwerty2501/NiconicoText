@@ -232,6 +232,7 @@
     <Compile Include="Tests\HtmlAnchorRegexTest.cs" />
     <Compile Include="Tests\HtmlBoldRegexTest.cs" />
     <Compile Include="Tests\HtmlBreakNiconicoWebTextSegmentTest.cs" />
+    <Compile Include="Tests\HtmlFontNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlFontRegexTest.cs" />
     <Compile Include="Tests\HtmlItalicNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlItalicRegexTest.cs" />
