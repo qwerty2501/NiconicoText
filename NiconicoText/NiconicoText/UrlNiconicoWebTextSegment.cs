@@ -13,6 +13,14 @@ namespace NiconicoText
             this.Url = url;
         }
 
+        public new bool HasUrl
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         public new Uri Url
         {
             get;
