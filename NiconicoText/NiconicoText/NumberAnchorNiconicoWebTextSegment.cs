@@ -10,8 +10,22 @@ namespace NiconicoText
     {
         internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range)
         {
-            this.range_ = range;
+            this.NumberAnchor = range;
             this.rangeCash_ = null;
+        }
+
+        public new bool HasNumberAnchor
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public new NiconicoWebTextNumberAnchorRange NumberAnchor
+        {
+            get;
+            private set;
         }
 
         public override NiconicoWebTextSegmentType SegmentType
@@ -25,7 +39,14 @@ namespace NiconicoText
             {
                 if (this.rangeCash_ == null)
                 {
-                    this.rangeCash_ = this.ToString();
+                    if (this.NumberAnchor.EndNumber > 0)
+                    {
+                        this.rangeCash_ = string.Concat(">>", this.NumberAnchor.StartNumber, "-", this.NumberAnchor.EndNumber);
+                    }
+                    else
+                    {
+                        this.rangeCash_ = string.Concat(">>", this.NumberAnchor.StartNumber);
+                    }
                 }
 
                 return this.rangeCash_;
@@ -34,19 +55,6 @@ namespace NiconicoText
             }
         }
 
-        public override string ToString()
-        {
-            if (this.range_.EndNumber > 0)
-            {
-                return string.Concat(">>", this.range_.StartNumber, "-", this.range_.EndNumber);
-            }
-            else
-            {
-                return string.Concat(">>", this.range_.StartNumber);
-            }
-        }
-
-        private NiconicoWebTextNumberAnchorRange range_;
 
         private string rangeCash_;
 
