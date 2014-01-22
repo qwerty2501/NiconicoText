@@ -10,22 +10,22 @@ using System.Threading.Tasks;
 namespace NiconicoTextTest.Tests
 {
     [TestClass]
-    public class StillImageIdRegexTest
+    public class WatchPictureIdRegexTest
     {
         [TestMethod]
         public void CreateTest()
         {
-            var regex = creteRegex();
+            var regex = createRegex();
         }
 
         [DataTestMethod]
-        [DataRow("ceewim14567522565ccew","im14567522565",true)]
+        [DataRow("aacsg5548845eed","sg5548845",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
             RegexTestHelper.MatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
         }
 
-        private Regex creteRegex()
+        private Regex createRegex()
         {
             return new Regex(NiconicoWebTextPatterns.watchPictureIdGroupPattern);
         }

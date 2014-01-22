@@ -245,12 +245,12 @@
     <Compile Include="Tests\PictureIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\PlainNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\RegexTestHelper.cs" />
-    <Compile Include="Tests\StillImageIdRegexTest.cs" />
+    <Compile Include="Tests\PictureIdRegexTest.cs" />
     <Compile Include="Tests\UrlRegexTest.cs" />
     <Compile Include="Tests\VideoIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\VideoIdRegexTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\WatchStillImageIdRegexTest.cs" />
+    <Compile Include="Tests\WatchPictureIdRegexTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
