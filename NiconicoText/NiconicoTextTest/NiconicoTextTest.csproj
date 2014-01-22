@@ -227,6 +227,7 @@
       <Link>WatchPictureIdNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
+    <Compile Include="Tests\ChannelIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\ChannelIdRegexTest.cs" />
     <Compile Include="Tests\CommunityIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\CommunityIdRegexTest.cs" />
