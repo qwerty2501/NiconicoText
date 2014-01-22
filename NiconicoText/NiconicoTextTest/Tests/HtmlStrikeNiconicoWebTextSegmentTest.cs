@@ -33,7 +33,7 @@ namespace NiconicoTextTest.Tests
             Assert.AreEqual(new NiconicoTextColor { R = 0, G = 0, B = 0 }, segment.Color);
             Assert.AreEqual(new NiconicoWebTextNumberAnchorRange { StartNumber = 0,EndNumber = 0}, segment.NumberAnchor);
             Assert.AreEqual(null, segment.Parent);
-            Assert.AreEqual(segments, segment.Segments);
+            CollectionAssert.AreEqual(segments.ToArray(), segment.Segments.ToArray());
             Assert.AreEqual(null, segment.Url);
             Assert.AreEqual("<s>test</s>", segment.Text);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlStrikeElement, segment.SegmentType);
