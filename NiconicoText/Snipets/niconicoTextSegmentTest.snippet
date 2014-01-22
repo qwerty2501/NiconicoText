@@ -114,6 +114,22 @@
           <ToolTip>解析用テストパターン</ToolTip>
           <Default>testPatern1</Default>
         </Literal>
+
+        <Literal>
+          <ID>R</ID>
+          <ToolTip></ToolTip>
+          <Default>0</Default>
+        </Literal>
+        <Literal>
+          <ID>G</ID>
+          <ToolTip></ToolTip>
+          <Default>0</Default>
+        </Literal>
+        <Literal>
+          <ID>B</ID>
+          <ToolTip></ToolTip>
+          <Default>0</Default>
+        </Literal>
 			</Declarations>
 			<Code Language="csharp">
           <![CDATA[using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -146,6 +162,7 @@ namespace NiconicoTextTest.Tests
             Assert.Is$hasNumberAnchor$(segment.HasNumberAnchor);
             Assert.Is$hasSegments$(segment.HasSegments);
             Assert.Is$hasUrl$(segment.HasUrl);
+            Assert.AreEqual(new NiconicoTextColor { R = $R$, G = $G$, B = $B$ }, segment.Color);
             Assert.AreEqual(new NiconicoWebTextNumberAnchorRange { StartNumber = $startNumber$,EndNumber = $endNumber$}, segment.NumberAnchor);
             Assert.AreEqual($parent$, segment.Parent);
             Assert.AreEqual($segments$, segment.Segments);

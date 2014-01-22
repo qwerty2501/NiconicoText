@@ -30,6 +30,7 @@ namespace NiconicoTextTest.Tests
             Assert.IsTrue(segment.HasNumberAnchor);
             Assert.IsFalse(segment.HasSegments);
             Assert.IsFalse(segment.HasUrl);
+            Assert.AreEqual(new NiconicoTextColor { R = 0, G = 0, B = 0 }, segment.Color);
             Assert.AreEqual(new NiconicoWebTextNumberAnchorRange { StartNumber = 5,EndNumber = 8}, segment.NumberAnchor);
             Assert.AreEqual(null, segment.Parent);
             Assert.AreEqual(null, segment.Segments);
