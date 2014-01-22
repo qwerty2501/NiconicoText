@@ -234,6 +234,7 @@
     <Compile Include="Tests\HtmlBreakNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlFontRegexTest.cs" />
     <Compile Include="Tests\HtmlItalicRegexTest.cs" />
+    <Compile Include="Tests\HtmlStrikeNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlStrikeRegexTest.cs" />
     <Compile Include="Tests\HtmlUnderLineNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\HtmlUnderLineRegexTest.cs" />
