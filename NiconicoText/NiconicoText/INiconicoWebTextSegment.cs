@@ -37,7 +37,7 @@ namespace NiconicoText
         bool HasNumberAnchor { get; }
 
         /// <summary>
-        /// Get, number anchor
+        /// Gets, number anchor
         /// </summary>
         NiconicoWebTextNumberAnchorRange NumberAnchor { get; }
 
