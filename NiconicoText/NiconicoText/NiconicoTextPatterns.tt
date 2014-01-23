@@ -146,7 +146,7 @@ namespace NiconicoText
 			niconicoTextPatterns.Add("watchPictureId",@"(?:[sm]g|im)\d{1,14}");
 			niconicoTextPatterns.Add("PictureId",@"im\d{1,14}");
 			niconicoTextPatterns.Add("url",@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w- ./?%&=]*)?");
-			niconicoTextPatterns.Add("numberAnchor",@">>(?<firstAnchor>[0-9]+?)(?:-(?<secondAnchor>[0-9]+?))?");
+			niconicoTextPatterns.Add("numberAnchor",@">>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?");
 			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:.*?(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>");
 			niconicoTextPatterns.Add("lineBreak",@"\r?\n");
 			niconicoTextPatterns.Add("htmlBreak",@"<(?i:br)\s*?/?>");

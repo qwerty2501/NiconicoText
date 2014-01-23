@@ -33,7 +33,7 @@ namespace NiconicoText
 
         public new IList<INiconicoWebTextSegment> Items
         {
-            get { return this.Items; }
+            get { return base.Items; }
         }
     }
 }

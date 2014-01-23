@@ -60,15 +60,15 @@ namespace NiconicoText
 
         internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            var secondGroup = match.Groups[NiconicoWebTextPatternIndexs.secondAnchorGroupNumber];
+            var secondGroup = match.Groups[NiconicoWebTextPatternIndexs.endNumberAnchorGroupNumber];
 
             if(secondGroup.Success)
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.firstAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
             }
             else
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.firstAnchorGroupNumber].Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) });
             }
 
             
