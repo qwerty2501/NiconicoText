@@ -29,7 +29,7 @@ namespace NiconicoText
         /// <summary>
         /// children segments of this text segment.
         /// </summary>
-        INiconicoWebTextSegmentCollection Segments { get; }
+        INiconicoWebTextSegmentObservableCollection Segments { get; }
 
         /// <summary>
         /// Determines wheter has number anchor.

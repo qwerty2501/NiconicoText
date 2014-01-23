@@ -24,7 +24,7 @@ namespace NiconicoText
 
         private NiconicoWebTextSegmentCollection segments_;
 
-        public new INiconicoWebTextSegmentCollection Segments
+        public new INiconicoWebTextSegmentObservableCollection Segments
         {
             get
             {

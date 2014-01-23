@@ -14,24 +14,42 @@ namespace NiconicoTextTest.Tests
         [TestInitialize]
         public void SegmentationTestInitialize()
         {
-            this.resultTable_ = new Dictionary<string, INiconicoWebTextSegmentCollection>();
+            this.resultTable_ = new Dictionary<string, INiconicoWebTextSegmentObservableCollection>();
             this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment("plainText")));
-            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"), new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680")), new PlainNiconicoWebTextSegment(" oooo")));
+            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"), 
+                                                        new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680")), 
+                                                        new PlainNiconicoWebTextSegment(" oooo"))
+                                                        );
+            this.resultTable_.Add("various1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"),
+                                             new HtmlBoldNiconicoWebTextSegment(
+                                                 craeteTestCase(
+                                                    new PlainNiconicoWebTextSegment("plain2"),
+                                                    new HtmlUnderLineNiconicoWebTextSegment
+                                                        (
+                                                            craeteTestCase(new PlainNiconicoWebTextSegment("underline"))
+                                                        )
+                                                    )
+                                                    ),
+                                                    new HtmlBreakNiconicoWebTextSegment(),
+                                                    new PlainNiconicoWebTextSegment("test")
+                                                 ));
+
             this.segmenter_ = new NiconicoWebTextSegmenter();
         }
 
-        private Dictionary<string, INiconicoWebTextSegmentCollection> resultTable_;
+        private Dictionary<string, INiconicoWebTextSegmentObservableCollection> resultTable_;
         private NiconicoWebTextSegmenter segmenter_;
         [DataTestMethod]
         [DataRow("plainText","plain1")]
         [DataRow("plainhttp://www.nicovideo.jp/watch/sm21305680 oooo", "url1")]
+        [DataRow("plain<b>plain2<u>underline</u></b><br>test", "various1")]
         public void SegmentationTest(string text,string key)
         {
             var segments = segmenter_.GetTokensInternal(text);
             SegmentsAreEqual(segments, this.resultTable_[key]);
         }
 
-        private void SegmentsAreEqual(INiconicoWebTextSegmentCollection expecteds, INiconicoWebTextSegmentCollection actuals)
+        private void SegmentsAreEqual(INiconicoWebTextSegmentObservableCollection expecteds, INiconicoWebTextSegmentObservableCollection actuals)
         {
             Assert.AreEqual(expecteds.Count, actuals.Count);
 
@@ -60,7 +78,7 @@ namespace NiconicoTextTest.Tests
         }
 
 
-        private INiconicoWebTextSegmentCollection craeteTestCase(params INiconicoWebTextSegment[] segments)
+        private NiconicoWebTextSegmentCollection craeteTestCase(params INiconicoWebTextSegment[] segments)
         {
             return new NiconicoWebTextSegmentCollection(segments);
         }

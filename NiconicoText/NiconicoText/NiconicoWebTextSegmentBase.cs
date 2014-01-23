@@ -32,7 +32,7 @@ namespace NiconicoText
             get { return this.HasParent ? this.Parent.HasSegments : false; }
         }
 
-        public INiconicoWebTextSegmentCollection Segments
+        public INiconicoWebTextSegmentObservableCollection Segments
         {
             get { return null; }
         }
