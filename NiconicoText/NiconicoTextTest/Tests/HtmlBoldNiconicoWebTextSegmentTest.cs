@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segments = new NiconicoWebTextSegmentCollection();
+            var segments = new NiconicoWebTextSegmentObservableCollection();
             segments.Add(new PlainNiconicoWebTextSegment("boldtest"));
             HtmlBoldNiconicoWebTextSegment val =  new HtmlBoldNiconicoWebTextSegment(segments);
 

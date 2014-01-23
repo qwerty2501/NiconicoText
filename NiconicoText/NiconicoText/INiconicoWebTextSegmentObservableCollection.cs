@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    public interface INiconicoWebTextSegmentObservableCollection : IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
+    internal interface INiconicoWebTextSegmentObservableCollection : INiconicoWebTextSegmentCollection,IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
-        /// <summary>
-        /// Create a Friendly String.
-        /// </summary>
-        /// <returns></returns>
-        string ToFriendlyString();
+        
 
 
     }

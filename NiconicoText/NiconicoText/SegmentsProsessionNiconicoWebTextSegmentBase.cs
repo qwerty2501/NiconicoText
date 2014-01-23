@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal SegmentsProsessionNiconicoWebTextSegmentBase(NiconicoWebTextSegmentCollection segments)
+        internal SegmentsProsessionNiconicoWebTextSegmentBase(NiconicoWebTextSegmentObservableCollection segments)
         {
             this.segments_ = segments;
             this.segments_.Owner = this;
@@ -22,7 +22,7 @@ namespace NiconicoText
             }
         }
 
-        private NiconicoWebTextSegmentCollection segments_;
+        private NiconicoWebTextSegmentObservableCollection segments_;
 
         public new INiconicoWebTextSegmentObservableCollection Segments
         {

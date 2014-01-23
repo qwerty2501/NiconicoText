@@ -10,13 +10,13 @@ namespace NiconicoText
 
     internal sealed class HtmlFontNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, NiconicoWebTextSegmentCollection segments) : this(fontElementSize, default(Color), false, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, NiconicoWebTextSegmentObservableCollection segments) : this(fontElementSize, default(Color), false, segments) { }
 
-        internal HtmlFontNiconicoWebTextSegment(Color color, NiconicoWebTextSegmentCollection segments) : this(new FontElementSize(0), color, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(Color color, NiconicoWebTextSegmentObservableCollection segments) : this(new FontElementSize(0), color, segments) { }
 
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, NiconicoWebTextSegmentCollection segments) : this(fontElementSize, color, true, segments) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, NiconicoWebTextSegmentObservableCollection segments) : this(fontElementSize, color, true, segments) { }
 
-        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, NiconicoWebTextSegmentCollection segments)
+        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, NiconicoWebTextSegmentObservableCollection segments)
             : base(segments)
         {
             this.fontElementSize_ = fontElementSize;

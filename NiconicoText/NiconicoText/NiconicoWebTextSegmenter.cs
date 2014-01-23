@@ -25,9 +25,9 @@ namespace NiconicoText
 
 
 
-        internal NiconicoWebTextSegmentCollection GetTokensInternal(string text)
+        internal NiconicoWebTextSegmentObservableCollection GetTokensInternal(string text)
         {
-            var segments = new NiconicoWebTextSegmentCollection();
+            var segments = new NiconicoWebTextSegmentObservableCollection();
             int matchIndex = 0;
             foreach(Match match in this.regex_.Matches(text))
             {

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    interface INiconicoWebTextSegmentCollection
+    interface INiconicoWebTextSegmentCollection:IList<INiconicoWebTextSegment>
     {
+        /// <summary>
+        /// Create a Friendly String.
+        /// </summary>
+        /// <returns></returns>
+        string ToFriendlyString();
     }
 }

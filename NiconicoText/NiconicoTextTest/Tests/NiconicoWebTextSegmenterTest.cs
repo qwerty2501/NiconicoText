@@ -78,9 +78,9 @@ namespace NiconicoTextTest.Tests
         }
 
 
-        private NiconicoWebTextSegmentCollection craeteTestCase(params INiconicoWebTextSegment[] segments)
+        private NiconicoWebTextSegmentObservableCollection craeteTestCase(params INiconicoWebTextSegment[] segments)
         {
-            return new NiconicoWebTextSegmentCollection(segments);
+            return new NiconicoWebTextSegmentObservableCollection(segments);
         }
     }
 }

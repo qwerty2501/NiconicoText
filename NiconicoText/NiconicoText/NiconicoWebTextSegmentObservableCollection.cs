@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
+    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>,INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
     {
-        internal NiconicoWebTextSegmentCollection() : base() { }
-        internal NiconicoWebTextSegmentCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
+        internal NiconicoWebTextSegmentObservableCollection() : base() { }
+        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
 
         internal INiconicoWebTextSegment Owner
         {

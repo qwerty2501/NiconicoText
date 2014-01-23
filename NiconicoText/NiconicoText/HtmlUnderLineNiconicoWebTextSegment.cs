@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlUnderLineNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlUnderLineNiconicoWebTextSegment(NiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlUnderLineNiconicoWebTextSegment(NiconicoWebTextSegmentObservableCollection segments) : base(segments) { }
 
         public new bool DecoratedUnderLine
         {

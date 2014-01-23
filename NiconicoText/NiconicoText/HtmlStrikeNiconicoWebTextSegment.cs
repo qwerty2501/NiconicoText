@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlStrikeNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlStrikeNiconicoWebTextSegment(NiconicoWebTextSegmentCollection segments) : base(segments) { }
+        internal HtmlStrikeNiconicoWebTextSegment(NiconicoWebTextSegmentObservableCollection segments) : base(segments) { }
 
         public new bool DecoratedStrike
         {
