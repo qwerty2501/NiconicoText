@@ -9,102 +9,46 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>,INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged, INotifyPropertyChanged
+    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
         internal NiconicoWebTextSegmentObservableCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
 
-        internal INiconicoWebTextSegment Owner
-        {
-            get;
-            set;
-        }
-
-        public override string ToString()
-        {
-            return string.Concat(this.Select((item) => item.Text));
-        }
-
-        public string ToFriendlyString()
-        {
-            return string.Concat(this.Select((item) => item.FriendlyText));
-        }
-
-        protected override void InsertItem(int index, INiconicoWebTextSegment item)
-        {
-            if (!checkCanInsert(item))
-                throw new InvalidOperationException("item can not insert to this collection.");
-
-            var segment = (NiconicoWebTextSegmentBase)item;
-            segment.Parent = this.Owner;
-
-            base.InsertItem(index, item);
-        }
-
-        protected override void ClearItems()
-        {
-            for (var index = 0; index < this.Count; index++)
-            {
-                removeParentAt(index);
-            }
-            base.ClearItems();
-        }
-
-        protected override void RemoveItem(int index)
-        {
-            removeParentAt(index);
-            base.RemoveItem(index);
-        }
-
-        protected override void SetItem(int index, INiconicoWebTextSegment item)
-        {
-            if (!checkCanInsert(item))
-                throw new InvalidOperationException("item can not set to this collection.");
-            var segment = (NiconicoWebTextSegmentBase)item;
-            segment.Parent = this.Owner;
-            removeParentAt(index);
-            base.SetItem(index, item);
-        }
+        
 
         public new IList<INiconicoWebTextSegment> Items
         {
             get { return base.Items; }
         }
 
-        
-
-        private void removeParentAt(int index)
+        protected override void InsertItem(int index, INiconicoWebTextSegment item)
         {
-            var source = (NiconicoWebTextSegmentBase)this[index];
-            source.Parent = null;
+            base.InsertItem(index, item);
+
+            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,item,index));
         }
 
-        private bool checkCanInsert(INiconicoWebTextSegment item)
+        protected override void RemoveItem(int index)
         {
-            return ((!checkAlreadyExists(item)) && item.Parent == null && item is NiconicoWebTextSegmentBase );
+            var changingItem = this[index];
+            base.RemoveItem(index);
+
+            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, changingItem, index));
         }
 
-        private bool checkAlreadyExists(INiconicoWebTextSegment item)
+        protected override void SetItem(int index, INiconicoWebTextSegment item)
         {
-            return checkAlreadyExists(this.Owner, item);
-        }
-
-        private static bool checkAlreadyExists(INiconicoWebTextSegment owner, INiconicoWebTextSegment item)
-        {
-            if (owner == item)
-                return true;
-
-            if (owner != null)
-            {
-                return checkAlreadyExists(owner.Parent, item);
-            }
-            else
-            {
-                return false;
-            }
-
+            var changingItem = this[index];
+            base.SetItem(index, item);
+            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, changingItem, index));
         }
 
 
+        private void onCollectionChanged(NotifyCollectionChangedEventArgs args)
+        {
+            if (this.CollectionChanged != null) this.CollectionChanged(this, args);
+        }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
     }
 }

@@ -49,7 +49,7 @@ namespace NiconicoTextTest.Tests
             SegmentsAreEqual(segments, this.resultTable_[key]);
         }
 
-        private void SegmentsAreEqual(INiconicoWebTextSegmentObservableCollection expecteds, INiconicoWebTextSegmentObservableCollection actuals)
+        private void SegmentsAreEqual(IList<INiconicoWebTextSegment> expecteds, IList<INiconicoWebTextSegment> actuals)
         {
             Assert.AreEqual(expecteds.Count, actuals.Count);
 
