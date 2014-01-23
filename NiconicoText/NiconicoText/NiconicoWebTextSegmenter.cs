@@ -11,7 +11,7 @@ namespace NiconicoText
     /// <summary>
     /// Niconico web text parser.
     /// </summary>
-    public sealed class NiconicoWebTextSegmenter
+    internal sealed class NiconicoWebTextSegmenter
     {
         
         /// <summary>
@@ -23,10 +23,7 @@ namespace NiconicoText
             this.regex_ = new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);
         }
 
-        public INiconicoWebTextSegmentCollection GetTokens(string text)
-        {
-            return this.GetTokensInternal(text);
-        }
+
 
         internal NiconicoWebTextSegmentCollection GetTokensInternal(string text)
         {
@@ -40,7 +37,7 @@ namespace NiconicoText
                     segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex, match.Index - matchIndex)));
                 }
 
-                segments.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this));
+                segments.Items.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this));
 
                 matchIndex = match.Index + match.Length;
                
@@ -49,7 +46,7 @@ namespace NiconicoText
 
             if (matchIndex < text.Length)
             {
-                segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex)));
+                segments.Items.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex)));
             }
 
             return segments;
