@@ -10,7 +10,7 @@ namespace NiconicoText
 
 
     /// <summary>
-    /// A Segment of Niconico web text.
+    /// A Segment of Niconico web text read only.
     /// </summary>
     public interface IReadOnlyNiconicoWebTextSegment:INiconicoTextSegment
     {
