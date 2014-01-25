@@ -80,7 +80,7 @@ namespace NiconicoTextTest.Tests
 
         private IReadOnlyList<IReadOnlyNiconicoWebTextSegment> craeteTestCase(params IReadOnlyNiconicoWebTextSegment[] segments)
         {
-            return new NiconicoWebTextSegmentObservableCollection(segments);
+            return new List<IReadOnlyNiconicoWebTextSegment>(segments);
         }
     }
 }

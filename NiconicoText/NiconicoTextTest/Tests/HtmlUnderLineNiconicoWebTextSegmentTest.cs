@@ -16,8 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segmentes = new NiconicoWebTextSegmentCollection();
-            segmentes.Add(new PlainNiconicoWebTextSegment("testText"));
+            var segmentes = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("testText") };
             HtmlUnderLineNiconicoWebTextSegment val =  new HtmlUnderLineNiconicoWebTextSegment(segmentes);
 
             IReadOnlyNiconicoWebTextSegment segment = val;

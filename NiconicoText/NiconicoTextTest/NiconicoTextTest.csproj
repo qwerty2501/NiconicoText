@@ -190,9 +190,6 @@
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmentBase.cs">
       <Link>NiconicoWebTextSegmentBase.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\NiconicoWebTextSegmentCollection.cs">
-      <Link>NiconicoWebTextSegmentCollection.cs</Link>
-    </Compile>
     <Compile Include="..\NiconicoText\NiconicoWebTextSegmenter.cs">
       <Link>NiconicoWebTextSegmenter.cs</Link>
     </Compile>

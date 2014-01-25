@@ -9,46 +9,75 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<IReadOnlyNiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
-        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<IReadOnlyNiconicoWebTextSegment> collection) : base(collection) { }
+        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
 
-        
+        internal IReadOnlyNiconicoWebTextSegment Owner
+        {
+            get;
+            set;
+        }
 
-        public new IList<IReadOnlyNiconicoWebTextSegment> Items
+        public new IList<INiconicoWebTextSegment> Items
         {
             get { return base.Items; }
         }
 
-        protected override void InsertItem(int index, IReadOnlyNiconicoWebTextSegment item)
-        {
-            base.InsertItem(index, item);
 
-            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,item,index));
+
+        
+
+        public override string ToString()
+        {
+            return this.ToText();
+        }
+
+        public string ToFriendlyString()
+        {
+            return this.ToFriendlyText();
+        }
+
+
+        protected override void ClearItems()
+        {
+            for (var index = 0; index < this.Count; index++)
+            {
+                removeParentAt(index);
+            }
+            base.ClearItems();
         }
 
         protected override void RemoveItem(int index)
         {
-            var changingItem = this[index];
+            removeParentAt(index);
             base.RemoveItem(index);
-
-            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, changingItem, index));
         }
 
-        protected override void SetItem(int index, IReadOnlyNiconicoWebTextSegment item)
+        protected override void SetItem(int index, INiconicoWebTextSegment item)
         {
-            var changingItem = this[index];
+            if (!checkCanInsert(item))
+                throw new InvalidOperationException("item can not set to this collection.");
+            var segment = (NiconicoWebTextSegmentBase)item;
+            segment.Parent = this.Owner;
+            removeParentAt(index);
             base.SetItem(index, item);
-            onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, changingItem, index));
         }
 
 
-        private void onCollectionChanged(NotifyCollectionChangedEventArgs args)
+
+
+
+        private void removeParentAt(int index)
         {
-            if (this.CollectionChanged != null) this.CollectionChanged(this, args);
+            var source = (NiconicoWebTextSegmentBase)this[index];
+            source.Parent = null;
         }
 
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        private bool checkCanInsert(IReadOnlyNiconicoWebTextSegment item)
+        {
+            return (item.Parent == null && item is NiconicoWebTextSegmentBase);
+        }
     }
 }
