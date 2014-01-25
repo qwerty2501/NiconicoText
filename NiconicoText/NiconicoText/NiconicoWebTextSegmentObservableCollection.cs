@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<IReadOnlyNiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<IReadOnlyNiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
         internal NiconicoWebTextSegmentObservableCollection(IEnumerable<IReadOnlyNiconicoWebTextSegment> collection) : base(collection) { }

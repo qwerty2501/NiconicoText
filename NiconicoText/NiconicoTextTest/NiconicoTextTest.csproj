@@ -151,9 +151,6 @@
     <Compile Include="..\NiconicoText\INiconicoWebTextSegment.cs">
       <Link>INiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\NiconicoText\INiconicoWebTextSegmentCollection.cs">
-      <Link>INiconicoWebTextSegmentCollection.cs</Link>
-    </Compile>
     <Compile Include="..\NiconicoText\INiconicoWebTextSegmentObservableCollection.cs">
       <Link>INiconicoWebTextSegmentObservableCollection.cs</Link>
     </Compile>

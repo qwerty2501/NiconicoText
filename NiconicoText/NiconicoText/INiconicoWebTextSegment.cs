@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    interface INiconicoWebTextSegment
+    public interface INiconicoWebTextSegment:IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
+
     }
 }
