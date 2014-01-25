@@ -18,7 +18,7 @@ namespace NiconicoTextTest.Tests
         {
             PlainNiconicoWebTextSegment val =  new PlainNiconicoWebTextSegment("plainText");
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsFalse(segment.DecoratedBold);

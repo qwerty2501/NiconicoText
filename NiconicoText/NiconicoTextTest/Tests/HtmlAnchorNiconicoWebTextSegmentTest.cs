@@ -20,7 +20,7 @@ namespace NiconicoTextTest.Tests
             segments.Add(new PlainNiconicoWebTextSegment("htmlanchortest"));
             HtmlAnchorNiconicoWebTextSegment val =  new HtmlAnchorNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm17856110"),segments);
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsFalse(segment.DecoratedBold);

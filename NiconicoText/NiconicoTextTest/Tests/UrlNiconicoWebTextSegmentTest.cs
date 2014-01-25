@@ -18,7 +18,7 @@ namespace NiconicoTextTest.Tests
         {
             UrlNiconicoWebTextSegment val =  new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm20884708"));
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsFalse(segment.DecoratedBold);
@@ -47,7 +47,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            INiconicoWebTextSegment segment = UrlNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = UrlNiconicoWebTextSegment.ParseWebText(match, segmenter);
             Assert.AreEqual(NiconicoWebTextSegmentType.Url, segment.SegmentType);
         }
 

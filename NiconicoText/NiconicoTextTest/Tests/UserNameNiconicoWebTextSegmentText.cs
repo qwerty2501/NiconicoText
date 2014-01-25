@@ -18,7 +18,7 @@ namespace NiconicoTextTest.Tests
         {
             UserNameNiconicoWebTextSegment val = new UserNameNiconicoWebTextSegment("userName");
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsFalse(segment.DecoratedBold);

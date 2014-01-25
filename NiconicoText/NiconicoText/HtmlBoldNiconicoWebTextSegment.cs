@@ -7,7 +7,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlBoldNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlBoldNiconicoWebTextSegment(NiconicoWebTextSegmentObservableCollection segments) : base(segments) { }
+        internal HtmlBoldNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments) : base(segments) { }
 
         public new bool DecoratedBold
         {

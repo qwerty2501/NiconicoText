@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlItalicNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlItalicNiconicoWebTextSegment(NiconicoWebTextSegmentObservableCollection segments) : base(segments) { }
+        internal HtmlItalicNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments) : base(segments) { }
 
         public new bool DecoratedItalic
         {

@@ -18,7 +18,7 @@ namespace NiconicoTextTest.Tests
         {
             HtmlBreakNiconicoWebTextSegment val =  new HtmlBreakNiconicoWebTextSegment();
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsFalse(segment.DecoratedBold);
@@ -47,7 +47,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            INiconicoWebTextSegment segment = HtmlBreakNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlBreakNiconicoWebTextSegment.ParseWebText(match, segmenter);
             Assert.AreEqual(NiconicoWebTextSegmentType.LineBreak, segment.SegmentType);
         }
 

@@ -332,8 +332,8 @@ namespace NiconicoText
 
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
-		
-		internal static IReadOnlyNiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter)
+
+        internal static IReadOnlyNiconicoWebTextSegment Parse(Match match, NiconicoWebTextSegmenter segmenter)
 		{
 			
 			int matchIndex = 0;

@@ -21,12 +21,12 @@ namespace NiconicoText
         
         public override string ToString()
         {
-            return string.Concat(this.Select((item) => item.Text));
+            return this.ToText();
         }
 
         public string ToFriendlyString()
         {
-            return string.Concat(this.Select((item) => item.FriendlyText));
+            return this.ToFriendlyText();
         }
 
         protected override void InsertItem(int index, IReadOnlyNiconicoWebTextSegment item)

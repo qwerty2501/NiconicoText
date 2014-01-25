@@ -20,7 +20,7 @@ namespace NiconicoTextTest.Tests
             segments.Add(new PlainNiconicoWebTextSegment("boldtest"));
             HtmlBoldNiconicoWebTextSegment val =  new HtmlBoldNiconicoWebTextSegment(segments);
 
-            INiconicoWebTextSegment segment = val;
+            IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);
             Assert.IsTrue(segment.DecoratedBold);
@@ -49,7 +49,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            INiconicoWebTextSegment segment = HtmlBoldNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlBoldNiconicoWebTextSegment.ParseWebText(match, segmenter);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlBoldElement, segment.SegmentType);
         }
 

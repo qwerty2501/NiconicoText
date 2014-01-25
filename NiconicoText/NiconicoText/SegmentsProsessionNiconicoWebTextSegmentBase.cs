@@ -8,10 +8,9 @@ namespace NiconicoText
 {
     internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal SegmentsProsessionNiconicoWebTextSegmentBase(NiconicoWebTextSegmentObservableCollection segments)
+        internal SegmentsProsessionNiconicoWebTextSegmentBase(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments)
         {
-            this.segments_ = segments;
-            this.segments_.Owner = this;
+            this.Segments = segments;
         }
 
         public new bool HasSegments
@@ -22,21 +21,18 @@ namespace NiconicoText
             }
         }
 
-        private NiconicoWebTextSegmentObservableCollection segments_;
 
-        public new INiconicoWebTextSegmentObservableCollection Segments
+        public new IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
         {
-            get
-            {
-                return this.segments_;
-            }
+            get;
+            private set;
         }
 
         public override string Text
         {
             get
             {
-                return this.Segments.ToString();
+                return this.Segments.ToText();
             }
         }
 
@@ -44,7 +40,7 @@ namespace NiconicoText
         {
             get
             {
-                return this.Segments.ToFriendlyString();
+                return this.Segments.ToFriendlyText();
             }
         }
 

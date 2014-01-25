@@ -14,7 +14,7 @@ namespace NiconicoTextTest.Tests
         [TestInitialize]
         public void SegmentationTestInitialize()
         {
-            this.resultTable_ = new Dictionary<string, INiconicoWebTextSegmentObservableCollection>();
+            this.resultTable_ = new Dictionary<string, IReadOnlyList<IReadOnlyNiconicoWebTextSegment>>();
             this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment("plainText")));
             this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"), 
                                                         new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680")), 
@@ -37,7 +37,7 @@ namespace NiconicoTextTest.Tests
             this.segmenter_ = new NiconicoWebTextSegmenter();
         }
 
-        private Dictionary<string, INiconicoWebTextSegmentObservableCollection> resultTable_;
+        private Dictionary<string, IReadOnlyList<IReadOnlyNiconicoWebTextSegment>> resultTable_;
         private NiconicoWebTextSegmenter segmenter_;
         [DataTestMethod]
         [DataRow("plainText","plain1")]
@@ -49,7 +49,7 @@ namespace NiconicoTextTest.Tests
             SegmentsAreEqual(segments, this.resultTable_[key]);
         }
 
-        private void SegmentsAreEqual(IList<INiconicoWebTextSegment> expecteds, IList<INiconicoWebTextSegment> actuals)
+        private void SegmentsAreEqual(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> expecteds, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> actuals)
         {
             Assert.AreEqual(expecteds.Count, actuals.Count);
 
@@ -78,7 +78,7 @@ namespace NiconicoTextTest.Tests
         }
 
 
-        private NiconicoWebTextSegmentObservableCollection craeteTestCase(params INiconicoWebTextSegment[] segments)
+        private IReadOnlyList<IReadOnlyNiconicoWebTextSegment> craeteTestCase(params IReadOnlyNiconicoWebTextSegment[] segments)
         {
             return new NiconicoWebTextSegmentObservableCollection(segments);
         }
