@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class VideoIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal sealed class VideoIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
         internal VideoIdNiconicoWebTextSegment(string videoId) : base(videoId) { }
 
@@ -19,7 +19,7 @@ namespace NiconicoText
 
 
 
-        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
             return new VideoIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value);
         }

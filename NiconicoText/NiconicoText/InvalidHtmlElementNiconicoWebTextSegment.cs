@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal sealed class InvalidHtmlElementNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class InvalidHtmlElementNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
         internal InvalidHtmlElementNiconicoWebTextSegment(string text) : base(text) { }
 
@@ -24,7 +24,7 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.HtmlInvalidElement; }
         }
 
-        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
             return new InvalidHtmlElementNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value);
         }

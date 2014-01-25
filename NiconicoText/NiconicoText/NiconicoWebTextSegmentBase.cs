@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase:INiconicoWebTextSegment,INiconicoTextSegment
+    internal abstract class NiconicoWebTextSegmentBase:IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
 
 
@@ -32,7 +32,7 @@ namespace NiconicoText
             get { return this.HasParent ? this.Parent.HasSegments : false; }
         }
 
-        public IList<INiconicoWebTextSegment> Segments
+        public IList<IReadOnlyNiconicoWebTextSegment> Segments
         {
             get { return null; }
         }
@@ -67,7 +67,7 @@ namespace NiconicoText
             get { return this.HasParent ? this.Parent.Url : null; }
         }
 
-        public INiconicoWebTextSegment Parent
+        public IReadOnlyNiconicoWebTextSegment Parent
         {
             get;
             internal protected set;

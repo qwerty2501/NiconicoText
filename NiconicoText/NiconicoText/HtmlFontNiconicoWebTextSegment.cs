@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     using Color = NiconicoTextColor;
 
-    internal sealed class HtmlFontNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlFontNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
         internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, NiconicoWebTextSegmentObservableCollection segments) : this(fontElementSize, default(Color), false, segments) { }
 
@@ -108,7 +108,7 @@ namespace NiconicoText
         
         private FontElementSize fontElementSize_;
 
-        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match,NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match,NiconicoWebTextSegmenter segmenter)
         {
             var fontElementSizeGroup = match.Groups[NiconicoWebTextPatternIndexs.sizeGroupNumber];
             var colorCodeGroup = match.Groups[NiconicoWebTextPatternIndexs.colorCodeGroupNumber];

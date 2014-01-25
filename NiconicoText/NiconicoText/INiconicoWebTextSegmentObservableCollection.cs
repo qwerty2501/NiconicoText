@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal interface INiconicoWebTextSegmentObservableCollection : INiconicoWebTextSegmentCollection,IList<INiconicoWebTextSegment>, INotifyCollectionChanged
+    internal interface INiconicoWebTextSegmentObservableCollection : INiconicoWebTextSegmentCollection,IList<IReadOnlyNiconicoWebTextSegment>, INotifyCollectionChanged
     {
         
 

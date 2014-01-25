@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentCollection :Collection<INiconicoWebTextSegment>,  INiconicoWebTextSegmentCollection,IList<INiconicoWebTextSegment>
+    internal class NiconicoWebTextSegmentCollection :Collection<IReadOnlyNiconicoWebTextSegment>,  INiconicoWebTextSegmentCollection,IList<IReadOnlyNiconicoWebTextSegment>
     {
         internal NiconicoWebTextSegmentCollection() { }
 
-        internal NiconicoWebTextSegmentCollection(IEnumerable<INiconicoWebTextSegment> segments) : base(new List<INiconicoWebTextSegment>(segments)) { }
+        internal NiconicoWebTextSegmentCollection(IEnumerable<IReadOnlyNiconicoWebTextSegment> segments) : base(new List<IReadOnlyNiconicoWebTextSegment>(segments)) { }
 
-        internal INiconicoWebTextSegment Owner
+        internal IReadOnlyNiconicoWebTextSegment Owner
         {
             get;
             set;
@@ -29,7 +29,7 @@ namespace NiconicoText
             return string.Concat(this.Select((item) => item.FriendlyText));
         }
 
-        protected override void InsertItem(int index, INiconicoWebTextSegment item)
+        protected override void InsertItem(int index, IReadOnlyNiconicoWebTextSegment item)
         {
             if (!checkCanInsert(item))
                 throw new InvalidOperationException("item can not insert to this collection.");
@@ -55,7 +55,7 @@ namespace NiconicoText
             base.RemoveItem(index);
         }
 
-        protected override void SetItem(int index, INiconicoWebTextSegment item)
+        protected override void SetItem(int index, IReadOnlyNiconicoWebTextSegment item)
         {
             if (!checkCanInsert(item))
                 throw new InvalidOperationException("item can not set to this collection.");
@@ -75,17 +75,17 @@ namespace NiconicoText
             source.Parent = null;
         }
 
-        private bool checkCanInsert(INiconicoWebTextSegment item)
+        private bool checkCanInsert(IReadOnlyNiconicoWebTextSegment item)
         {
             return ((!checkAlreadyExists(item)) && item.Parent == null && item is NiconicoWebTextSegmentBase);
         }
 
-        private bool checkAlreadyExists(INiconicoWebTextSegment item)
+        private bool checkAlreadyExists(IReadOnlyNiconicoWebTextSegment item)
         {
             return checkAlreadyExists(this.Owner, item);
         }
 
-        private static bool checkAlreadyExists(INiconicoWebTextSegment owner, INiconicoWebTextSegment item)
+        private static bool checkAlreadyExists(IReadOnlyNiconicoWebTextSegment owner, IReadOnlyNiconicoWebTextSegment item)
         {
             if (owner == item)
                 return true;

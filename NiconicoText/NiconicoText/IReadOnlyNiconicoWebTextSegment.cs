@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
+    using Color = NiconicoTextColor;
+
+
     /// <summary>
     /// A Segment of Niconico web text.
     /// </summary>
-    public interface INiconicoWebTextSegment:INiconicoTextSegment
+    public interface IReadOnlyNiconicoWebTextSegment:INiconicoTextSegment
     {
         /// <summary>
         /// Determines wheter Url Associated with this text segment.
@@ -22,14 +25,14 @@ namespace NiconicoText
         bool HasSegments { get; }
 
         /// <summary>
-        /// this text segment type.
+        /// Segment type.
         /// </summary>
         NiconicoWebTextSegmentType SegmentType { get; }
 
         /// <summary>
         /// children segments of this text segment.
         /// </summary>
-        IList<INiconicoWebTextSegment> Segments { get; }
+        IList<IReadOnlyNiconicoWebTextSegment> Segments { get; }
 
         /// <summary>
         /// Determines wheter has number anchor.
@@ -67,6 +70,16 @@ namespace NiconicoText
         bool DecoratedItalic { get; }
 
         /// <summary>
+        /// Determines whether color associated with this text segment.
+        /// </summary>
+        bool DecoratedColor { get; }
+
+        /// <summary>
+        /// Color associated with this text segment.
+        /// </summary>
+        Color Color { get; }
+
+        /// <summary>
         /// Url Associated with this text segment.
         /// </summary>
         Uri Url { get; }
@@ -74,6 +87,6 @@ namespace NiconicoText
         /// <summary>
         /// Parent segment text of this text segment.
         /// </summary>
-        INiconicoWebTextSegment Parent { get; }
+        IReadOnlyNiconicoWebTextSegment Parent { get; }
     }
 }

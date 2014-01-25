@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NiconicoText
 {
-    internal sealed class WatchPictureIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class WatchPictureIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
         internal WatchPictureIdNiconicoWebTextSegment(string pictureId) : base(pictureId) { }
 
@@ -14,7 +14,7 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.PictureId; }
         }
 
-        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
             return new WatchPictureIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.watchPictureIdGroupNumber].Value);
         }

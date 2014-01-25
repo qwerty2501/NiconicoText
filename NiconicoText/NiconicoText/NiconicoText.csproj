@@ -123,7 +123,7 @@
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentObservableCollection.cs" />
-    <Compile Include="INiconicoWebTextSegment.cs" />
+    <Compile Include="IReadOnlyNiconicoWebTextSegment.cs" />
     <Compile Include="LineBreakNiconicoWebTextSegment.cs" />
     <Compile Include="LiveIdNiconicoWebTextSegment.cs" />
     <Compile Include="MarketItemIdNiconicoWebTextSegment.cs" />

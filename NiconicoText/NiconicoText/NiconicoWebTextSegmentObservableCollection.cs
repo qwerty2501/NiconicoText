@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : NiconicoWebTextSegmentCollection, INiconicoWebTextSegmentCollection, INiconicoWebTextSegmentObservableCollection, IList<IReadOnlyNiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
-        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
+        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<IReadOnlyNiconicoWebTextSegment> collection) : base(collection) { }
 
         
 
-        public new IList<INiconicoWebTextSegment> Items
+        public new IList<IReadOnlyNiconicoWebTextSegment> Items
         {
             get { return base.Items; }
         }
 
-        protected override void InsertItem(int index, INiconicoWebTextSegment item)
+        protected override void InsertItem(int index, IReadOnlyNiconicoWebTextSegment item)
         {
             base.InsertItem(index, item);
 
@@ -36,7 +36,7 @@ namespace NiconicoText
             onCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, changingItem, index));
         }
 
-        protected override void SetItem(int index, INiconicoWebTextSegment item)
+        protected override void SetItem(int index, IReadOnlyNiconicoWebTextSegment item)
         {
             var changingItem = this[index];
             base.SetItem(index, item);

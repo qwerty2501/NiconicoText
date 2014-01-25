@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace NiconicoText
 {
 
-    using Color = NiconicoTextColor;
-
+    
     /// <summary>
     /// A Segment of Niconico text.
     /// </summary>
@@ -24,14 +23,6 @@ namespace NiconicoText
         /// </summary>
         string FriendlyText { get; }
 
-        /// <summary>
-        /// Determines whether color associated with this text segment.
-        /// </summary>
-        bool DecoratedColor { get; }
-
-        /// <summary>
-        /// Color associated with this text segment.
-        /// </summary>
-        Color Color { get; }
+        
     }
 }

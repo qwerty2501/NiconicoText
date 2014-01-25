@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NiconicoText
 {
-    internal class LiveIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,INiconicoWebTextSegment
+    internal class LiveIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
         internal LiveIdNiconicoWebTextSegment(string liveId) : base(liveId) { }
 
@@ -17,7 +17,7 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.LiveId; }
         }
 
-        internal static INiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
             return new LiveIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.liveIdGroupNumber].Value);
         }
