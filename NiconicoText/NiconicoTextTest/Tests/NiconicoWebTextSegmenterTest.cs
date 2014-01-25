@@ -45,7 +45,7 @@ namespace NiconicoTextTest.Tests
         [DataRow("plain<b>plain2<u>underline</u></b><br>test", "various1")]
         public void SegmentationTest(string text,string key)
         {
-            var segments = segmenter_.GetSegments(text);
+            var segments = segmenter_.Divide(text);
             SegmentsAreEqual(segments, this.resultTable_[key]);
         }
 
