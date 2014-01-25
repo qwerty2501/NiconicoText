@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            CommunityIdNiconicoWebTextSegment val =  new CommunityIdNiconicoWebTextSegment("co55555555");
+            CommunityIdNiconicoWebTextSegment val =  new CommunityIdNiconicoWebTextSegment("co55555555",null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -47,7 +47,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = CommunityIdNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = CommunityIdNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
             Assert.AreEqual(NiconicoWebTextSegmentType.CommunityId, segment.SegmentType);
         }
 

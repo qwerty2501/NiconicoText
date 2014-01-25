@@ -16,8 +16,8 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("fonttest") };
-            HtmlFontNiconicoWebTextSegment val =  new HtmlFontNiconicoWebTextSegment(new FontElementSize(4),new NiconicoTextColor{R=0xFF,G=0xCC,B=0xBB},segments);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("fonttest",null) };
+            HtmlFontNiconicoWebTextSegment val =  new HtmlFontNiconicoWebTextSegment(new FontElementSize(4),new NiconicoTextColor{R=0xFF,G=0xCC,B=0xBB},segments,null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -48,7 +48,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = HtmlFontNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlFontNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlFontElement, segment.SegmentType);
         }
 

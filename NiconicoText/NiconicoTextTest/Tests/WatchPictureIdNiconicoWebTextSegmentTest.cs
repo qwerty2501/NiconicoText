@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            WatchPictureIdNiconicoWebTextSegment val =  new WatchPictureIdNiconicoWebTextSegment("im222222222");
+            WatchPictureIdNiconicoWebTextSegment val =  new WatchPictureIdNiconicoWebTextSegment("im222222222",null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

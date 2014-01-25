@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            UserNameNiconicoWebTextSegment val = new UserNameNiconicoWebTextSegment("userName");
+            UserNameNiconicoWebTextSegment val = new UserNameNiconicoWebTextSegment("userName",null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

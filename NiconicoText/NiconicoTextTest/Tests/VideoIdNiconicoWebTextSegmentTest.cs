@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            VideoIdNiconicoWebTextSegment val =  new VideoIdNiconicoWebTextSegment("sm17962764");
+            VideoIdNiconicoWebTextSegment val =  new VideoIdNiconicoWebTextSegment("sm17962764",null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

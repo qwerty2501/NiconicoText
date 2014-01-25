@@ -15,23 +15,25 @@ namespace NiconicoTextTest.Tests
         public void SegmentationTestInitialize()
         {
             this.resultTable_ = new Dictionary<string, IReadOnlyList<IReadOnlyNiconicoWebTextSegment>>();
-            this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment("plainText")));
-            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"), 
-                                                        new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680")), 
-                                                        new PlainNiconicoWebTextSegment(" oooo"))
+            this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment("plainText",null)));
+            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain",null), 
+                                                        new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680"),null), 
+                                                        new PlainNiconicoWebTextSegment(" oooo",null))
                                                         );
-            this.resultTable_.Add("various1", craeteTestCase(new PlainNiconicoWebTextSegment("plain"),
+            this.resultTable_.Add("various1", craeteTestCase(new PlainNiconicoWebTextSegment("plain",null),
                                              new HtmlBoldNiconicoWebTextSegment(
                                                  craeteTestCase(
-                                                    new PlainNiconicoWebTextSegment("plain2"),
+                                                    new PlainNiconicoWebTextSegment("plain2",null),
                                                     new HtmlUnderLineNiconicoWebTextSegment
                                                         (
-                                                            craeteTestCase(new PlainNiconicoWebTextSegment("underline"))
+                                                            craeteTestCase(new PlainNiconicoWebTextSegment("underline",null)),
+                                                            null
                                                         )
-                                                    )
                                                     ),
-                                                    new HtmlBreakNiconicoWebTextSegment(),
-                                                    new PlainNiconicoWebTextSegment("test")
+                                                    null),
+                                                    new HtmlBreakNiconicoWebTextSegment(null),
+                                                    new PlainNiconicoWebTextSegment("test",null)
+                                                    
                                                  ));
 
             this.segmenter_ = new NiconicoWebTextSegmenter();

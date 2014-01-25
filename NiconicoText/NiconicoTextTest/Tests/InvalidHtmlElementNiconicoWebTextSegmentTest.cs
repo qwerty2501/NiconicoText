@@ -16,7 +16,7 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            InvalidHtmlElementNiconicoWebTextSegment val =  new InvalidHtmlElementNiconicoWebTextSegment("<invalid>");
+            InvalidHtmlElementNiconicoWebTextSegment val =  new InvalidHtmlElementNiconicoWebTextSegment("<invalid>",null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -47,7 +47,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlInvalidElement, segment.SegmentType);
         }
 
