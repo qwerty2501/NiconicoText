@@ -9,7 +9,7 @@ namespace NiconicoText
 {
     internal sealed class VideoIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
-        internal VideoIdNiconicoWebTextSegment(string videoId) : base(videoId) { }
+        internal VideoIdNiconicoWebTextSegment(string videoId, IReadOnlyNiconicoWebTextSegment parent) : base(videoId,parent) { }
 
 
         public override NiconicoWebTextSegmentType SegmentType
@@ -19,9 +19,9 @@ namespace NiconicoText
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new VideoIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value);
+            return new VideoIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value,parent);
         }
     }
 }

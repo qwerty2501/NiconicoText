@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlStrikeNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlStrikeNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments) : base(segments) { }
+        internal HtmlStrikeNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent) : base(segments,parent) { }
 
         public new bool DecoratedStrike
         {
@@ -28,9 +28,9 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.HtmlStrikeElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new HtmlStrikeNiconicoWebTextSegment(segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.strikeTextGroupNumber].Value));
+            return new HtmlStrikeNiconicoWebTextSegment(segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.strikeTextGroupNumber].Value),parent);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal abstract class PlainNiconicoWebTextSegmentBase : NiconicoWebTextSegmentBase, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
     {
-        internal PlainNiconicoWebTextSegmentBase(string text)
+        internal PlainNiconicoWebTextSegmentBase(string text,IReadOnlyNiconicoWebTextSegment parent):base(parent)
         {
             this.text_ = text;
         }

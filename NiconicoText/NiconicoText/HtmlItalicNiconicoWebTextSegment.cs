@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class HtmlItalicNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlItalicNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments) : base(segments) { }
+        internal HtmlItalicNiconicoWebTextSegment(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent) : base(segments,parent) { }
 
         public new bool DecoratedItalic
         {
@@ -31,9 +31,9 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.HtmlItalicElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new HtmlItalicNiconicoWebTextSegment(segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.italicTextGroupNumber].Value));
+            return new HtmlItalicNiconicoWebTextSegment(segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.italicTextGroupNumber].Value),parent);
         }
     }
 }

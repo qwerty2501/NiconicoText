@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class UrlNiconicoWebTextSegment:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal UrlNiconicoWebTextSegment(Uri url)
+        internal UrlNiconicoWebTextSegment(Uri url, IReadOnlyNiconicoWebTextSegment parent):base(parent)
         {
             this.Url = url;
         }
@@ -39,9 +39,9 @@ namespace NiconicoText
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new UrlNiconicoWebTextSegment(new Uri(match.Groups[NiconicoWebTextPatternIndexs.urlGroupNumber].Value));
+            return new UrlNiconicoWebTextSegment(new Uri(match.Groups[NiconicoWebTextPatternIndexs.urlGroupNumber].Value),parent);
         }
     }
 }

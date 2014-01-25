@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class InvalidHtmlElementNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal InvalidHtmlElementNiconicoWebTextSegment(string text) : base(text) { }
+        internal InvalidHtmlElementNiconicoWebTextSegment(string text, IReadOnlyNiconicoWebTextSegment parent) : base(text,parent) { }
 
 
         public new string FriendlyText
@@ -24,9 +24,9 @@ namespace NiconicoText
             get { return NiconicoWebTextSegmentType.HtmlInvalidElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new InvalidHtmlElementNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value);
+            return new InvalidHtmlElementNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value,parent);
         }
     }
 }

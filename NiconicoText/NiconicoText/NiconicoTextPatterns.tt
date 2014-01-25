@@ -44,7 +44,7 @@ namespace NiconicoText
 			Func<string,string,string,string> toParseCase = (key,className,methodName) =>
 			{
 				return "case " + className + "." + key + "GroupNumber:\r\n" +
-						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment." + methodName + "(match,segmenter);";
+						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment." + methodName + "(match,segmenter,parent);";
 			};
 
 			Action writeMatchIndexHead = ()=>
@@ -178,7 +178,7 @@ namespace NiconicoText
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
 		
-		internal static INiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter)
+		internal static IReadOnlyNiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter,IReadOnlyNiconicoWebTextSegment parent)
 		{
 			<#
 			writeMatchIndexHead();
@@ -192,7 +192,7 @@ namespace NiconicoText
 			#>
 
 			<#= @"default:
-					return new PlainNiconicoWebTextSegment(match.Value);"
+					return new PlainNiconicoWebTextSegment(match.Value,parent);"
 			#>
 			}
 		}

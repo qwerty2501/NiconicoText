@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal SegmentsProsessionNiconicoWebTextSegmentBase(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments)
+        internal SegmentsProsessionNiconicoWebTextSegmentBase(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent):base(parent)
         {
             this.Segments = segments;
         }

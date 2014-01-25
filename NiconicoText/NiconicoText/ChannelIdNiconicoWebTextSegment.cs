@@ -9,16 +9,16 @@ namespace NiconicoText
 {
     internal sealed class ChannelIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
-        internal ChannelIdNiconicoWebTextSegment(string chanelId) : base(chanelId) { }
+        internal ChannelIdNiconicoWebTextSegment(string chanelId,IReadOnlyNiconicoWebTextSegment parent) : base(chanelId,parent) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.ChanelId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new ChannelIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.channelIdGroupNumber].Value);
+            return new ChannelIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.channelIdGroupNumber].Value,parent);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class PlainNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
-        internal PlainNiconicoWebTextSegment(string text) : base(text) { }
+        internal PlainNiconicoWebTextSegment(string text, IReadOnlyNiconicoWebTextSegment parent) : base(text,parent) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {

@@ -8,7 +8,7 @@ namespace NiconicoText
 {
     internal sealed class NumberAnchorNiconicoWebTextSegment:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range)
+        internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range, IReadOnlyNiconicoWebTextSegment parent):base(parent)
         {
             this.NumberAnchor = range;
             this.rangeCash_ = null;
@@ -58,17 +58,17 @@ namespace NiconicoText
 
         private string rangeCash_;
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
             var secondGroup = match.Groups[NiconicoWebTextPatternIndexs.endNumberAnchorGroupNumber];
 
             if(secondGroup.Success)
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) },parent);
             }
             else
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) });
+                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) },parent);
             }
 
             

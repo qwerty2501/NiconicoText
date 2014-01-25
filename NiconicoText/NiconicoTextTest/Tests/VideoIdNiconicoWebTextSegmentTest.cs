@@ -47,7 +47,7 @@ namespace NiconicoTextTest.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = VideoIdNiconicoWebTextSegment.ParseWebText(match, segmenter);
+            IReadOnlyNiconicoWebTextSegment segment = VideoIdNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
             Assert.AreEqual(NiconicoWebTextSegmentType.VideoId, segment.SegmentType);
         }
 

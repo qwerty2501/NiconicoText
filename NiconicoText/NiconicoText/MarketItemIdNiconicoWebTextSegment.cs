@@ -8,16 +8,16 @@ namespace NiconicoText
 {
     internal sealed class MarketItemIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {
-        internal MarketItemIdNiconicoWebTextSegment(string marketId) : base(marketId) { }
+        internal MarketItemIdNiconicoWebTextSegment(string marketId, IReadOnlyNiconicoWebTextSegment parent) : base(marketId,parent) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.MarketId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new MarketItemIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.marketItemIdGroupNumber].Value);
+            return new MarketItemIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.marketItemIdGroupNumber].Value,parent);
         }
     }
 }

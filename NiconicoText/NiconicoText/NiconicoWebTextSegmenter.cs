@@ -30,6 +30,11 @@ namespace NiconicoText
 
         internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Divide(string text)
         {
+            return this.PartialDivide(text, null);
+        }
+
+        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
+        {
             var segments = new List<IReadOnlyNiconicoWebTextSegment>();
             int matchIndex = 0;
             foreach(Match match in this.regex_.Matches(text))
@@ -37,10 +42,10 @@ namespace NiconicoText
                 
                 if (matchIndex < match.Index)
                 {
-                    segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex, match.Index - matchIndex)));
+                    segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex, match.Index - matchIndex),parent));
                 }
 
-                segments.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this));
+                segments.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this,parent));
 
                 matchIndex = match.Index + match.Length;
                
@@ -49,7 +54,7 @@ namespace NiconicoText
 
             if (matchIndex < text.Length)
             {
-                segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex)));
+                segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex),parent));
             }
 
             return segments.ToArray();

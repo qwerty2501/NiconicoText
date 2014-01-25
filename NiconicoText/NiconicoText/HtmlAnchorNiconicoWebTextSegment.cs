@@ -9,8 +9,8 @@ namespace NiconicoText
     internal sealed class HtmlAnchorNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
 
-        internal HtmlAnchorNiconicoWebTextSegment(Uri url, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments)
-            : base(segments) 
+        internal HtmlAnchorNiconicoWebTextSegment(Uri url, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent)
+            : base(segments,parent) 
         {
             this.Url = url;
         }

@@ -11,6 +11,10 @@ namespace NiconicoText
     internal abstract class NiconicoWebTextSegmentBase:IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
 
+        internal NiconicoWebTextSegmentBase(IReadOnlyNiconicoWebTextSegment parent)
+        {
+            this.Parent = parent;
+        }
 
         internal protected bool HasParent
         {
