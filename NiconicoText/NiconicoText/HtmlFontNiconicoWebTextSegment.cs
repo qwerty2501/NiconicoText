@@ -115,7 +115,7 @@ namespace NiconicoText
             var colorNameGroup = match.Groups[NiconicoWebTextPatternIndexs.colorNameGroupNumber];
             var codeColor = new Color();
             var nameColor = new Color();
-            var segments = segmenter.GetSegments(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
+            var segments = segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
             if (colorCodeGroup.Success)
             {
                 codeColor = NiconicoTextColorExtention.FromColorCode(colorCodeGroup.Value);

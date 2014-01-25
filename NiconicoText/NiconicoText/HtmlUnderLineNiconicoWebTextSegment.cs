@@ -33,7 +33,7 @@ namespace NiconicoText
 
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter)
         {
-            return new HtmlUnderLineNiconicoWebTextSegment(segmenter.GetSegments(match.Groups[NiconicoWebTextPatternIndexs.underLineTextGroupNumber].Value));
+            return new HtmlUnderLineNiconicoWebTextSegment(segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.underLineTextGroupNumber].Value));
         }
     }
 }
