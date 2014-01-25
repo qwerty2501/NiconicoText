@@ -16,8 +16,9 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("fonttest",null) };
-            HtmlFontNiconicoWebTextSegment val =  new HtmlFontNiconicoWebTextSegment(new FontElementSize(4),new NiconicoTextColor{R=0xFF,G=0xCC,B=0xBB},segments,null);
+            HtmlFontNiconicoWebTextSegment val = new HtmlFontNiconicoWebTextSegment(new FontElementSize(4), new NiconicoTextColor { R = 0xFF, G = 0xCC, B = 0xBB }, null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("fonttest", val) };
+            val.Segments = segments;
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

@@ -16,8 +16,10 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("italictest",null) };
-            HtmlItalicNiconicoWebTextSegment val =  new HtmlItalicNiconicoWebTextSegment(segments,null);
+            HtmlItalicNiconicoWebTextSegment val = new HtmlItalicNiconicoWebTextSegment( null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("italictest",val) };
+            val.Segments = segments;
+            
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

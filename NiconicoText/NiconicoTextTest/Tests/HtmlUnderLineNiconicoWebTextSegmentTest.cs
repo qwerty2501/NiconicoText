@@ -16,9 +16,10 @@ namespace NiconicoTextTest.Tests
         [TestMethod]
         public void CreateTest()
         {
-            var segmentes = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("testText",null) };
-            HtmlUnderLineNiconicoWebTextSegment val =  new HtmlUnderLineNiconicoWebTextSegment(segmentes,null);
-
+            
+            HtmlUnderLineNiconicoWebTextSegment val =  new HtmlUnderLineNiconicoWebTextSegment(null);
+            var segmentes = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("testText", val) };
+            val.Segments = segmentes;
             IReadOnlyNiconicoWebTextSegment segment = val;
 
             Assert.IsFalse( segment.DecoratedColor);

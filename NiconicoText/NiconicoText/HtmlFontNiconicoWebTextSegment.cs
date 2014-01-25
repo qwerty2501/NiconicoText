@@ -10,14 +10,14 @@ namespace NiconicoText
 
     internal sealed class HtmlFontNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent) : this(fontElementSize, default(Color), false, segments,parent) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize,  IReadOnlyNiconicoWebTextSegment parent) : this(fontElementSize, default(Color), false,parent) { }
 
-        internal HtmlFontNiconicoWebTextSegment(Color color, NiconicoWebTextSegmentObservableCollection segments, IReadOnlyNiconicoWebTextSegment parent) : this(new FontElementSize(0), color, segments,parent) { }
+        internal HtmlFontNiconicoWebTextSegment(Color color,  IReadOnlyNiconicoWebTextSegment parent) : this(new FontElementSize(0), color,parent) { }
 
-        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent) : this(fontElementSize, color, true, segments,parent) { }
+        internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color,IReadOnlyNiconicoWebTextSegment parent) : this(fontElementSize, color, true,parent) { }
 
-        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> segments, IReadOnlyNiconicoWebTextSegment parent)
-            : base(segments,parent)
+        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, IReadOnlyNiconicoWebTextSegment parent)
+            : base(parent)
         {
             this.fontElementSize_ = fontElementSize;
             this.color_ = color;
@@ -115,7 +115,7 @@ namespace NiconicoText
             var colorNameGroup = match.Groups[NiconicoWebTextPatternIndexs.colorNameGroupNumber];
             var codeColor = new Color();
             var nameColor = new Color();
-            var segments = segmenter.Divide(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value);
+
             if (colorCodeGroup.Success)
             {
                 codeColor = NiconicoTextColorExtention.FromColorCode(colorCodeGroup.Value);
@@ -155,21 +155,23 @@ namespace NiconicoText
                
             }
 
+            HtmlFontNiconicoWebTextSegment segment;
+
             if (colorCodeGroup.Success)
             {
-                return new HtmlFontNiconicoWebTextSegment(fontSize, codeColor, segments,parent);
+                segment = new HtmlFontNiconicoWebTextSegment(fontSize, codeColor,parent);
             }
             else if (colorNameGroup.Success)
             {
-                return new HtmlFontNiconicoWebTextSegment(fontSize, nameColor, segments,parent);
+                segment = new HtmlFontNiconicoWebTextSegment(fontSize, nameColor,parent);
             }
             else
             {
-                return new HtmlFontNiconicoWebTextSegment(fontSize, segments,parent);
+                segment = new HtmlFontNiconicoWebTextSegment(fontSize,parent);
             }
-            
 
-
+            segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value,segment);
+            return segment;
         }
     }
 }
