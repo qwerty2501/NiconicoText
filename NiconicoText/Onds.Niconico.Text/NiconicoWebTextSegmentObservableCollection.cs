@@ -9,10 +9,10 @@ using System.Text;
 
 namespace Onds.Niconico.Text
 {
-    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>,IEnumerable<INiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>,IReadOnlyList<INiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
-        internal NiconicoWebTextSegmentObservableCollection(IEnumerable<INiconicoWebTextSegment> collection) : base(collection) { }
+        internal NiconicoWebTextSegmentObservableCollection(IReadOnlyList<INiconicoWebTextSegment> collection) : base(collection) { }
 
         internal IReadOnlyNiconicoWebTextSegment Owner
         {

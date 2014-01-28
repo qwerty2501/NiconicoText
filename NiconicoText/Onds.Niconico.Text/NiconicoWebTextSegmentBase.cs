@@ -36,7 +36,7 @@ namespace Onds.Niconico.Text
             get { return this.HasParent ? this.Parent.HasSegments : false; }
         }
 
-        public IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments
+        public IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
         {
             get { return null; }
         }

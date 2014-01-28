@@ -21,7 +21,7 @@ namespace Onds.Niconico.Text
         }
 
 
-        public new IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments
+        public new IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
         {
             get;
             internal set;

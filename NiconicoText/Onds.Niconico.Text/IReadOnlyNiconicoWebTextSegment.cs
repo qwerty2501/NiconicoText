@@ -32,7 +32,7 @@ namespace Onds.Niconico.Text
         /// <summary>
         /// children segments of this text segment.
         /// </summary>
-        IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments { get; }
+        IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments { get; }
 
         /// <summary>
         /// Determines wheter has number anchor.

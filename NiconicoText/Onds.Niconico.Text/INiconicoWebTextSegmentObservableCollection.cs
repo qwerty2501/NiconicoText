@@ -19,13 +19,13 @@ namespace Onds.Niconico.Text
 
     internal static class NiconicoSegmentsExtention
     {
-        internal static string ToText<T>(this IEnumerable<T> self)
+        internal static string ToText<T>(this IReadOnlyList<T> self)
             where T:IReadOnlyNiconicoWebTextSegment
         {
             return string.Concat(self.Select((item) => item.Text));
         }
 
-        internal static string ToFriendlyText<T>(this IEnumerable<T> self)
+        internal static string ToFriendlyText<T>(this IReadOnlyList<T> self)
             where T:IReadOnlyNiconicoWebTextSegment
         {
             return string.Concat(self.Select((item) => item.FriendlyText));

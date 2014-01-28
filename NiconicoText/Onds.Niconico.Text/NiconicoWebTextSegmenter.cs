@@ -23,17 +23,17 @@ namespace Onds.Niconico.Text
             this.regex_ = new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);
         }
 
-        public static IEnumerable<IReadOnlyNiconicoWebTextSegment> DivideToSegments(string text)
+        public static IReadOnlyList<IReadOnlyNiconicoWebTextSegment> DivideToSegments(string text)
         {
             return segmenter.Divide(text);
         }
 
-        internal IEnumerable<IReadOnlyNiconicoWebTextSegment> Divide(string text)
+        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Divide(string text)
         {
             return this.PartialDivide(text, null);
         }
 
-        internal IEnumerable<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
+        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
         {
             var segments = new List<IReadOnlyNiconicoWebTextSegment>();
             int matchIndex = 0;
