@@ -177,15 +177,12 @@
     </Compile>
     <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.cs">
       <Link>NiconicoTextPatterns.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.partial.cs">
-      <Link>NiconicoTextPatterns.partial.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns1.cs">
-      <Link>NiconicoTextPatterns1.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.partial.cs">
+      <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextNumberAnchorRange.cs">
       <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
@@ -283,7 +280,7 @@
     <None Include="..\Onds.Niconico.Text\NiconicoTextPatterns.tt">
       <Link>NiconicoTextPatterns.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NiconicoTextPatterns1.cs</LastGenOutput>
+      <LastGenOutput>NiconicoTextPatterns.cs</LastGenOutput>
     </None>
     <None Include="NiconicoTextTest_TemporaryKey.pfx" />
   </ItemGroup>

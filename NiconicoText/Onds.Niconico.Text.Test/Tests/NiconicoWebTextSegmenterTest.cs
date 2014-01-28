@@ -62,7 +62,7 @@ namespace Onds.Niconico.Text.Test.Tests
         public void DivideTest(string text,string key)
         {
             var segments = segmenter_.Divide(text);
-            SegmentsAreEqual(segments, this.resultTable_[key]);
+            SegmentsAreEqual(segments.ToArray(), this.resultTable_[key]);
         }
 
         private void SegmentsAreEqual(IReadOnlyList<IReadOnlyNiconicoWebTextSegment> expecteds, IReadOnlyList<IReadOnlyNiconicoWebTextSegment> actuals)
@@ -91,7 +91,7 @@ namespace Onds.Niconico.Text.Test.Tests
                 Assert.AreEqual(expected.Url, actual.Url);
                 if (expected.Segments != null)
                 {
-                    SegmentsAreEqual(expected.Segments, actual.Segments);
+                    SegmentsAreEqual(expected.Segments.ToArray(), actual.Segments.ToArray());
                 }
                 else
                 {
