@@ -1,0 +1,228 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+
+namespace Onds.Niconico.Text
+{
+	using System.Text.RegularExpressions;
+	using System.Linq;
+
+    internal static partial class NiconicoWebTextPatterns
+    {
+
+		
+
+        <#
+			Func<string,string> toPatternName = (name)=>
+			{
+				return char.ToUpper(name[0]) + name.Substring(1,name.Length - 1) + "Pattern";
+			};
+
+			Func<string,string> toInternalPatternName = (name)=>
+			{
+				return  char.ToLower(name[0]) + name.Substring(1,name.Length - 1) + "Pattern";
+			};
+
+			Func<string,string> toGroupPatternName = (name)=>
+			{
+				return name + "GroupPattern";
+			};
+
+			Func<string,string> toKeyName = (name)=>
+			{
+				return name + "KeyName";
+			};
+
+			Func<string,string,string> toGroupValue = (patternKeyName,value)=>
+			{
+				return "(?<"  + patternKeyName   + ">"  + value  + ")";
+			};
+
+			Func<string,string,string,string> toParseCase = (key,className,methodName) =>
+			{
+				return "case " + className + "." + key + "GroupNumber:\r\n" +
+						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment." + methodName + "(match,segmenter,parent);";
+			};
+
+			Action writeMatchIndexHead = ()=>
+			{
+			#>
+
+<#= @"			int matchIndex = 0;
+			foreach(Group group in match.Groups)
+			{
+				if(group.Success && matchIndex > 0)
+					break;
+				++matchIndex;
+			}"
+#>
+			<#
+			};
+
+			Action<Dictionary<string,string>,string,string> writeParseCases = (patterns,className,methodName)=>
+			{
+				foreach(var pattern in patterns)
+				{
+#>
+
+				<#= toParseCase(pattern.Key,className,methodName) #>
+<#
+				}
+#>
+
+<#
+			};
+
+			
+
+			Func<Dictionary<string,string>,string> toPatterns = (patterns)=>
+			{
+				var list = new List<string>();
+
+				foreach(var pattern in patterns)
+				{
+					list.Add(toGroupValue(pattern.Key,pattern.Value) );
+				}
+
+				return "(?:" + string.Join("|",list) + ")";
+			};
+
+			Func<string,string> writePatternNumber = (pattern)=>
+			{
+				var regex = new Regex(pattern.Replace("\"\"","\""));
+				var list = new List<string>();
+
+				foreach(var key in regex.GetGroupNames())
+				{
+					int tmp;
+					
+					if(int.TryParse(key,out tmp))
+						continue;
+				#>
+
+		<#= "internal const int " + key + "GroupNumber=" + regex.GroupNumberFromName(key) + ";\r\n\r\n" #>
+				<#
+				}
+
+				return string.Join("",list);
+			};
+
+			Action<Dictionary<string,string>> writePatterns = (dictionary)=>
+			{
+				foreach(var textPattern in dictionary)
+				{
+
+					var niconicoTextPatternName = toPatternName(textPattern.Key);
+
+					var internalPatternName = toInternalPatternName(textPattern.Key);
+
+					var gruopKeyName = toGroupPatternName(textPattern.Key);
+
+					var patternKeyName =  textPattern.Key ;
+			
+			#>
+
+		<#="internal const string " +  internalPatternName + "=" + "@\"" + textPattern.Value + "\"" + ";\r\n\r\n" #>
+		<#= "internal const string " +  patternKeyName + "=\"" + textPattern.Key + "\";\r\n\r\n"  #>
+		<#= "internal const string " +  gruopKeyName + "=" + "@\"" + toGroupValue(patternKeyName,textPattern.Value)  + "\";\r\n\r\n" #>
+			<#
+			
+				}
+
+
+			};
+			
+			var niconicoTextPatterns = new Dictionary<string,string>();
+			niconicoTextPatterns.Add("communityId",@"co\d{1,14}");
+			niconicoTextPatterns.Add("channelId",@"ch\d{1,14}");
+			niconicoTextPatterns.Add("videoId",@"(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14}");
+			niconicoTextPatterns.Add("articleId",@"ar\d{1,14}");
+			niconicoTextPatterns.Add("materialId",@"nc\d{1,14}");
+			niconicoTextPatterns.Add("marketItemId",@"(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+)");
+			niconicoTextPatterns.Add("liveId",@"lv\d{1,14}");
+			niconicoTextPatterns.Add("watchPictureId",@"(?:[sm]g|im)\d{1,14}");
+			niconicoTextPatterns.Add("PictureId",@"im\d{1,14}");
+			niconicoTextPatterns.Add("url",@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?");
+			niconicoTextPatterns.Add("numberAnchor",@">>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?");
+			niconicoTextPatterns.Add("htmlFont",@"<(?i:font)\s+?(?:.*?(?:(?i:color)=\""""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""""(?<size>[+-]?[1-7]))\""""\s*?){1,2}.*?>(?<fontText>.*?)</(?i:font)\s*?>");
+			niconicoTextPatterns.Add("lineBreak",@"\r?\n");
+			niconicoTextPatterns.Add("htmlBreak",@"<(?i:br)\s*?/?>");
+			niconicoTextPatterns.Add("htmlBold",@"<[bB]\s*?.*?>(?<boldText>.*?)</[bB]\s*?>");
+			niconicoTextPatterns.Add("htmlItalic",@"<[iI]\s*?.*?>(?<italicText>.*?)</[iI]\s*?>");
+			niconicoTextPatterns.Add("htmlStrike",@"<[sS]\s*?.*?>(?<strikeText>.*?)</[sS]\s*?>");
+			niconicoTextPatterns.Add("htmlUnderLine",@"<[uU]\s*?.*?>(?<underLineText>.*?)</[uU]\s*?>");
+			niconicoTextPatterns.Add("invalidHtmlElement",@"</?.*?>");
+			var niconicoTextParsePattern = toPatterns(niconicoTextPatterns);
+
+			#>
+
+
+		<# writePatterns(niconicoTextPatterns); #>
+
+		internal const string niconicoWebTextParsePattern = @"<#= niconicoTextParsePattern #>";
+
+
+
+    }
+
+	internal static class NiconicoWebTextPatternIndexs
+	{
+
+<# writePatternNumber(niconicoTextParsePattern); #>
+	}
+
+
+	internal static class NiconicoWebTextSegmentMatchParser
+	{
+		
+		internal static IReadOnlyNiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter,IReadOnlyNiconicoWebTextSegment parent)
+		{
+			<#
+			writeMatchIndexHead();
+			#>
+
+			switch(matchIndex)
+			{
+			<#
+
+			writeParseCases(niconicoTextPatterns,"NiconicoWebTextPatternIndexs","ParseWebText");
+			#>
+
+			<#= @"default:
+					return new PlainNiconicoWebTextSegment(match.Value,parent);"
+			#>
+			}
+		}
+
+	}
+
+	namespace Comments{
+
+		internal static class NiconicoCommentTextPatterns
+		{
+			<#
+				var niconicoCommentTextPatterns = new Dictionary<string,string>();
+				niconicoCommentTextPatterns.Add("htmlAnchor",@"<[aA]\s+?.*?href=\""""(?<href>"+ niconicoTextPatterns["url"] +  @")\""""\s?.*?>(?<anchorText>.*?)</[aA]\s*?>");
+				niconicoCommentTextPatterns.Add("attoMarkName",@"@[^@^\s]+");
+				var niconicoCommentTextParsePattern =  toPatterns(niconicoCommentTextPatterns) + "|" + niconicoTextParsePattern;
+			#>
+
+	<# writePatterns(niconicoCommentTextPatterns); #>
+
+		internal const string niconicoCommentTextParsePattern = @"<#= niconicoCommentTextParsePattern #>";
+
+
+
+		}
+
+		internal static class NiconicoCommentTextPatternIndexs
+		{
+
+<# writePatternNumber(niconicoCommentTextParsePattern); #>
+
+		}
+	}
+}
