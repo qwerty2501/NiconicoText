@@ -181,12 +181,6 @@
     <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
     </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns1.cs">
-      <Link>NiconicoTextPatterns1.cs</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
-    </Compile>
     <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextNumberAnchorRange.cs">
       <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
     </Compile>
