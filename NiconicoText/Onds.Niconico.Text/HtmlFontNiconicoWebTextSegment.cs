@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Onds.Niconico.Text
 {
@@ -129,7 +129,7 @@ namespace Onds.Niconico.Text
 
             if (fontElementSizeGroup.Success)
             {
-                var firstChar = fontElementSizeGroup.Value.First();
+                var firstChar = fontElementSizeGroup.Value[0];
 
                 if (firstChar == '-' || firstChar == '+')
                 {

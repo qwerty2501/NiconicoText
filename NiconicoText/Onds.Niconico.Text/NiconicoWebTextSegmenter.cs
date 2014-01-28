@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 
 
 namespace Onds.Niconico.Text
@@ -23,17 +23,17 @@ namespace Onds.Niconico.Text
             this.regex_ = new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);
         }
 
-        public static IReadOnlyList<IReadOnlyNiconicoWebTextSegment> DivideToSegments(string text)
+        public static IEnumerable<IReadOnlyNiconicoWebTextSegment> DivideToSegments(string text)
         {
             return segmenter.Divide(text);
         }
 
-        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Divide(string text)
+        internal IEnumerable<IReadOnlyNiconicoWebTextSegment> Divide(string text)
         {
             return this.PartialDivide(text, null);
         }
 
-        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
+        internal IEnumerable<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
         {
             var segments = new List<IReadOnlyNiconicoWebTextSegment>();
             int matchIndex = 0;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Onds.Niconico.Text
 {
@@ -32,7 +32,7 @@ namespace Onds.Niconico.Text
         /// <summary>
         /// children segments of this text segment.
         /// </summary>
-        IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments { get; }
+        IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments { get; }
 
         /// <summary>
         /// Determines wheter has number anchor.

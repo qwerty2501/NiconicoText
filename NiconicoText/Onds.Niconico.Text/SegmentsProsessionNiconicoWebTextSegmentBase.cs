@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Onds.Niconico.Text
 {
@@ -21,7 +21,7 @@ namespace Onds.Niconico.Text
         }
 
 
-        public new IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
+        public new IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments
         {
             get;
             internal set;

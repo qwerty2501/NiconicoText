@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Onds.Niconico.Text
 {
@@ -19,12 +19,14 @@ namespace Onds.Niconico.Text
 
     internal static class NiconicoSegmentsExtention
     {
-        internal static string ToText(this IEnumerable<IReadOnlyNiconicoWebTextSegment> self)
+        internal static string ToText<T>(this IEnumerable<T> self)
+            where T:IReadOnlyNiconicoWebTextSegment
         {
             return string.Concat(self.Select((item) => item.Text));
         }
 
-        internal static string ToFriendlyText(this IEnumerable<IReadOnlyNiconicoWebTextSegment> self)
+        internal static string ToFriendlyText<T>(this IEnumerable<T> self)
+            where T:IReadOnlyNiconicoWebTextSegment
         {
             return string.Concat(self.Select((item) => item.FriendlyText));
         }

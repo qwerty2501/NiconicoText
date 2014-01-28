@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Onds.Niconico.Text
 {
@@ -36,7 +36,7 @@ namespace Onds.Niconico.Text
             get { return this.HasParent ? this.Parent.HasSegments : false; }
         }
 
-        public IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
+        public IEnumerable<IReadOnlyNiconicoWebTextSegment> Segments
         {
             get { return null; }
         }
