@@ -112,123 +112,6 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Onds.Niconico.Text\ArticleIdNiconicoWebTextSegment.cs">
-      <Link>ArticleIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\ChannelIdNiconicoWebTextSegment.cs">
-      <Link>ChannelIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\CommunityIdNiconicoWebTextSegment.cs">
-      <Link>CommunityIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\FontElementSize.cs">
-      <Link>FontElementSize.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlAnchorNiconicoWebTextSegment.cs">
-      <Link>HtmlAnchorNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlBoldNiconicoWebTextSegment.cs">
-      <Link>HtmlBoldNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlFontNiconicoWebTextSegment.cs">
-      <Link>HtmlFontNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlItalicNiconicoWebTextSegment.cs">
-      <Link>HtmlItalicNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlStrikeNiconicoWebTextSegment.cs">
-      <Link>HtmlStrikeNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\HtmlUnderLineNiconicoWebTextSegment.cs">
-      <Link>HtmlUnderLineNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\IdNiconicoWebTextSegmentBase.cs">
-      <Link>IdNiconicoWebTextSegmentBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\INiconicoTextSegment.cs">
-      <Link>INiconicoTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\INiconicoWebTextSegment.cs">
-      <Link>INiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\INiconicoWebTextSegmentObservableCollection.cs">
-      <Link>INiconicoWebTextSegmentObservableCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\InvalidHtmlElementNiconicoWebTextSegment.cs">
-      <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\IReadOnlyNiconicoWebTextSegment.cs">
-      <Link>IReadOnlyNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\LineBreakNiconicoWebTextSegment.cs">
-      <Link>LineBreakNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\LiveIdNiconicoWebTextSegment.cs">
-      <Link>LiveIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\MarketItemIdNiconicoWebTextSegment.cs">
-      <Link>MarketItemIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\MaterialIdNiconicoWebTextSegment.cs">
-      <Link>MaterialIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextColor.cs">
-      <Link>NiconicoTextColor.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.cs">
-      <Link>NiconicoTextPatterns.cs</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NiconicoTextPatterns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoTextPatterns.partial.cs">
-      <Link>NiconicoTextPatterns.partial.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextNumberAnchorRange.cs">
-      <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextSegmentBase.cs">
-      <Link>NiconicoWebTextSegmentBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextSegmenter.cs">
-      <Link>NiconicoWebTextSegmenter.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextSegmentObservableCollection.cs">
-      <Link>NiconicoWebTextSegmentObservableCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NiconicoWebTextSegmentType.cs">
-      <Link>NiconicoWebTextSegmentType.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\NumberAnchorNiconicoWebTextSegment.cs">
-      <Link>NumberAnchorNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\PictureIdNiconicoWebTextSegment.cs">
-      <Link>PictureIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\PlainNiconicoWebTextSegment.cs">
-      <Link>PlainNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\PlainNiconicoWebTextSegmentBase.cs">
-      <Link>PlainNiconicoWebTextSegmentBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\SegmentsProsessionNiconicoWebTextSegmentBase.cs">
-      <Link>SegmentsProsessionNiconicoWebTextSegmentBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\UrlNiconicoWebTextSegment.cs">
-      <Link>UrlNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\UserNameNiconicoWebTextSegment.cs">
-      <Link>UserNameNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\Utils\NiconicoTextUrlUtility.cs">
-      <Link>Utils\NiconicoTextUrlUtility.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\VideoIdNiconicoWebTextSegment.cs">
-      <Link>VideoIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Text\WatchPictureIdNiconicoWebTextSegment.cs">
-      <Link>WatchPictureIdNiconicoWebTextSegment.cs</Link>
-    </Compile>
     <Compile Include="Tests\ArticleIdNiconicoWebTextSegmentTest.cs" />
     <Compile Include="Tests\ArticleIdRegexTest.cs" />
     <Compile Include="Tests\ChannelIdNiconicoWebTextSegmentTest.cs" />
@@ -277,11 +160,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="..\Onds.Niconico.Text\NiconicoTextPatterns.tt">
-      <Link>NiconicoTextPatterns.tt</Link>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NiconicoTextPatterns.cs</LastGenOutput>
-    </None>
     <None Include="NiconicoTextTest_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -301,14 +179,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
+      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

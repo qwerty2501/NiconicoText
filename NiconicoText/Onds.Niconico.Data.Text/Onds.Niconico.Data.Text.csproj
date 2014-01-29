@@ -9,8 +9,8 @@
     <ProjectGuid>{FF673EBD-B0E2-4E79-B2B9-1D77C48565C9}</ProjectGuid>
     <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Onds.Niconico.Text</RootNamespace>
-    <AssemblyName>Onds.Niconico.Text</AssemblyName>
+    <RootNamespace>Onds.Niconico.Data.Text</RootNamespace>
+    <AssemblyName>Onds.Niconico.Data.Text</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
