@@ -62,7 +62,7 @@ namespace Onds.Niconico.Data.Text
 
         private Regex regex_;
 
-        private static NiconicoWebTextSegmenter segmenter = new NiconicoWebTextSegmenter();
+        private readonly static NiconicoWebTextSegmenter segmenter = new NiconicoWebTextSegmenter();
 
     }
 }
