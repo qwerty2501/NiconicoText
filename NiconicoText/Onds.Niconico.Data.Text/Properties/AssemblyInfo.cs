@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // されます。アセンブリに関連する情報を変更するには、これらの
 // 属性値を変更します。
 [assembly: AssemblyTitle("Onds.Niconico.Data.Text")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Niconico Text Library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Other Niconico Developeres")]
 [assembly: AssemblyProduct("Onds.Niconico.Data.Text")]
 [assembly: AssemblyCopyright("Copyright ©  2014 Onds")]
 [assembly: AssemblyTrademark("")]
