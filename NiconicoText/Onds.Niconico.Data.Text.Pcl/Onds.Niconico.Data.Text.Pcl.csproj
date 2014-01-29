@@ -132,6 +132,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\PlainNiconicoWebTextSegmentBase.cs">
       <Link>PlainNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\SegmentsProsessionNiconicoWebTextSegmentBase.cs">
       <Link>SegmentsProsessionNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
@@ -141,20 +144,20 @@
     <Compile Include="..\Onds.Niconico.Data.Text\UserNameNiconicoWebTextSegment.cs">
       <Link>UserNameNiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\Utils\NiconicoTextUrlUtility.cs">
+      <Link>Utils\NiconicoTextUrlUtility.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\VideoIdNiconicoWebTextSegment.cs">
       <Link>VideoIdNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\WatchPictureIdNiconicoWebTextSegment.cs">
       <Link>WatchPictureIdNiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="..\Onds.Niconico.Data.Text\NiconicoTextPatterns.tt">
       <Link>NiconicoTextPatterns.tt</Link>
@@ -165,7 +168,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
