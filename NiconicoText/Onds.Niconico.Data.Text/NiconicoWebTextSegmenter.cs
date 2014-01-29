@@ -11,7 +11,7 @@ namespace Onds.Niconico.Data.Text
     /// <summary>
     /// Niconico web text parser.
     /// </summary>
-    public sealed class NiconicoWebTextSegmenter
+    internal sealed class NiconicoWebTextSegmenter
     {
         
         /// <summary>

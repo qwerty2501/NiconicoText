@@ -129,6 +129,7 @@
     <Compile Include="MarketItemIdNiconicoWebTextSegment.cs" />
     <Compile Include="MaterialIdNiconicoWebTextSegment.cs" />
     <Compile Include="NiconicoTextColor.cs" />
+    <Compile Include="NiconicoTextSegmenter.cs" />
     <Compile Include="NiconicoWebTextSegmentBase.cs" />
     <Compile Include="NiconicoWebTextSegmentObservableCollection.cs" />
     <Compile Include="NiconicoWebTextSegmenter.cs" />
