@@ -16,7 +16,7 @@ namespace Onds.Niconico.Data.Text
         /// </summary>
         /// <param name="text">text</param>
         /// <returns>divided text segments.</returns>
-        public static IReadOnlyCollection<IReadOnlyNiconicoWebTextSegment> DivideToWebTextSegments(string text)
+        public static IReadOnlyList<IReadOnlyNiconicoWebTextSegment> DivideToWebTextSegments(string text)
         {
             return NiconicoWebTextSegmenter.DivideToSegments(text);
         }
