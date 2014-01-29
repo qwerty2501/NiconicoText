@@ -9,7 +9,7 @@
     <ProjectGuid>{302E3AC6-DCC6-4016-86A4-DF4BCB73BC35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Onds.Niconico.Text.Test</RootNamespace>
+    <RootNamespace>Onds.Niconico.Data.Text.Test</RootNamespace>
     <AssemblyName>Onds.Niconico.Text.Test</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>

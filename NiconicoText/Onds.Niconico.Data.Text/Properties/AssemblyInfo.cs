@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Onds.Niconico.Data.Text")]
 [assembly: AssemblyDescription("Niconico Text Library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Other Niconico Developeres")]
+[assembly: AssemblyCompany("Other Niconico Developers")]
 [assembly: AssemblyProduct("Onds.Niconico.Data.Text")]
-[assembly: AssemblyCopyright("Copyright ©  2014 Onds")]
+[assembly: AssemblyCopyright("Copyright ©  2014 Other Niconico Developers")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
