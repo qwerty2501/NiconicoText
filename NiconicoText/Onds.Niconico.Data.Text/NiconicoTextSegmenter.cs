@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    class NiconicoTextSegmenter
+    /// <summary>
+    /// Niconico Text Segmenter
+    /// </summary>
+    public static class NiconicoTextSegmenter
     {
+        /// <summary>
+        /// Divide to web text.
+        /// </summary>
+        /// <param name="text">text</param>
+        /// <returns>divided text segments.</returns>
+        public static IReadOnlyCollection<IReadOnlyNiconicoWebTextSegment> DivideToWebTextSegments(string text)
+        {
+            return NiconicoWebTextSegmenter.DivideToSegments(text);
+        }
+
     }
 }
