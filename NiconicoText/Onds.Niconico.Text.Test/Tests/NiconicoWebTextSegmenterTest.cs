@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-using Onds.Niconico.Text;
+using Onds.Niconico.Data.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Onds.Niconico.Text.Test.Tests
+namespace Onds.Niconico.Data.Text.Test.Tests
 {
     [TestClass]
     public class NiconicoWebTextSegmenterTest

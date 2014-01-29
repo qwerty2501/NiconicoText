@@ -1,11 +1,11 @@
-﻿using Onds.Niconico.Text.Utils;
+﻿using Onds.Niconico.Data.Text.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
     internal class LiveIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
     {

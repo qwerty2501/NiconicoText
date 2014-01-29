@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
@@ -43,7 +43,7 @@ namespace Onds.Niconico.Text
 
         public byte FontElementSize
         {
-            get { return this.HasParent ? this.Parent.FontElementSize : Onds.Niconico.Text.FontElementSize.defaultSize; }
+            get { return this.HasParent ? this.Parent.FontElementSize : Onds.Niconico.Data.Text.FontElementSize.defaultSize; }
         }
 
         public bool DecoratedUnderLine

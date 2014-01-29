@@ -6,10 +6,10 @@
             Version="1.0.0.0" />
   
   <Properties>
-    <DisplayName>Onds.Niconico.Text.Test</DisplayName>
+    <DisplayName>Onds.Niconico.Data.Text.Test</DisplayName>
     <PublisherDisplayName>康祐</PublisherDisplayName>
     <Logo>Images\UnitTestStoreLogo.png</Logo>
-    <Description>Onds.Niconico.Text.Test</Description>
+    <Description>Onds.Niconico.Data.Text.Test</Description>
   </Properties>
   
   <Prerequisites>

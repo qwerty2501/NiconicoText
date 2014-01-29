@@ -5,7 +5,7 @@ using System.Text;
 
 using System.Globalization;
 
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
     /// <summary>
     /// Niconico text's color.

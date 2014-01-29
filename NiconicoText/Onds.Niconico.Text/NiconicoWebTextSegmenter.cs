@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 
 
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
     /// <summary>
     /// Niconico web text parser.

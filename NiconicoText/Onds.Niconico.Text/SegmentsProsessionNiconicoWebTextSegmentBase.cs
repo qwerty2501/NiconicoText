@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
     internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {

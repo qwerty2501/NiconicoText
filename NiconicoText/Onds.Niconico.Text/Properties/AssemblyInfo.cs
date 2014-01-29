@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般的な情報は、一連の属性によって制御
 // されます。アセンブリに関連する情報を変更するには、これらの
 // 属性値を変更します。
-[assembly: AssemblyTitle("Onds.Niconico.Text")]
+[assembly: AssemblyTitle("Onds.Niconico.Data.Text")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Onds.Niconico.Text")]
+[assembly: AssemblyProduct("Onds.Niconico.Data.Text")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

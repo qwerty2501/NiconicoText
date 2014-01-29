@@ -1,5 +1,5 @@
 ﻿
-namespace Onds.Niconico.Text
+namespace Onds.Niconico.Data.Text
 {
 	using System.Text.RegularExpressions;
 	using System.Linq;

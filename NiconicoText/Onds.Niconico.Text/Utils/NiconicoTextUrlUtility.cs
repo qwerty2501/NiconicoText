@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace Onds.Niconico.Text.Utils
+namespace Onds.Niconico.Data.Text.Utils
 {
     public static class NiconicoTextUrlUtility
     {

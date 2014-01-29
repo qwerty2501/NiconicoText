@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Onds.Niconico.Text.Test.Tests
+namespace Onds.Niconico.Data.Text.Test.Tests
 {
     internal static class RegexTestHelper
     {
