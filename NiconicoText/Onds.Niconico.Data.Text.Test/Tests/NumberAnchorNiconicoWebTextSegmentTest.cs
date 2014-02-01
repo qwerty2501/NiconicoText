@@ -18,7 +18,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         {
 
             var numberAnchorRange = new NiconicoWebTextNumberAnchorRange { StartNumber = 5, EndNumber = 8 };
-            NumberAnchorNiconicoWebTextSegment val = new NumberAnchorNiconicoWebTextSegment(numberAnchorRange,null);
+            NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(numberAnchorRange, null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -49,7 +49,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = NumberAnchorNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
+            IReadOnlyNiconicoWebTextSegment segment = NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.NumberAnchor, segment.SegmentType);
         }
 

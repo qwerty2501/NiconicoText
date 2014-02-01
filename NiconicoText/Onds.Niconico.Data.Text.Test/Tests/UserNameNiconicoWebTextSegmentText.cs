@@ -16,7 +16,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            UserNameNiconicoWebTextSegment val = new UserNameNiconicoWebTextSegment("userName",null);
+            UserNameNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new UserNameNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("userName", null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 

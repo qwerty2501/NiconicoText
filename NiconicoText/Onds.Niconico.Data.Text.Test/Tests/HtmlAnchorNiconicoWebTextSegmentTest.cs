@@ -16,8 +16,8 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            HtmlAnchorNiconicoWebTextSegment val = new HtmlAnchorNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm17856110"), null);
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("htmlanchortest",val) };
+            HtmlAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new HtmlAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new Uri("http://www.nicovideo.jp/watch/sm17856110"), null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("htmlanchortest", val) };
             val.Segments = segments;
 
             IReadOnlyNiconicoWebTextSegment segment = val;

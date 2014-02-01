@@ -16,7 +16,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            UrlNiconicoWebTextSegment val =  new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm20884708"),null);
+            UrlNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new UrlNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new Uri("http://www.nicovideo.jp/watch/sm20884708"), null);
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -47,7 +47,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = UrlNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
+            IReadOnlyNiconicoWebTextSegment segment = UrlNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.Url, segment.SegmentType);
         }
 

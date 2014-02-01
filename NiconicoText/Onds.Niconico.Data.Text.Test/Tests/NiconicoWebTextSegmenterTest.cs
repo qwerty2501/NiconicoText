@@ -15,22 +15,22 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         public void SegmentationTestInitialize()
         {
             this.resultTable_ = new Dictionary<string, IReadOnlyList<IReadOnlyNiconicoWebTextSegment>>();
-            this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment("plainText",null)));
-            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment("plain",null), 
-                                                        new UrlNiconicoWebTextSegment(new Uri("http://www.nicovideo.jp/watch/sm21305680"),null), 
-                                                        new PlainNiconicoWebTextSegment(" oooo",null))
+            this.resultTable_.Add("plain1",craeteTestCase( new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("plainText",null)));
+            this.resultTable_.Add("url1", craeteTestCase(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("plain",null), 
+                                                        new UrlNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new Uri("http://www.nicovideo.jp/watch/sm21305680"),null), 
+                                                        new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(" oooo",null))
                                         );
-            this.resultTable_.Add("various1", craeteTestCase(new PlainNiconicoWebTextSegment("plain",null),
+            this.resultTable_.Add("various1", craeteTestCase(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("plain",null),
                                                 createSegmentsContainerCase(
-                                                    new HtmlBoldNiconicoWebTextSegment(null),
-                                                    new PlainNiconicoWebTextSegment("plain2", null),
+                                                    new HtmlBoldNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null),
+                                                    new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("plain2", null),
 
-                                                    createSegmentsContainerCase(new HtmlUnderLineNiconicoWebTextSegment(null),
-                                                        new PlainNiconicoWebTextSegment("underline", null)
+                                                    createSegmentsContainerCase(new HtmlUnderLineNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null),
+                                                        new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("underline", null)
                                                     )
                                                 ),
-                                                new HtmlBreakNiconicoWebTextSegment(null),
-                                                new PlainNiconicoWebTextSegment("test",null)
+                                                new HtmlBreakNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null),
+                                                new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("test",null)
                                                     
                                                 )
                                                );
@@ -38,8 +38,8 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             this.resultTable_.Add
             ("font1", craeteTestCase
                 (
-                    createSegmentsContainerCase(new HtmlFontNiconicoWebTextSegment(4, new NiconicoTextColor { R = 0xFF, G = 0x00, B = 0x00 }, null),
-                        new PlainNiconicoWebTextSegment("text",null)
+                    createSegmentsContainerCase(new HtmlFontNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(4, new NiconicoTextColor { R = 0xFF, G = 0x00, B = 0x00 }, null),
+                        new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("text",null)
                     )
                 )
             );
@@ -103,7 +103,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             
         }
 
-        private NiconicoWebTextSegmentBase createSegmentsContainerCase(SegmentsProsessionNiconicoWebTextSegmentBase parent, params NiconicoWebTextSegmentBase[] segments)
+        private NiconicoWebTextSegmentBase<IReadOnlyNiconicoWebTextSegment> createSegmentsContainerCase(SegmentsProsessionNiconicoWebTextSegmentBase<IReadOnlyNiconicoWebTextSegment> parent, params NiconicoWebTextSegmentBase<IReadOnlyNiconicoWebTextSegment>[] segments)
         {
             foreach (var segment in segments)
             {

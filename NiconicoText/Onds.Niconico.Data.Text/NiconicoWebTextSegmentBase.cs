@@ -14,7 +14,7 @@ namespace Onds.Niconico.Data.Text
 
         internal NiconicoWebTextSegmentBase(T parent)
         {
-            this.parent_ = parent;
+            this.Parent = parent;
         }
 
         internal protected bool HasParent
@@ -74,10 +74,9 @@ namespace Onds.Niconico.Data.Text
 
         public IReadOnlyNiconicoWebTextSegment Parent
         {
-            get
-            {
-                return this.parent_;
-            }
+            get;
+            internal set;
+
         }
 
         public abstract string Text { get; }
@@ -117,8 +116,6 @@ namespace Onds.Niconico.Data.Text
             get { return false; }
         }
 
-        private T parent_;
-
         INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
         {
             get { return null; }
@@ -128,10 +125,10 @@ namespace Onds.Niconico.Data.Text
         {
             get 
             { 
-                if(! (this.parent_ is IReadOnlyNiconicoWebTextSegment))
+                if(! (this.Parent is IReadOnlyNiconicoWebTextSegment))
                     throw new InvalidOperationException("Parent is not writeable.");
 
-                return (INiconicoWebTextSegment)this.parent_;
+                return (INiconicoWebTextSegment)this.Parent;
             }
         }
     }

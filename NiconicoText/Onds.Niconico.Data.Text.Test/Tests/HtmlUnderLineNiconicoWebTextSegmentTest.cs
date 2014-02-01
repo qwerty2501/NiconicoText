@@ -16,9 +16,9 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            
-            HtmlUnderLineNiconicoWebTextSegment val =  new HtmlUnderLineNiconicoWebTextSegment(null);
-            var segmentes = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("testText", val) };
+
+            HtmlUnderLineNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new HtmlUnderLineNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null);
+            var segmentes = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("testText", val) };
             val.Segments = segmentes;
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -49,7 +49,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = HtmlUnderLineNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlUnderLineNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlUnderLineElement, segment.SegmentType);
         }
 

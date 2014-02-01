@@ -16,8 +16,8 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            HtmlItalicNiconicoWebTextSegment val = new HtmlItalicNiconicoWebTextSegment( null);
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("italictest",val) };
+            HtmlItalicNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new HtmlItalicNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("italictest", val) };
             val.Segments = segments;
             
 
@@ -50,7 +50,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = HtmlItalicNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlItalicNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlItalicElement, segment.SegmentType);
         }
 

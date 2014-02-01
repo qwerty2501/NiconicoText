@@ -16,8 +16,8 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            HtmlBoldNiconicoWebTextSegment val = new HtmlBoldNiconicoWebTextSegment( null);
-            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment("boldtest", val) };
+            HtmlBoldNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new HtmlBoldNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("boldtest", val) };
             val.Segments = segments;
 
             IReadOnlyNiconicoWebTextSegment segment = val;
@@ -49,7 +49,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             var segmenter = new NiconicoWebTextSegmenter();
             var match = regex.Match(text);
             Assert.IsTrue(match.Success);
-            IReadOnlyNiconicoWebTextSegment segment = HtmlBoldNiconicoWebTextSegment.ParseWebText(match, segmenter,null);
+            IReadOnlyNiconicoWebTextSegment segment = HtmlBoldNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlBoldElement, segment.SegmentType);
         }
 
