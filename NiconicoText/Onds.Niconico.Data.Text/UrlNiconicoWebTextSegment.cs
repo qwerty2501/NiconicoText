@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class UrlNiconicoWebTextSegment:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class UrlNiconicoWebTextSegment<T>:NiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal UrlNiconicoWebTextSegment(Uri url, IReadOnlyNiconicoWebTextSegment parent):base(parent)
+        internal UrlNiconicoWebTextSegment(Uri url, T parent):base(parent)
         {
             this.Url = url;
         }
@@ -39,9 +40,9 @@ namespace Onds.Niconico.Data.Text
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new UrlNiconicoWebTextSegment(new Uri(match.Groups[NiconicoWebTextPatternIndexs.urlGroupNumber].Value),parent);
+            return new UrlNiconicoWebTextSegment<T>(new Uri(match.Groups[NiconicoWebTextPatternIndexs.urlGroupNumber].Value),parent);
         }
     }
 }

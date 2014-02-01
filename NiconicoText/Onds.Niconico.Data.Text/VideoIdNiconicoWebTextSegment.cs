@@ -7,9 +7,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class VideoIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
+    internal sealed class VideoIdNiconicoWebTextSegment<T>:IdNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal VideoIdNiconicoWebTextSegment(string videoId, IReadOnlyNiconicoWebTextSegment parent) : base(videoId,parent) { }
+        internal VideoIdNiconicoWebTextSegment(string videoId, T parent) : base(videoId,parent) { }
 
 
         public override NiconicoWebTextSegmentType SegmentType
@@ -19,9 +20,9 @@ namespace Onds.Niconico.Data.Text
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new VideoIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value,parent);
+            return new VideoIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value,parent);
         }
     }
 }

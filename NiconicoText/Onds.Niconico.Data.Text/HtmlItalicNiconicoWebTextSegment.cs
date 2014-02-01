@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class HtmlItalicNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlItalicNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal HtmlItalicNiconicoWebTextSegment( IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal HtmlItalicNiconicoWebTextSegment( T parent) : base(parent) { }
 
         public new bool DecoratedItalic
         {
@@ -31,9 +32,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.HtmlItalicElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            var segment = new HtmlItalicNiconicoWebTextSegment(parent);
+            var segment = new HtmlItalicNiconicoWebTextSegment<T>(parent);
             segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.italicTextGroupNumber].Value,segment);
             return segment;
         }

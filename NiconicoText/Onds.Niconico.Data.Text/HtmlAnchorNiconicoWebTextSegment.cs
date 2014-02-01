@@ -6,10 +6,11 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class HtmlAnchorNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlAnchorNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
 
-        internal HtmlAnchorNiconicoWebTextSegment(Uri url,  IReadOnlyNiconicoWebTextSegment parent)
+        internal HtmlAnchorNiconicoWebTextSegment(Uri url,  T parent)
             : base(parent) 
         {
             this.Url = url;

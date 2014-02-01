@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class PlainNiconicoWebTextSegment:PlainNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
+    internal sealed class PlainNiconicoWebTextSegment<T>:PlainNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal PlainNiconicoWebTextSegment(string text, IReadOnlyNiconicoWebTextSegment parent) : base(text,parent) { }
+        internal PlainNiconicoWebTextSegment(string text, T parent) : base(text,parent) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {

@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class NumberAnchorNiconicoWebTextSegment:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class NumberAnchorNiconicoWebTextSegment<T>:NiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range, IReadOnlyNiconicoWebTextSegment parent):base(parent)
+        internal NumberAnchorNiconicoWebTextSegment(NiconicoWebTextNumberAnchorRange range, T parent):base(parent)
         {
             this.NumberAnchor = range;
             this.rangeCash_ = null;
@@ -64,11 +65,11 @@ namespace Onds.Niconico.Data.Text
 
             if(secondGroup.Success)
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) },parent);
+                return new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) },parent);
             }
             else
             {
-                return new NumberAnchorNiconicoWebTextSegment(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) },parent);
+                return new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) },parent);
             }
 
             

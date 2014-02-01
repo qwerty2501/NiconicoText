@@ -333,7 +333,8 @@ namespace Onds.Niconico.Data.Text
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
 		
-		internal static IReadOnlyNiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter,IReadOnlyNiconicoWebTextSegment parent)
+		internal static IReadOnlyNiconicoWebTextSegment Parse<T>(Match match,NiconicoWebTextSegmenter segmenter,T parent)
+			where T:IReadOnlyNiconicoWebTextSegment
 		{
 			
 			int matchIndex = 0;
@@ -348,65 +349,65 @@ namespace Onds.Niconico.Data.Text
 			{
 			
 				case NiconicoWebTextPatternIndexs.communityIdGroupNumber:
-		return CommunityIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return CommunityIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.channelIdGroupNumber:
-		return ChannelIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return ChannelIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.videoIdGroupNumber:
-		return VideoIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return VideoIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.articleIdGroupNumber:
-		return ArticleIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return ArticleIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.materialIdGroupNumber:
-		return MaterialIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return MaterialIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.marketItemIdGroupNumber:
-		return MarketItemIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return MarketItemIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.liveIdGroupNumber:
-		return LiveIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return LiveIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.watchPictureIdGroupNumber:
-		return WatchPictureIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return WatchPictureIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.PictureIdGroupNumber:
-		return PictureIdNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return PictureIdNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.urlGroupNumber:
-		return UrlNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return UrlNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.numberAnchorGroupNumber:
-		return NumberAnchorNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return NumberAnchorNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlFontGroupNumber:
-		return HtmlFontNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlFontNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.lineBreakGroupNumber:
-		return LineBreakNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return LineBreakNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlBreakGroupNumber:
-		return HtmlBreakNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlBreakNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlBoldGroupNumber:
-		return HtmlBoldNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlBoldNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlItalicGroupNumber:
-		return HtmlItalicNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlItalicNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlStrikeGroupNumber:
-		return HtmlStrikeNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlStrikeNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.htmlUnderLineGroupNumber:
-		return HtmlUnderLineNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return HtmlUnderLineNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber:
-		return InvalidHtmlElementNiconicoWebTextSegment.ParseWebText(match,segmenter,parent);
+		return InvalidHtmlElementNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 
 			default:
-					return new PlainNiconicoWebTextSegment(match.Value,parent);
+					return new PlainNiconicoWebTextSegment<T>(match.Value,parent);
 			}
 		}
 

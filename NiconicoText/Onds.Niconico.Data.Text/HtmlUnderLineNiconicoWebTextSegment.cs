@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class HtmlUnderLineNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlUnderLineNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal HtmlUnderLineNiconicoWebTextSegment( IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal HtmlUnderLineNiconicoWebTextSegment( T parent) : base(parent) { }
 
         public new bool DecoratedUnderLine
         {
@@ -31,9 +32,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.HtmlUnderLineElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            var segment = new HtmlUnderLineNiconicoWebTextSegment(parent);
+            var segment = new HtmlUnderLineNiconicoWebTextSegment<T>(parent);
             segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.underLineTextGroupNumber].Value,segment);
             return segment;
         }

@@ -44,7 +44,7 @@ namespace Onds.Niconico.Data.Text
 			Func<string,string,string,string> toParseCase = (key,className,methodName) =>
 			{
 				return "case " + className + "." + key + "GroupNumber:\r\n" +
-						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment." + methodName + "(match,segmenter,parent);";
+						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment<T>." + methodName + "(match,segmenter,parent);";
 			};
 
 			Action writeMatchIndexHead = ()=>
@@ -68,7 +68,7 @@ namespace Onds.Niconico.Data.Text
 				{
 #>
 
-				<#= toParseCase(pattern.Key,className,methodName) #>
+				<#= toParseCase(pattern.Key,className ,methodName) #>
 <#
 				}
 #>
@@ -178,7 +178,8 @@ namespace Onds.Niconico.Data.Text
 	internal static class NiconicoWebTextSegmentMatchParser
 	{
 		
-		internal static IReadOnlyNiconicoWebTextSegment Parse(Match match,NiconicoWebTextSegmenter segmenter,IReadOnlyNiconicoWebTextSegment parent)
+		internal static IReadOnlyNiconicoWebTextSegment Parse<T>(Match match,NiconicoWebTextSegmenter segmenter,T parent)
+			where T:IReadOnlyNiconicoWebTextSegment
 		{
 			<#
 			writeMatchIndexHead();
@@ -192,7 +193,7 @@ namespace Onds.Niconico.Data.Text
 			#>
 
 			<#= @"default:
-					return new PlainNiconicoWebTextSegment(match.Value,parent);"
+					return new PlainNiconicoWebTextSegment<T>(match.Value,parent);"
 			#>
 			}
 		}

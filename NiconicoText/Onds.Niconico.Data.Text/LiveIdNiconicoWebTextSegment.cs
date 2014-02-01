@@ -7,9 +7,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal class LiveIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
+    internal class LiveIdNiconicoWebTextSegment<T>:IdNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal LiveIdNiconicoWebTextSegment(string liveId, IReadOnlyNiconicoWebTextSegment parent) : base(liveId,parent) { }
+        internal LiveIdNiconicoWebTextSegment(string liveId, T parent) : base(liveId,parent) { }
 
 
         public override NiconicoWebTextSegmentType SegmentType
@@ -17,9 +18,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.LiveId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new LiveIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.liveIdGroupNumber].Value,parent);
+            return new LiveIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.liveIdGroupNumber].Value,parent);
         }
     }
 }

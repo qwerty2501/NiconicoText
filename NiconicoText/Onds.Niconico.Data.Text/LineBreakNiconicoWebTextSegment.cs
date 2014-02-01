@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal abstract class LineBreakNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal abstract class LineBreakNiconicoWebTextSegmentBase<T>:NiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal LineBreakNiconicoWebTextSegmentBase(IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal LineBreakNiconicoWebTextSegmentBase(T parent) : base(parent) { }
 
         public new string FriendlyText
         {
@@ -24,9 +25,10 @@ namespace Onds.Niconico.Data.Text
         }
     }
 
-    internal sealed class LineBreakNiconicoWebTextSegment : LineBreakNiconicoWebTextSegmentBase, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+    internal sealed class LineBreakNiconicoWebTextSegment<T> : LineBreakNiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
-        internal LineBreakNiconicoWebTextSegment(IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal LineBreakNiconicoWebTextSegment(T parent) : base(parent) { }
 
         public override string Text
         {
@@ -35,13 +37,14 @@ namespace Onds.Niconico.Data.Text
 
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new LineBreakNiconicoWebTextSegment(parent);
+            return new LineBreakNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
         }
     }
 
-    internal sealed class HtmlBreakNiconicoWebTextSegment : LineBreakNiconicoWebTextSegmentBase, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+    internal sealed class HtmlBreakNiconicoWebTextSegment<T> : LineBreakNiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal HtmlBreakNiconicoWebTextSegment(IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal HtmlBreakNiconicoWebTextSegment(T parent) : base(parent) { }
 
         public override string Text
         {
@@ -50,7 +53,7 @@ namespace Onds.Niconico.Data.Text
 
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new HtmlBreakNiconicoWebTextSegment(parent);
+            return new HtmlBreakNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
         }
     }
 }

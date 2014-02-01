@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase:NiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase<T>:NiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment,INiconicoWebTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal SegmentsProsessionNiconicoWebTextSegmentBase( IReadOnlyNiconicoWebTextSegment parent):base(parent)
+        internal SegmentsProsessionNiconicoWebTextSegmentBase( T parent):base(parent)
         {
         }
 
@@ -45,5 +46,18 @@ namespace Onds.Niconico.Data.Text
 
 
 
+
+        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
+        {
+            get 
+            {
+                if (!(this.Segments is INiconicoWebTextSegmentCollection))
+                    throw new InvalidOperationException("Segments is not writeable");
+
+                return (INiconicoWebTextSegmentCollection)this.Segments;
+            }
+        }
+
+        
     }
 }

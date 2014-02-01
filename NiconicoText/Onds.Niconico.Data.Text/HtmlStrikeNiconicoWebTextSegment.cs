@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class HtmlStrikeNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlStrikeNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment        
     {
-        internal HtmlStrikeNiconicoWebTextSegment( IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal HtmlStrikeNiconicoWebTextSegment( T parent) : base(parent) { }
 
         public new bool DecoratedStrike
         {
@@ -28,9 +29,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.HtmlStrikeElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            var segment = new HtmlStrikeNiconicoWebTextSegment(parent);
+            var segment = new HtmlStrikeNiconicoWebTextSegment<T>(parent);
             segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.strikeTextGroupNumber].Value,segment);
             return segment;
         }

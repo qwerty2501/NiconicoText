@@ -30,10 +30,10 @@ namespace Onds.Niconico.Data.Text
 
         internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Divide(string text)
         {
-            return this.PartialDivide(text, null);
+            return this.PartialDivide(text, default(IReadOnlyNiconicoWebTextSegment));
         }
 
-        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text,IReadOnlyNiconicoWebTextSegment parent)
+        internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text, IReadOnlyNiconicoWebTextSegment parent)
         {
             var segments = new List<IReadOnlyNiconicoWebTextSegment>();
             int matchIndex = 0;
@@ -42,10 +42,10 @@ namespace Onds.Niconico.Data.Text
                 
                 if (matchIndex < match.Index)
                 {
-                    segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex, match.Index - matchIndex),parent));
+                    segments.Add(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(text.Substring(matchIndex, match.Index - matchIndex), parent));
                 }
 
-                segments.Add(NiconicoWebTextSegmentMatchParser.Parse(match, this,parent));
+                segments.Add(NiconicoWebTextSegmentMatchParser.Parse<IReadOnlyNiconicoWebTextSegment>(match, this,parent));
 
                 matchIndex = match.Index + match.Length;
                
@@ -54,7 +54,7 @@ namespace Onds.Niconico.Data.Text
 
             if (matchIndex < text.Length)
             {
-                segments.Add(new PlainNiconicoWebTextSegment(text.Substring(matchIndex),parent));
+                segments.Add(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(text.Substring(matchIndex), parent));
             }
 
             return segments.ToArray();

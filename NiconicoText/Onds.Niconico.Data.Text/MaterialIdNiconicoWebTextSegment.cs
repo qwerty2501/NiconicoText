@@ -6,18 +6,19 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class MaterialIdNiconicoWebTextSegment:IdNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment
+    internal sealed class MaterialIdNiconicoWebTextSegment<T>:IdNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal MaterialIdNiconicoWebTextSegment(string materialId, IReadOnlyNiconicoWebTextSegment parent) : base(materialId,parent) { }
+        internal MaterialIdNiconicoWebTextSegment(string materialId, T parent) : base(materialId,parent) { }
 
         public override NiconicoWebTextSegmentType SegmentType
         {
             get { return NiconicoWebTextSegmentType.MaterialId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new MaterialIdNiconicoWebTextSegment(match.Groups[NiconicoWebTextPatternIndexs.materialIdGroupNumber].Value,parent);
+            return new MaterialIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.materialIdGroupNumber].Value,parent);
         }
     }
 }

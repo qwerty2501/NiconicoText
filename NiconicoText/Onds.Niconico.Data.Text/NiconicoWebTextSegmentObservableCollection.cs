@@ -9,10 +9,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection, IList<INiconicoWebTextSegment>,IReadOnlyList<INiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : Collection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection, IList<INiconicoWebTextSegment>, IReadOnlyList<INiconicoWebTextSegment>, IReadOnlyList<IReadOnlyNiconicoWebTextSegment>
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
-        internal NiconicoWebTextSegmentObservableCollection(IReadOnlyList<INiconicoWebTextSegment> collection) : base(collection) { }
+        internal NiconicoWebTextSegmentObservableCollection(IList<INiconicoWebTextSegment> list) : base(list) { }
 
         internal IReadOnlyNiconicoWebTextSegment Owner
         {
@@ -40,44 +40,25 @@ namespace Onds.Niconico.Data.Text
         }
 
 
-        protected override void ClearItems()
+
+        IReadOnlyNiconicoWebTextSegment IReadOnlyList<IReadOnlyNiconicoWebTextSegment>.this[int index]
         {
-            for (var index = 0; index < this.Count; index++)
-            {
-                removeParentAt(index);
-            }
-            base.ClearItems();
+            get { return this[index]; }
         }
 
-        protected override void RemoveItem(int index)
+        int IReadOnlyCollection<IReadOnlyNiconicoWebTextSegment>.Count
         {
-            removeParentAt(index);
-            base.RemoveItem(index);
+            get { return this.Count; }
         }
 
-        protected override void SetItem(int index, INiconicoWebTextSegment item)
+        IEnumerator<IReadOnlyNiconicoWebTextSegment> IEnumerable<IReadOnlyNiconicoWebTextSegment>.GetEnumerator()
         {
-            if (!checkCanInsert(item))
-                throw new InvalidOperationException("item can not set to this collection.");
-            var segment = (NiconicoWebTextSegmentBase)item;
-            segment.Parent = this.Owner;
-            removeParentAt(index);
-            base.SetItem(index, item);
+            return this.GetEnumerator();
         }
 
-
-
-
-
-        private void removeParentAt(int index)
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            var source = (NiconicoWebTextSegmentBase)this[index];
-            source.Parent = null;
-        }
-
-        private bool checkCanInsert(IReadOnlyNiconicoWebTextSegment item)
-        {
-            return (item.Parent == null && item is NiconicoWebTextSegmentBase);
+            return this.GetEnumerator();
         }
     }
 }

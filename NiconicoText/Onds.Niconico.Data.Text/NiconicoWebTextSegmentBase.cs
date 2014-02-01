@@ -8,12 +8,13 @@ namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase:IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal abstract class NiconicoWebTextSegmentBase<T> : INiconicoWebTextSegment,IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+        where T:IReadOnlyNiconicoWebTextSegment
     {
 
-        internal NiconicoWebTextSegmentBase(IReadOnlyNiconicoWebTextSegment parent)
+        internal NiconicoWebTextSegmentBase(T parent)
         {
-            this.Parent = parent;
+            this.parent_ = parent;
         }
 
         internal protected bool HasParent
@@ -73,8 +74,10 @@ namespace Onds.Niconico.Data.Text
 
         public IReadOnlyNiconicoWebTextSegment Parent
         {
-            get;
-            internal protected set;
+            get
+            {
+                return this.parent_;
+            }
         }
 
         public abstract string Text { get; }
@@ -112,6 +115,24 @@ namespace Onds.Niconico.Data.Text
         public bool DecoratedColor
         {
             get { return false; }
+        }
+
+        private T parent_;
+
+        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
+        {
+            get { return null; }
+        }
+
+        INiconicoWebTextSegment INiconicoWebTextSegment.Parent
+        {
+            get 
+            { 
+                if(! (this.parent_ is IReadOnlyNiconicoWebTextSegment))
+                    throw new InvalidOperationException("Parent is not writeable.");
+
+                return (INiconicoWebTextSegment)this.parent_;
+            }
         }
     }
 }

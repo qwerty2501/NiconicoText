@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class HtmlBoldNiconicoWebTextSegment:SegmentsProsessionNiconicoWebTextSegmentBase,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class HtmlBoldNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+        where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal HtmlBoldNiconicoWebTextSegment( IReadOnlyNiconicoWebTextSegment parent) : base(parent) { }
+        internal HtmlBoldNiconicoWebTextSegment( T parent) : base(parent) { }
 
         public new bool DecoratedBold
         {
@@ -30,9 +31,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.HtmlBoldElement; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            var segment = new HtmlBoldNiconicoWebTextSegment(parent);
+            var segment = new HtmlBoldNiconicoWebTextSegment<T>(parent);
             segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.boldTextGroupNumber].Value,segment);
             return segment;
         }
