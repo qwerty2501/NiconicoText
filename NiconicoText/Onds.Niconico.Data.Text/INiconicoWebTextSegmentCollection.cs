@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    public interface INiconicoWebTextSegmentCollection : IList<INiconicoWebTextSegment>
+    public interface INiconicoWebTextSegmentCollection : IList<INiconicoWebTextSegment>,IReadOnlyList<IReadOnlyNiconicoWebTextSegment>
     {
         /// <summary>
         /// Create a Friendly String.

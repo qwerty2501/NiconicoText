@@ -120,5 +120,11 @@ namespace Onds.Niconico.Data.Text
         /// Html invalid element.
         /// </summary>
         HtmlInvalidElement,
+
+        /// <summary>
+        /// This Segment is full text.
+        /// </summary>
+        FullText,
+        
     }
 }

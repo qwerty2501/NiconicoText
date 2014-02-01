@@ -11,6 +11,7 @@ namespace Onds.Niconico.Data.Text
     {
         internal SegmentsProsessionNiconicoWebTextSegmentBase( T parent):base(parent)
         {
+            this.Segments = null;
         }
 
         public new bool HasSegments
@@ -27,6 +28,18 @@ namespace Onds.Niconico.Data.Text
             get;
             internal set;
         }
+
+        internal INiconicoWebTextSegmentCollection EditableSegments
+        {
+            get
+            {
+                if (!(this.Segments is INiconicoWebTextSegmentCollection))
+                    new InvalidOperationException("Segments is not editable.");
+
+                return this.Segments as INiconicoWebTextSegmentCollection;
+            }
+        }
+
 
         public override string Text
         {
