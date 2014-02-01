@@ -122,7 +122,7 @@
     <Compile Include="HtmlUnderLineNiconicoWebTextSegment.cs" />
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
-    <Compile Include="INiconicoWebTextSegmentObservableCollection.cs" />
+    <Compile Include="INiconicoWebTextSegmentCollection.cs" />
     <Compile Include="IReadOnlyNiconicoWebTextSegment.cs" />
     <Compile Include="LineBreakNiconicoWebTextSegment.cs" />
     <Compile Include="LiveIdNiconicoWebTextSegment.cs" />

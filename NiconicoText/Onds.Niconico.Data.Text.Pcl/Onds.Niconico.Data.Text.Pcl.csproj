@@ -72,8 +72,8 @@
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegment.cs">
       <Link>INiconicoWebTextSegment.cs</Link>
     </Compile>
-    <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegmentObservableCollection.cs">
-      <Link>INiconicoWebTextSegmentObservableCollection.cs</Link>
+    <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegmentCollection.cs">
+      <Link>INiconicoWebTextSegmentCollection.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\InvalidHtmlElementNiconicoWebTextSegment.cs">
       <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
@@ -171,7 +171,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

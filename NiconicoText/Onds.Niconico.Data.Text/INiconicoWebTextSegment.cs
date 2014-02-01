@@ -15,7 +15,7 @@ namespace Onds.Niconico.Data.Text
         /// <summary>
         /// children segments of this text segment.
         /// </summary>
-        new INiconicoWebTextSegmentObservableCollection Segments { get; }
+        new INiconicoWebTextSegmentCollection Segments { get; }
 
         /// <summary>
         /// parent, this segment.

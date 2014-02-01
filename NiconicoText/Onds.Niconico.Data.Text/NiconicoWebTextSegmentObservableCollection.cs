@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentObservableCollection, IList<INiconicoWebTextSegment>,IReadOnlyList<INiconicoWebTextSegment>, INotifyCollectionChanged
+    internal class NiconicoWebTextSegmentObservableCollection : ObservableCollection<INiconicoWebTextSegment>, INiconicoWebTextSegmentCollection, IList<INiconicoWebTextSegment>,IReadOnlyList<INiconicoWebTextSegment>, INotifyCollectionChanged
     {
         internal NiconicoWebTextSegmentObservableCollection() : base() { }
         internal NiconicoWebTextSegmentObservableCollection(IReadOnlyList<INiconicoWebTextSegment> collection) : base(collection) { }
