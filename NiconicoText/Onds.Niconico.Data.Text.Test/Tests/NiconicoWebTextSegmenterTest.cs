@@ -107,7 +107,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         {
             foreach (var segment in segments)
             {
-                segment.Parent = parent;
+                segment.Parent_ = parent;
             }
             
             parent.Segments = segments;
