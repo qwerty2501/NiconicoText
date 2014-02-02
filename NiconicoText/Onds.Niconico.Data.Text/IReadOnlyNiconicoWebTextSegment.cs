@@ -75,6 +75,11 @@ namespace Onds.Niconico.Data.Text
         bool DecoratedColor { get; }
 
         /// <summary>
+        /// Determines wheter font element size associated with this text segment.
+        /// </summary>
+        bool DecoratedFontElementSize { get; }
+
+        /// <summary>
         /// Color associated with this text segment.
         /// </summary>
         Color Color { get; }

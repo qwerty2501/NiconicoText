@@ -106,5 +106,11 @@ namespace Onds.Niconico.Data.Text
         {
             get { return this.Segments.ToFriendlyText(); }
         }
+
+
+        public bool DecoratedFontElementSize
+        {
+            get { return false; }
+        }
     }
 }

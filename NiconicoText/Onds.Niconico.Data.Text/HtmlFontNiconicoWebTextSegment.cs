@@ -17,12 +17,12 @@ namespace Onds.Niconico.Data.Text
 
         internal HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color,T parent) : this(fontElementSize, color, true,parent) { }
 
-        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool associatedColor, T parent)
+        private HtmlFontNiconicoWebTextSegment(FontElementSize fontElementSize, Color color, bool decoratedColor, T parent)
             : base(parent)
         {
             this.fontElementSize_ = fontElementSize;
             this.color_ = color;
-            this.DecoratedColor = associatedColor;
+            this.DecoratedColor = decoratedColor;
         }
 
         public new Color Color
@@ -44,6 +44,22 @@ namespace Onds.Niconico.Data.Text
         {
             get;
             private set;
+        }
+
+        public new bool DecoratedFontElementSize
+        {
+            get
+            {
+                if (this.fontElementSize_ > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return base.DecoratedFontElementSize;
+                }
+
+            }
         }
 
 

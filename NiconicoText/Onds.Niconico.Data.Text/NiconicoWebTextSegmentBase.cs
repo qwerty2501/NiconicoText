@@ -159,5 +159,11 @@ namespace Onds.Niconico.Data.Text
         {
             get { return this.HasParent ? (this as INiconicoWebTextSegment).Parent.Root : null; }
         }
+
+
+        public bool DecoratedFontElementSize
+        {
+            get { return this.HasParent ? this.Parent.DecoratedFontElementSize : false; }
+        }
     }
 }
