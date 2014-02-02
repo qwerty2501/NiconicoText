@@ -187,6 +187,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextColor.cs">
       <Link>NiconicoTextColor.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextParser.cs">
+      <Link>NiconicoTextParser.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextPatterns.cs">
       <Link>NiconicoTextPatterns.cs</Link>
       <AutoGen>True</AutoGen>
@@ -195,9 +198,6 @@
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextPatterns.partial.cs">
       <Link>NiconicoTextPatterns.partial.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextSegmenter.cs">
-      <Link>NiconicoTextSegmenter.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextType.cs">
       <Link>NiconicoTextType.cs</Link>

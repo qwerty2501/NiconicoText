@@ -9,7 +9,7 @@ namespace Onds.Niconico.Data.Text
     /// <summary>
     /// Niconico Text Segmenter
     /// </summary>
-    public static class NiconicoTextSegmenter
+    public static class NiconicoTextParser
     {
         /// <summary>
         /// Divide to web text.
