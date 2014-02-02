@@ -72,6 +72,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoTextSegment.cs">
       <Link>INiconicoTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebText.cs">
+      <Link>INiconicoWebText.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegment.cs">
       <Link>INiconicoWebTextSegment.cs</Link>
     </Compile>
