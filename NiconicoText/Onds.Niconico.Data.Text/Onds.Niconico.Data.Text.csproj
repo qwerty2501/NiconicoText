@@ -124,6 +124,7 @@
     <Compile Include="IdNiconicoWebTextSegmentBase.cs" />
     <Compile Include="INiconicoTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentCollection.cs" />
+    <Compile Include="IReadOnlyNiconicoWebText.cs" />
     <Compile Include="IReadOnlyNiconicoWebTextSegment.cs" />
     <Compile Include="LineBreakNiconicoWebTextSegment.cs" />
     <Compile Include="LiveIdNiconicoWebTextSegment.cs" />

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    public enum NiconicoTextType
+    interface IReadOnlyNiconicoWebText
     {
-        Web,
-        Comment
     }
 }

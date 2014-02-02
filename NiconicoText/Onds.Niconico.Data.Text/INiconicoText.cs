@@ -8,6 +8,6 @@ namespace Onds.Niconico.Data.Text
 {
     public interface INiconicoText
     {
-
+        NiconicoTextType TextType { get; }
     }
 }

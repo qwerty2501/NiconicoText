@@ -160,6 +160,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\InvalidHtmlElementNiconicoWebTextSegment.cs">
       <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\IReadOnlyNiconicoWebText.cs">
+      <Link>IReadOnlyNiconicoWebText.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\IReadOnlyNiconicoWebTextSegment.cs">
       <Link>IReadOnlyNiconicoWebTextSegment.cs</Link>
     </Compile>
