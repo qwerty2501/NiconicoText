@@ -81,6 +81,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegmentCollection.cs">
       <Link>INiconicoWebTextSegmentCollection.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegmentTuner.cs">
+      <Link>INiconicoWebTextSegmentTuner.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\InvalidHtmlElementNiconicoWebTextSegment.cs">
       <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
     </Compile>
