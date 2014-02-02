@@ -145,6 +145,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\IdNiconicoWebTextSegmentBase.cs">
       <Link>IdNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\INiconicoText.cs">
+      <Link>INiconicoText.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoTextSegment.cs">
       <Link>INiconicoTextSegment.cs</Link>
     </Compile>
@@ -313,7 +316,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
