@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    public interface INiconicoText
+    enum NiconicoTextType
     {
-
     }
 }

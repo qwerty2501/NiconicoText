@@ -190,6 +190,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextSegmenter.cs">
       <Link>NiconicoTextSegmenter.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoTextType.cs">
+      <Link>NiconicoTextType.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextNumberAnchorRange.cs">
       <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
     </Compile>
