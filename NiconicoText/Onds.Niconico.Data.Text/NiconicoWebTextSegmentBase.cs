@@ -8,7 +8,7 @@ namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase<T> : INiconicoWebTextSegment,IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+    internal abstract class NiconicoWebTextSegmentBase<T> : INiconicoWebTextSegment, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegmentTuner
         where T:IReadOnlyNiconicoWebTextSegment
     {
 
@@ -133,6 +133,18 @@ namespace Onds.Niconico.Data.Text
                     throw new InvalidOperationException("Parent is not writeable.");
 
                 return this.Parent_ as INiconicoWebTextSegment; 
+            }
+        }
+
+        NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                throw new InvalidOperationException("This segment does not have Child Segments.");
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase<T>:NiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment,INiconicoWebTextSegment
+    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase<T> : NiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegment, INiconicoWebTextSegmentTuner
         where T : IReadOnlyNiconicoWebTextSegment
     {
         internal SegmentsProsessionNiconicoWebTextSegmentBase( T parent):base(parent)
@@ -29,14 +29,16 @@ namespace Onds.Niconico.Data.Text
             internal set;
         }
 
-        internal INiconicoWebTextSegmentCollection EditableSegments
+
+
+        internal NiconicoWebTextSegmentCollection EditableSegments
         {
             get
             {
-                if (!(this.Segments is INiconicoWebTextSegmentCollection))
+                if (!(this.Segments is NiconicoWebTextSegmentCollection))
                     new InvalidOperationException("Segments is not editable.");
 
-                return this.Segments as INiconicoWebTextSegmentCollection;
+                return this.Segments as NiconicoWebTextSegmentCollection;
             }
         }
 
@@ -64,10 +66,19 @@ namespace Onds.Niconico.Data.Text
         {
             get 
             {
-                if (!(this.Segments is INiconicoWebTextSegmentCollection))
-                    throw new InvalidOperationException("Segments is not writeable");
+                return this.EditableSegments;
+            }
+        }
 
-                return (INiconicoWebTextSegmentCollection)this.Segments;
+        NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
+        {
+            get
+            {
+                return this.EditableSegments;
+            }
+            set
+            {
+                this.Segments = value;
             }
         }
 
