@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    interface INiconicoWebText
+    public interface INiconicoWebText:INiconicoText,IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment,INiconicoWebTextSegment
     {
     }
 }
