@@ -78,6 +78,22 @@ namespace Onds.Niconico.Data.Text.Test.Tests
 
         }
 
+        [TestMethod]
+        public void HtmlFontMatchTest2()
+        {
+            var text = @"<font color=""red"">redText</font><font size=""7"">size7</font>";
+            var matches = this.regex_.Matches(text);
+
+            Assert.AreEqual(2, matches.Count);
+
+            var match1 = matches[0];
+            var match2 = matches[1];
+
+            Assert.AreEqual(true, match1.Success);
+            Assert.AreEqual(@"<font color=""red"">redText</font>",match1.Value);
+            Assert.AreEqual(@"<font size=""7"">size7</font>", match2.Value);
+        }
+
         private static Regex createRegex()
         {
             return new Regex(NiconicoWebTextPatterns.niconicoWebTextParsePattern);

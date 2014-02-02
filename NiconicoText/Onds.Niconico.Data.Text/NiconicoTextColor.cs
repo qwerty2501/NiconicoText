@@ -33,7 +33,8 @@ namespace Onds.Niconico.Data.Text
     {
         public static string ToColorCode(this NiconicoTextColor self)
         {
-            return string.Concat("#", Convert.ToString(self.R, 16).ToUpper(), Convert.ToString(self.G, 16).ToUpper(), Convert.ToString(self.B, 16).ToUpper());
+            return string.Format("#{0,0:X2}{1,0:X2}{2,0:X2}", self.R, self.G, self.B);
+
         }
 
         public static NiconicoTextColor CommentColorWhite
