@@ -103,13 +103,13 @@ namespace Onds.Niconico.Data.Text
         {
             get
             {
-                if (this.fontElementSize_ == 0)
+                if (this.fontElementSize_ > 0)
                 {
-                    return base.FontElementSize;
+                    return this.fontElementSize_;
                 }
                 else
                 {
-                    return this.fontElementSize_;
+                    return base.FontElementSize;
                 }
             }
         }
