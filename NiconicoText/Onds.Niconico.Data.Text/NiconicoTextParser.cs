@@ -12,13 +12,16 @@ namespace Onds.Niconico.Data.Text
     public static class NiconicoTextParser
     {
         /// <summary>
-        /// Divide to web text.
+        /// Parse from web text.
         /// </summary>
-        /// <param name="text">text</param>
-        /// <returns>divided text segments.</returns>
-        public static IReadOnlyList<IReadOnlyNiconicoWebTextSegment> DivideToWebTextSegments(string text)
+        /// <param name="text">Plain Niconico web text.</param>
+        /// <returns>Parsed text.</returns>
+        public static IReadOnlyNiconicoWebText ParseWebText(string text)
         {
-            return NiconicoWebTextSegmenter.DivideToSegments(text);
+            var segments =  NiconicoWebTextSegmenter.DivideToSegments(text);
+            var readOnlyText = new ReadOnlyNiconicoWebText();
+            readOnlyText.Segments = segments;
+            return readOnlyText;
         }
 
     }
