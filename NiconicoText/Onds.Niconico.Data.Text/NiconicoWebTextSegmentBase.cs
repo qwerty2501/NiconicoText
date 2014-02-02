@@ -147,5 +147,17 @@ namespace Onds.Niconico.Data.Text
                 throw new InvalidOperationException("This segment does not have Child Segments.");
             }
         }
+
+
+        public IReadOnlyNiconicoWebText Root
+        {
+            get { return this.HasParent ? this.Parent.Root : null; }
+        }
+
+
+        INiconicoWebText INiconicoWebTextSegment.Root
+        {
+            get { return this.HasParent ? (this as INiconicoWebTextSegment).Parent.Root : null; }
+        }
     }
 }

@@ -85,8 +85,13 @@ namespace Onds.Niconico.Data.Text
         Uri Url { get; }
 
         /// <summary>
-        /// Parent segment text of this text segment.
+        /// Parent segment of this text segment.
         /// </summary>
         IReadOnlyNiconicoWebTextSegment Parent { get; }
+
+        /// <summary>
+        /// Root text of this text segment.
+        /// </summary>
+        IReadOnlyNiconicoWebText Root { get; }
     }
 }

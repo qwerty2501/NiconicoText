@@ -21,5 +21,10 @@ namespace Onds.Niconico.Data.Text
         /// parent, this segment.
         /// </summary>
         new INiconicoWebTextSegment Parent { get; }
+
+        /// <summary>
+        /// Root text of thissegment.
+        /// </summary>
+        new INiconicoWebText Root { get; }
     }
 }

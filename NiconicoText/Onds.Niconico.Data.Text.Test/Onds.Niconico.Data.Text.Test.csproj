@@ -232,6 +232,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\ReadOnlyNiconicoWebText.cs">
+      <Link>ReadOnlyNiconicoWebText.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\SegmentsProsessionNiconicoWebTextSegmentBase.cs">
       <Link>SegmentsProsessionNiconicoWebTextSegmentBase.cs</Link>
     </Compile>
