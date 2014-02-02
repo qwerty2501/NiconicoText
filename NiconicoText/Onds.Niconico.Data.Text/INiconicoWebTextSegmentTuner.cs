@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    interface INiconicoWebTextSegmentTuner
+    internal interface INiconicoWebTextSegmentTuner
     {
+        IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments { get; set; }
     }
 }

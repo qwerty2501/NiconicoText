@@ -208,11 +208,11 @@
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextSegmentBase.cs">
       <Link>NiconicoWebTextSegmentBase.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextSegmentCollection.cs">
+      <Link>NiconicoWebTextSegmentCollection.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextSegmenter.cs">
       <Link>NiconicoWebTextSegmenter.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextSegmentObservableCollection.cs">
-      <Link>NiconicoWebTextSegmentObservableCollection.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextSegmentType.cs">
       <Link>NiconicoWebTextSegmentType.cs</Link>

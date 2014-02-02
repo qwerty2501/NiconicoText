@@ -136,7 +136,7 @@
     <Compile Include="NiconicoTextSegmenter.cs" />
     <Compile Include="NiconicoTextType.cs" />
     <Compile Include="NiconicoWebTextSegmentBase.cs" />
-    <Compile Include="NiconicoWebTextSegmentObservableCollection.cs" />
+    <Compile Include="NiconicoWebTextSegmentCollection.cs" />
     <Compile Include="NiconicoWebTextSegmenter.cs" />
     <Compile Include="NiconicoTextPatterns.cs">
       <AutoGen>True</AutoGen>
