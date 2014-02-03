@@ -133,6 +133,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\HtmlFontNiconicoWebTextSegment.cs">
       <Link>HtmlFontNiconicoWebTextSegment.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\HtmlInvalidElementNiconicoWebTextSegment.cs">
+      <Link>HtmlInvalidElementNiconicoWebTextSegment.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\HtmlItalicNiconicoWebTextSegment.cs">
       <Link>HtmlItalicNiconicoWebTextSegment.cs</Link>
     </Compile>
@@ -162,9 +165,6 @@
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\INiconicoWebTextSegmentTuner.cs">
       <Link>INiconicoWebTextSegmentTuner.cs</Link>
-    </Compile>
-    <Compile Include="..\Onds.Niconico.Data.Text\InvalidHtmlElementNiconicoWebTextSegment.cs">
-      <Link>InvalidHtmlElementNiconicoWebTextSegment.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\IReadOnlyNiconicoWebText.cs">
       <Link>IReadOnlyNiconicoWebText.cs</Link>
@@ -331,7 +331,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
+      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

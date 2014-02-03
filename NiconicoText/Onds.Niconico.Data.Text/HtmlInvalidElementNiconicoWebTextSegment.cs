@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class InvalidHtmlElementNiconicoWebTextSegment<T> : SegmentsProsessionNiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+    internal sealed class HtmlInvalidElementNiconicoWebTextSegment<T> : SegmentsProsessionNiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
         where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal InvalidHtmlElementNiconicoWebTextSegment( T parent) : base(parent) { }
+        internal HtmlInvalidElementNiconicoWebTextSegment( T parent) : base(parent) { }
 
 
         public new string Text
@@ -35,7 +35,7 @@ namespace Onds.Niconico.Data.Text
 
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            var invalidHtml = new InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
+            var invalidHtml = new HtmlInvalidElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
             var matchValue = match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value;
             invalidHtml.Segments = segmenter.PartialDivide(matchValue.Substring(1,matchValue.Length - 2), invalidHtml);
             return invalidHtml;

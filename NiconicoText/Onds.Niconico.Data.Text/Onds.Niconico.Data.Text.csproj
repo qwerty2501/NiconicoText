@@ -119,7 +119,7 @@
     <Compile Include="INiconicoWebText.cs" />
     <Compile Include="INiconicoWebTextSegment.cs" />
     <Compile Include="INiconicoWebTextSegmentTuner.cs" />
-    <Compile Include="InvalidHtmlElementNiconicoWebTextSegment.cs" />
+    <Compile Include="HtmlInvalidElementNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlItalicNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlStrikeNiconicoWebTextSegment.cs" />
     <Compile Include="HtmlUnderLineNiconicoWebTextSegment.cs" />

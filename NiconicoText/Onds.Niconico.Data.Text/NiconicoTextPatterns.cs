@@ -403,7 +403,7 @@ namespace Onds.Niconico.Data.Text
 		return HtmlUnderLineNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 				case NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber:
-		return InvalidHtmlElementNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
+		return HtmlInvalidElementNiconicoWebTextSegment<T>.ParseWebText(match,segmenter,parent);
 
 
 			default:
