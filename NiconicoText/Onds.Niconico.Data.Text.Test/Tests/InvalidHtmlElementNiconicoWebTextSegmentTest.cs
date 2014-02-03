@@ -16,7 +16,9 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [TestMethod]
         public void CreateTest()
         {
-            InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("<invalid>", null);
+            InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> val = new InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>( null);
+            var segments = new IReadOnlyNiconicoWebTextSegment[] { new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>("invalid", val) };
+            val.Segments = segments;
 
             IReadOnlyNiconicoWebTextSegment segment = val;
 
@@ -26,12 +28,12 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             Assert.IsFalse(segment.DecoratedStrike);
             Assert.IsFalse(segment.DecoratedUnderLine);
             Assert.IsFalse(segment.HasNumberAnchor);
-            Assert.IsFalse(segment.HasSegments);
+            Assert.IsTrue(segment.HasSegments);
             Assert.IsFalse(segment.HasUrl);
             Assert.AreEqual(new NiconicoTextColor { R = 0, G = 0, B = 0 }, segment.Color);
             Assert.AreEqual(new NiconicoWebTextNumberAnchorRange { StartNumber = 0,EndNumber = 0}, segment.NumberAnchor);
             Assert.AreEqual(null, segment.Parent);
-            Assert.AreEqual(null, segment.Segments);
+            CollectionAssert.AreEqual(segments, segment.Segments.ToArray());
             Assert.AreEqual(null, segment.Url);
             Assert.AreEqual("<invalid>", segment.Text);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlInvalidElement, segment.SegmentType);
@@ -49,6 +51,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
             Assert.IsTrue(match.Success);
             IReadOnlyNiconicoWebTextSegment segment = InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>.ParseWebText(match, segmenter, null);
             Assert.AreEqual(NiconicoWebTextSegmentType.HtmlInvalidElement, segment.SegmentType);
+            Assert.AreEqual(text, segment.Text);
         }
 
 

@@ -6,11 +6,19 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal sealed class InvalidHtmlElementNiconicoWebTextSegment<T>:PlainNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal sealed class InvalidHtmlElementNiconicoWebTextSegment<T> : SegmentsProsessionNiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
         where T : IReadOnlyNiconicoWebTextSegment
     {
-        internal InvalidHtmlElementNiconicoWebTextSegment(string text, T parent) : base(text,parent) { }
+        internal InvalidHtmlElementNiconicoWebTextSegment( T parent) : base(parent) { }
 
+
+        public new string Text
+        {
+            get
+            {
+                return string.Concat("<", base.Text, ">");
+            }
+        }
 
         public new string FriendlyText
         {
@@ -27,7 +35,10 @@ namespace Onds.Niconico.Data.Text
 
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            return new InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value,parent);
+            var invalidHtml = new InvalidHtmlElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
+            var matchValue = match.Groups[NiconicoWebTextPatternIndexs.invalidHtmlElementGroupNumber].Value;
+            invalidHtml.Segments = segmenter.PartialDivide(matchValue.Substring(1,matchValue.Length - 2), invalidHtml);
+            return invalidHtml;
         }
     }
 }
