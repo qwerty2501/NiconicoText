@@ -12,192 +12,192 @@ namespace Onds.Niconico.Data.Text
         
 
 		
-		internal const string communityIdPattern=@"co\d{1,14}";
+		 //internal const string communityIdPattern=@"co\d{1,14}";
 
 
-		internal const string communityId="communityId";
+		//internal const string communityId="communityId";
 
-
+ 
 		internal const string communityIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string channelIdPattern=@"ch\d{1,14}";
+		 //internal const string channelIdPattern=@"ch\d{1,14}";
 
 
-		internal const string channelId="channelId";
+		//internal const string channelId="channelId";
 
-
+ 
 		internal const string channelIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string videoIdPattern=@"(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14}";
+		 //internal const string videoIdPattern=@"(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14}";
 
 
-		internal const string videoId="videoId";
+		//internal const string videoId="videoId";
 
-
+ 
 		internal const string videoIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string articleIdPattern=@"ar\d{1,14}";
+		 //internal const string articleIdPattern=@"ar\d{1,14}";
 
 
-		internal const string articleId="articleId";
+		//internal const string articleId="articleId";
 
-
+ 
 		internal const string articleIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string materialIdPattern=@"nc\d{1,14}";
+		 //internal const string materialIdPattern=@"nc\d{1,14}";
 
 
-		internal const string materialId="materialId";
+		//internal const string materialId="materialId";
 
-
+ 
 		internal const string materialIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string marketItemIdPattern=@"(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+)";
+		 //internal const string marketItemIdPattern=@"(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+)";
 
 
-		internal const string marketItemId="marketItemId";
+		//internal const string marketItemId="marketItemId";
 
-
+ 
 		internal const string marketItemIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string liveIdPattern=@"lv\d{1,14}";
+		 //internal const string liveIdPattern=@"lv\d{1,14}";
 
 
-		internal const string liveId="liveId";
+		//internal const string liveId="liveId";
 
-
+ 
 		internal const string liveIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string watchPictureIdPattern=@"(?:[sm]g|im)\d{1,14}";
+		 //internal const string watchPictureIdPattern=@"(?:[sm]g|im)\d{1,14}";
 
 
-		internal const string watchPictureId="watchPictureId";
+		//internal const string watchPictureId="watchPictureId";
 
-
+ 
 		internal const string watchPictureIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string pictureIdPattern=@"im\d{1,14}";
+		 //internal const string pictureIdPattern=@"im\d{1,14}";
 
 
-		internal const string PictureId="PictureId";
+		//internal const string PictureId="PictureId";
 
-
+ 
 		internal const string PictureIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
-		internal const string urlPattern=@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?";
+		 //internal const string urlPattern=@"https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?";
 
 
-		internal const string url="url";
+		//internal const string url="url";
 
-
+ 
 		internal const string urlGroupPattern=@"(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)";
 
 
 			
-		internal const string numberAnchorPattern=@">>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?";
+		 //internal const string numberAnchorPattern=@">>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?";
 
 
-		internal const string numberAnchor="numberAnchor";
+		//internal const string numberAnchor="numberAnchor";
 
-
+ 
 		internal const string numberAnchorGroupPattern=@"(?<numberAnchor>>>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?)";
 
 
 			
-		internal const string htmlFontPattern=@"<(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>";
+		 //internal const string htmlFontPattern=@"<(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>";
 
 
-		internal const string htmlFont="htmlFont";
+		//internal const string htmlFont="htmlFont";
 
-
+ 
 		internal const string htmlFontGroupPattern=@"(?<htmlFont><(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>)";
 
 
 			
-		internal const string lineBreakPattern=@"\r?\n";
+		 //internal const string lineBreakPattern=@"\r?\n";
 
 
-		internal const string lineBreak="lineBreak";
+		//internal const string lineBreak="lineBreak";
 
-
+ 
 		internal const string lineBreakGroupPattern=@"(?<lineBreak>\r?\n)";
 
 
 			
-		internal const string htmlBreakPattern=@"<(?i:br)\s*?/?>";
+		 //internal const string htmlBreakPattern=@"<(?i:br)\s*?/?>";
 
 
-		internal const string htmlBreak="htmlBreak";
+		//internal const string htmlBreak="htmlBreak";
 
-
+ 
 		internal const string htmlBreakGroupPattern=@"(?<htmlBreak><(?i:br)\s*?/?>)";
 
 
 			
-		internal const string htmlBoldPattern=@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>";
+		 //internal const string htmlBoldPattern=@"<[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>";
 
 
-		internal const string htmlBold="htmlBold";
+		//internal const string htmlBold="htmlBold";
 
-
+ 
 		internal const string htmlBoldGroupPattern=@"(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)";
 
 
 			
-		internal const string htmlItalicPattern=@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>";
+		 //internal const string htmlItalicPattern=@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>";
 
 
-		internal const string htmlItalic="htmlItalic";
+		//internal const string htmlItalic="htmlItalic";
 
-
+ 
 		internal const string htmlItalicGroupPattern=@"(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)";
 
 
 			
-		internal const string htmlStrikePattern=@"<[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>";
+		 //internal const string htmlStrikePattern=@"<[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>";
 
 
-		internal const string htmlStrike="htmlStrike";
+		//internal const string htmlStrike="htmlStrike";
 
-
+ 
 		internal const string htmlStrikeGroupPattern=@"(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)";
 
 
 			
-		internal const string htmlUnderLinePattern=@"<[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>";
+		 //internal const string htmlUnderLinePattern=@"<[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>";
 
 
-		internal const string htmlUnderLine="htmlUnderLine";
+		//internal const string htmlUnderLine="htmlUnderLine";
 
-
+ 
 		internal const string htmlUnderLineGroupPattern=@"(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)";
 
 
 			
-		internal const string htmlInvalidElementPattern=@"</?.*?>";
+		 //internal const string htmlInvalidElementPattern=@"</?.*?>";
 
 
-		internal const string htmlInvalidElement="htmlInvalidElement";
+		//internal const string htmlInvalidElement="htmlInvalidElement";
 
-
+ 
 		internal const string htmlInvalidElementGroupPattern=@"(?<htmlInvalidElement></?.*?>)";
 
 
@@ -419,22 +419,22 @@ namespace Onds.Niconico.Data.Text
 		{
 			
 	
-		internal const string htmlAnchorPattern=@"<[aA]\s+?[^>]*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)\""\s?[^>]*?>(?<anchorText>.*?)</[aA]\s*?>";
+		 //internal const string htmlAnchorPattern=@"<[aA]\s+?[^>]*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)\""\s?[^>]*?>(?<anchorText>.*?)</[aA]\s*?>";
 
 
-		internal const string htmlAnchor="htmlAnchor";
+		//internal const string htmlAnchor="htmlAnchor";
 
-
+ 
 		internal const string htmlAnchorGroupPattern=@"(?<htmlAnchor><[aA]\s+?[^>]*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)\""\s?[^>]*?>(?<anchorText>.*?)</[aA]\s*?>)";
 
 
 			
-		internal const string attoMarkNamePattern=@"@[^@^\s]+";
+		 //internal const string attoMarkNamePattern=@"@[^@^\s]+";
 
 
-		internal const string attoMarkName="attoMarkName";
+		//internal const string attoMarkName="attoMarkName";
 
-
+ 
 		internal const string attoMarkNameGroupPattern=@"(?<attoMarkName>@[^@^\s]+)";
 
 

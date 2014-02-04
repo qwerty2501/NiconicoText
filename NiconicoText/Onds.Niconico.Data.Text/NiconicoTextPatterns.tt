@@ -138,8 +138,8 @@ namespace Onds.Niconico.Data.Text
 			
 			#>
 
-		<#="internal const string " +  internalPatternName + "=" + "@\"" + textPattern.Value + "\"" + ";\r\n\r\n" #>
-		<#= "internal const string " +  patternKeyName + "=\"" + textPattern.Key + "\";\r\n\r\n"  #>
+		<#=" //internal const string " +  internalPatternName + "=" + "@\"" + textPattern.Value + "\"" + ";\r\n\r\n" #>
+		<#= "//internal const string " +  patternKeyName + "=\"" + textPattern.Key + "\";\r\n\r\n"  #> 
 		<#= "internal const string " +  gruopKeyName + "=" + "@\"" + toGroupValue(patternKeyName,textPattern.Value)  + "\";\r\n\r\n" #>
 			<#
 			
