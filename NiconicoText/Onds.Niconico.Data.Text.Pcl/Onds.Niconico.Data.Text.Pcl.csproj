@@ -126,6 +126,9 @@
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebText.cs">
       <Link>NiconicoWebText.cs</Link>
     </Compile>
+    <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextDecorateFlags.cs">
+      <Link>NiconicoWebTextDecorateFlags.cs</Link>
+    </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\NiconicoWebTextNumberAnchorRange.cs">
       <Link>NiconicoWebTextNumberAnchorRange.cs</Link>
     </Compile>
