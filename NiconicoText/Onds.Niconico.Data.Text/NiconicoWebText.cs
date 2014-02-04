@@ -6,124 +6,134 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    public sealed class NiconicoWebText:INiconicoText,INiconicoWebText,IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoWebTextSegment
+    using Color = NiconicoTextColor;
+
+    public sealed class NiconicoWebText:INiconicoText,INiconicoWebText,IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoWebTextSegment,INiconicoTextSegment
     {
+        public NiconicoWebText()
+        {
+            this.segments_ = new NiconicoWebTextSegmentCollection();
+        }
         
         public event NiconicoTextUpdateHandler TextUpdated;
 
         public NiconicoTextType TextType
         {
-            get { throw new NotImplementedException(); }
+            get { return NiconicoTextType.Web; }
         }
 
-        public bool HasUrl
+        bool IReadOnlyNiconicoWebTextSegment.HasUrl
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public bool HasSegments
         {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
 
-        public NiconicoWebTextSegmentType SegmentType
+        NiconicoWebTextSegmentType IReadOnlyNiconicoWebTextSegment.SegmentType
         {
-            get { throw new NotImplementedException(); }
+            get { return NiconicoWebTextSegmentType.FullText; }
         }
 
-        public IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Segments
+        IReadOnlyList<IReadOnlyNiconicoWebTextSegment> IReadOnlyNiconicoWebTextSegment.Segments
         {
-            get { throw new NotImplementedException(); }
+            get { return this.segments_; }
         }
 
-        public bool HasNumberAnchor
+        private NiconicoWebTextSegmentCollection segments_;
+
+        bool IReadOnlyNiconicoWebTextSegment.HasNumberAnchor
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public NiconicoWebTextNumberAnchorRange NumberAnchor
+        NiconicoWebTextNumberAnchorRange IReadOnlyNiconicoWebTextSegment.NumberAnchor
         {
-            get { throw new NotImplementedException(); }
+            get { return default(NiconicoWebTextNumberAnchorRange); }
         }
 
-        public byte FontElementSize
+        byte IReadOnlyNiconicoWebTextSegment.FontElementSize
         {
-            get { throw new NotImplementedException(); }
+            get { return FontElementSize.defaultSize; }
         }
 
-        public bool DecoratedUnderLine
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedUnderLine
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public bool DecoratedBold
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedBold
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public bool DecoratedStrike
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedStrike
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public bool DecoratedItalic
+         bool IReadOnlyNiconicoWebTextSegment.DecoratedItalic
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public bool DecoratedColor
+         bool IReadOnlyNiconicoWebTextSegment.DecoratedColor
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public bool DecoratedFontElementSize
+         bool IReadOnlyNiconicoWebTextSegment.DecoratedFontElementSize
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
-        public NiconicoTextColor Color
+         Color IReadOnlyNiconicoWebTextSegment.Color
         {
-            get { throw new NotImplementedException(); }
+            get { return default(Color); }
         }
 
-        public Uri Url
+         Uri IReadOnlyNiconicoWebTextSegment.Url
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
-        public IReadOnlyNiconicoWebTextSegment Parent
+         IReadOnlyNiconicoWebTextSegment IReadOnlyNiconicoWebTextSegment.Parent
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
-        public IReadOnlyNiconicoWebText Root
+         IReadOnlyNiconicoWebText IReadOnlyNiconicoWebTextSegment.Root
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
-        public string Text
-        {
-            get { throw new NotImplementedException(); }
-        }
+         public string Text
+         {
+             get;
+             private set;
+         }
 
-        public string FriendlyText
-        {
-            get { throw new NotImplementedException(); }
-        }
+         public string FriendlyText
+         {
+             get;
+             private set;
+         }
 
         INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
         {
-            get { throw new NotImplementedException(); }
+            get { return this.segments_; }
         }
 
         INiconicoWebTextSegment INiconicoWebTextSegment.Parent
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         INiconicoWebText INiconicoWebTextSegment.Root
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         public IReadOnlyList<INiconicoWebTextSegment> ImportText(string text)
@@ -149,6 +159,13 @@ namespace Onds.Niconico.Data.Text
         public INiconicoWebTextSegment RemoveChildSegment(INiconicoWebTextSegment semgent)
         {
             throw new NotImplementedException();
+        }
+
+
+        public void RaiseTextUpdate()
+        {
+            if (this.TextUpdated != null)
+                this.TextUpdated();
         }
     }
 }

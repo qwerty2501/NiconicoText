@@ -8,6 +8,11 @@ namespace Onds.Niconico.Data.Text
 {
     internal sealed class WriteableNiconicoWebTextSegment:INiconicoTextSegment,INiconicoWebTextSegment,IReadOnlyNiconicoWebTextSegment,INiconicoWebTextSegmentTuner
     {
+        internal WriteableNiconicoWebTextSegment()
+        {
+            this.decorateFlag_ = NiconicoWebTextDecorateFlags.None;
+        }
+
         INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
         {
             get { return this.Segments; }

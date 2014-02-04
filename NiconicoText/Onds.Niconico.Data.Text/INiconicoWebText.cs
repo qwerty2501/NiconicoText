@@ -11,5 +11,7 @@ namespace Onds.Niconico.Data.Text
     public interface INiconicoWebText:INiconicoText,IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment,INiconicoWebTextSegment
     {
         event NiconicoTextUpdateHandler TextUpdated;
+
+        void RaiseTextUpdate();
     }
 }
