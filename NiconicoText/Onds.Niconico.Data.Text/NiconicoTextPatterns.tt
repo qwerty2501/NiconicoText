@@ -18,7 +18,7 @@ namespace Onds.Niconico.Data.Text
         <#
 			Func<string,string> createIdPattern = (pattern)=>
 			{
-				return @"(?:\A|[^a-z])" + pattern + @"(?:[^A-Za-z\d]|$)";
+				return @"(?:[^a-z]|\b)" + pattern + @"(?:[^A-Za-z\d]|\b)";
 			};
 			
 			Func<string,string> toPatternName = (name)=>

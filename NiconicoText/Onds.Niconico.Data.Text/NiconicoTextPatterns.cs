@@ -18,7 +18,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string communityId="communityId";
 
 
-		internal const string communityIdGroupPattern=@"(?:(?:\A|[^a-z])(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string communityIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -28,7 +28,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string channelId="channelId";
 
 
-		internal const string channelIdGroupPattern=@"(?:(?:\A|[^a-z])(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string channelIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -38,7 +38,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string videoId="videoId";
 
 
-		internal const string videoIdGroupPattern=@"(?:(?:\A|[^a-z])(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string videoIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -48,7 +48,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string articleId="articleId";
 
 
-		internal const string articleIdGroupPattern=@"(?:(?:\A|[^a-z])(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string articleIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -58,7 +58,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string materialId="materialId";
 
 
-		internal const string materialIdGroupPattern=@"(?:(?:\A|[^a-z])(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string materialIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -68,7 +68,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string marketItemId="marketItemId";
 
 
-		internal const string marketItemIdGroupPattern=@"(?:(?:\A|[^a-z])(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|$))";
+		internal const string marketItemIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -78,7 +78,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string liveId="liveId";
 
 
-		internal const string liveIdGroupPattern=@"(?:(?:\A|[^a-z])(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string liveIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -88,7 +88,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string watchPictureId="watchPictureId";
 
 
-		internal const string watchPictureIdGroupPattern=@"(?:(?:\A|[^a-z])(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string watchPictureIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -98,7 +98,7 @@ namespace Onds.Niconico.Data.Text
 		internal const string PictureId="PictureId";
 
 
-		internal const string PictureIdGroupPattern=@"(?:(?:\A|[^a-z])(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|$))";
+		internal const string PictureIdGroupPattern=@"(?:(?:[^a-z]|\b)(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|\b))";
 
 
 			
@@ -202,7 +202,7 @@ namespace Onds.Niconico.Data.Text
 
 
 			
-		internal const string niconicoWebTextParsePattern = @"(?:(?:(?:\A|[^a-z])(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|$))|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)|(?<numberAnchor>>>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<htmlInvalidElement></?.*?>))";
+		internal const string niconicoWebTextParsePattern = @"(?:(?:(?:[^a-z]|\b)(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|\b))|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)|(?<numberAnchor>>>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<htmlInvalidElement></?.*?>))";
 
 
 
@@ -439,7 +439,7 @@ namespace Onds.Niconico.Data.Text
 
 
 			
-		internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?[^>]*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)\""\s?[^>]*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?:(?:\A|[^a-z])(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|$))|(?:(?:\A|[^a-z])(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|$))|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)|(?<numberAnchor>>>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<htmlInvalidElement></?.*?>))";
+		internal const string niconicoCommentTextParsePattern = @"(?:(?<htmlAnchor><[aA]\s+?[^>]*?href=\""(?<href>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)\""\s?[^>]*?>(?<anchorText>.*?)</[aA]\s*?>)|(?<attoMarkName>@[^@^\s]+))|(?:(?:(?:[^a-z]|\b)(?<communityId>co\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<channelId>ch\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<videoId>(?:sm|nm|so|ca|ax|yo|nl|ig|na|cw|z[a-e]|om|sk|yk)\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<articleId>ar\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<materialId>nc\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<marketItemId>(?:dw\d+|az[A-Z0-9]{10}|ys[a-zA-Z0-9-]+_[a-zA-Z0-9-]|ga\d+|ip[\d_]+|gg[a-zA-Z0-9]+-[a-zA-Z0-9-]+))(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<liveId>lv\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<watchPictureId>(?:[sm]g|im)\d{1,14})(?:[^A-Za-z\d]|\b))|(?:(?:[^a-z]|\b)(?<PictureId>im\d{1,14})(?:[^A-Za-z\d]|\b))|(?<url>https?://[\w-](?:\.?[\w-]+)+(?:[0-9]*?)?(?:/[\w-./?%&=]*)?)|(?<numberAnchor>>>(?<startNumberAnchor>[0-9]+?)(?:-(?<endNumberAnchor>[0-9]+?))?)|(?<htmlFont><(?i:font)\s+?(?:[^>]*?(?:(?i:color)=\""(?:(?<colorCode>#?[a-fA-F0-9]{6})|(?<colorName>[a-zA-Z]{1,25}))|(?i:size)=\""(?<size>[+-]?[1-7]))\""\s*?){1,2}[^>]*?>(?<fontText>.*?)</(?i:font)\s*?>)|(?<lineBreak>\r?\n)|(?<htmlBreak><(?i:br)\s*?/?>)|(?<htmlBold><[bB]\s*?>(?<boldText>.*?)</[bB]\s*?>)|(?<htmlItalic><[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>)|(?<htmlStrike><[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>)|(?<htmlUnderLine><[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>)|(?<htmlInvalidElement></?.*?>))";
 
 
 
