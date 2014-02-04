@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
+    public delegate void NiconicoTextUpdateHandler();
+
     public interface INiconicoWebText:INiconicoText,IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment,INiconicoWebTextSegment
     {
+        event NiconicoTextUpdateHandler TextUpdated;
     }
 }

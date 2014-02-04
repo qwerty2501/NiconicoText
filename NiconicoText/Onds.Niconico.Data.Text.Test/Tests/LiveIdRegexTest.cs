@@ -20,22 +20,25 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("cccclv162882011?zrou", "lv162882011",true)]
-        [DataRow("ccccev162882011?zrou", "", false)]
+        [DataRow("テストlv162882011?zrou", "lv162882011",true)]
+        [DataRow("ccccelv162882011?zrou", "", false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.liveIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.liveIdGroupPattern, text, id, 2, succeed);
         }
 
         [DataTestMethod]
-        [DataRow("cccclv162882011?zrou_lv162882011", "lv162882011", "lv162882011")]
+        [DataRow("テストlv162882011?zrou_lv162882011", "lv162882011", "lv162882011")]
         public void MatchesTest(string text,string id1,string id2)
         {
             var regex = createRegex();
             var mathes = regex.Matches(text);
             Assert.AreEqual(2, mathes.Count);
-            Assert.AreEqual(id1, mathes[0].Value);
-            Assert.AreEqual(id2, mathes[1].Value);
+
+            var match1 = mathes[0];
+            var match2 = mathes[1];
+            Assert.AreEqual(id1, match1.Groups[1].Value);
+            Assert.AreEqual(id2, match2.Groups[1].Value);
             
         }
 

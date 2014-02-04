@@ -19,10 +19,10 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("oflco28428ccie", "co28428", true)]
+        [DataRow("テストco28428テスト", "co28428", true)]
         public void MatchTest(string text, string id, bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.communityIdGroupPattern, text, id, 2, true);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.communityIdGroupPattern, text, id, 2, true);
         }
 
 

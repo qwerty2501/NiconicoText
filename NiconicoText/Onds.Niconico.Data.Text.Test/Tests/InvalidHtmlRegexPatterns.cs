@@ -22,12 +22,12 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [DataRow("<invalidhtml>","<invalidhtml>",true)]
         public void MatchTest(string text,string value,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.invalidHtmlElementGroupPattern, text, value, 2, succeed);
+            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.htmlInvalidElementGroupPattern, text, value, 2, succeed);
         }
 
         private Regex createRegex()
         {
-            return new Regex(NiconicoWebTextPatterns.invalidHtmlElementGroupPattern);
+            return new Regex(NiconicoWebTextPatterns.htmlInvalidElementGroupPattern);
         }
     }
 }

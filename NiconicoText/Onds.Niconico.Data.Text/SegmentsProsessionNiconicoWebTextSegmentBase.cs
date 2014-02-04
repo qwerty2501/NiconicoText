@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase<T> : NiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegment, INiconicoWebTextSegmentTuner
+    internal abstract class SegmentsProsessionNiconicoWebTextSegmentBase<T> : NiconicoWebTextSegmentBase<T>, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegmentTuner
         where T : IReadOnlyNiconicoWebTextSegment
     {
         internal SegmentsProsessionNiconicoWebTextSegmentBase( T parent):base(parent)
@@ -62,13 +62,6 @@ namespace Onds.Niconico.Data.Text
 
 
 
-        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
-        {
-            get 
-            {
-                return this.EditableSegments;
-            }
-        }
 
         NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
         {

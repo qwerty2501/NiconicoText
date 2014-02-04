@@ -19,10 +19,11 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("ofxazB00HS2GTHQccw","azB00HS2GTHQ",true)]
+        [DataRow("テストazB00HS2GTHQテスト", "azB00HS2GTHQ", true)]
+        [DataRow("テストazB00HS2GTHQccw","",false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.marketItemIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.marketItemIdGroupPattern, text, id, 2, succeed);
         }
 
 

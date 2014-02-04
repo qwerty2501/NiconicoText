@@ -9,24 +9,24 @@ namespace Onds.Niconico.Data.Text
 
     using Color = NiconicoTextColor;
 
-    internal class ReadOnlyNiconicoWebText:IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoText,INiconicoTextSegment
+    public sealed class ReadOnlyNiconicoWebText:IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoText,INiconicoTextSegment
     {
         public NiconicoTextType TextType
         {
             get { return NiconicoTextType.Web; }
         }
 
-        public bool HasUrl
+        bool IReadOnlyNiconicoWebTextSegment.HasUrl
         {
             get { return false; }
         }
 
-        public bool HasSegments
+        bool IReadOnlyNiconicoWebTextSegment.HasSegments
         {
             get { return true; }
         }
 
-        public NiconicoWebTextSegmentType SegmentType
+        NiconicoWebTextSegmentType IReadOnlyNiconicoWebTextSegment.SegmentType
         {
             get { return NiconicoWebTextSegmentType.FullText; }
         }
@@ -37,78 +37,78 @@ namespace Onds.Niconico.Data.Text
             internal set;
         }
 
-        public bool HasNumberAnchor
+        bool IReadOnlyNiconicoWebTextSegment.HasNumberAnchor
         {
             get { return false; }
         }
 
-        public NiconicoWebTextNumberAnchorRange NumberAnchor
+        NiconicoWebTextNumberAnchorRange IReadOnlyNiconicoWebTextSegment.NumberAnchor
         {
             get { return default(NiconicoWebTextNumberAnchorRange); }
         }
 
-        public byte FontElementSize
+        byte IReadOnlyNiconicoWebTextSegment.FontElementSize
         {
             get { return Onds.Niconico.Data.Text.FontElementSize.defaultSize; }
         }
 
-        public bool DecoratedUnderLine
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedUnderLine
         {
             get { return false; }
         }
 
-        public bool DecoratedBold
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedBold
         {
             get { return false; }
         }
 
-        public bool DecoratedStrike
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedStrike
         {
             get { return false; }
         }
 
-        public bool DecoratedItalic
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedItalic
         {
             get { return false; }
         }
 
-        public bool DecoratedColor
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedColor
         {
             get { return false; }
         }
 
-        public Color Color
+        Color IReadOnlyNiconicoWebTextSegment.Color
         {
             get { return default(Color); }
         }
 
-        public Uri Url
+        Uri IReadOnlyNiconicoWebTextSegment.Url
         {
             get { return null; }
         }
 
-        public IReadOnlyNiconicoWebTextSegment Parent
+        IReadOnlyNiconicoWebTextSegment IReadOnlyNiconicoWebTextSegment.Parent
         {
             get { return null; }
         }
 
-        public IReadOnlyNiconicoWebText Root
+        IReadOnlyNiconicoWebText IReadOnlyNiconicoWebTextSegment.Root
         {
             get { return this; }
         }
 
-        public string Text
+        string INiconicoTextSegment.Text
         {
             get { return this.Segments.ToText(); }
         }
 
-        public string FriendlyText
+        string INiconicoTextSegment.FriendlyText
         {
             get { return this.Segments.ToFriendlyText(); }
         }
 
 
-        public bool DecoratedFontElementSize
+        bool IReadOnlyNiconicoWebTextSegment.DecoratedFontElementSize
         {
             get { return false; }
         }

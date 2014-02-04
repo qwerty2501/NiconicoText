@@ -16,6 +16,11 @@ namespace Onds.Niconico.Data.Text
 		
 
         <#
+			Func<string,string> createIdPattern = (pattern)=>
+			{
+				return @"(?:\A|[^a-z])" + pattern + @"(?:[^A-Za-z\d]|$)";
+			};
+			
 			Func<string,string> toPatternName = (name)=>
 			{
 				return char.ToUpper(name[0]) + name.Substring(1,name.Length - 1) + "Pattern";
@@ -38,7 +43,14 @@ namespace Onds.Niconico.Data.Text
 
 			Func<string,string,string> toGroupValue = (patternKeyName,value)=>
 			{
-				return "(?<"  + patternKeyName   + ">"  + value  + ")";
+
+				var pattern ="(?<"  + patternKeyName   + ">"  + value  + ")";
+				if(patternKeyName.IndexOf("Id") < 0)
+				{
+					return pattern;
+				}
+				
+				return "(?:" + createIdPattern(pattern) + ")";
 			};
 
 			Func<string,string,string,string> toParseCase = (key,className,methodName) =>
@@ -78,6 +90,7 @@ namespace Onds.Niconico.Data.Text
 
 			
 
+			
 			Func<Dictionary<string,string>,string> toPatterns = (patterns)=>
 			{
 				var list = new List<string>();
@@ -154,7 +167,7 @@ namespace Onds.Niconico.Data.Text
 			niconicoTextPatterns.Add("htmlItalic",@"<[iI]\s*?>(?<italicText>.*?)</[iI]\s*?>");
 			niconicoTextPatterns.Add("htmlStrike",@"<[sS]\s*?>(?<strikeText>.*?)</[sS]\s*?>");
 			niconicoTextPatterns.Add("htmlUnderLine",@"<[uU]\s*?>(?<underLineText>.*?)</[uU]\s*?>");
-			niconicoTextPatterns.Add("invalidHtmlElement",@"</?.*?>");
+			niconicoTextPatterns.Add("htmlInvalidElement",@"</?.*?>");
 			var niconicoTextParsePattern = toPatterns(niconicoTextPatterns);
 
 			#>

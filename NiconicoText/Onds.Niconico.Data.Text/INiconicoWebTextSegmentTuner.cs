@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    internal interface INiconicoWebTextSegmentTuner:INiconicoWebTextSegment,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
+    internal interface INiconicoWebTextSegmentTuner:IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
     {
         new NiconicoWebTextSegmentCollection Segments { get; set; }
 

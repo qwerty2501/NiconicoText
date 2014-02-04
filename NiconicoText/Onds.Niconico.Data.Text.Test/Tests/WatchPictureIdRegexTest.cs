@@ -19,10 +19,11 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("aacsg5548845eed","sg5548845",true)]
+        [DataRow("sg5548845", "sg5548845", true)]
+        [DataRow("sg5548845eed","",false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex createRegex()

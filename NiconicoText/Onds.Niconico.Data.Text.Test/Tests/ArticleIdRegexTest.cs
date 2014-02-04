@@ -19,11 +19,11 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("oflar407000ccie","ar407000",true)]
+        [DataRow("ar407000","ar407000",true)]
         [DataRow("ofler407000ccie", "", false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.articleIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.articleIdGroupPattern, text, id, 2, succeed);
 
         }
 

@@ -19,10 +19,10 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("oflch407000ccie","ch407000",true)]
+        [DataRow("テストch407000テスト","ch407000",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.channelIdGroupPattern, text, id, 2, true);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.channelIdGroupPattern, text, id, 2, true);
         }
 
         private Regex createRegex()

@@ -22,7 +22,7 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         [DataRow("ああああnc27317ああああ","nc27317",true)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.materialIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.materialIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex createRegex()

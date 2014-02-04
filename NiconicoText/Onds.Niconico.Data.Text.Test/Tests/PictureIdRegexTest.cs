@@ -19,10 +19,11 @@ namespace Onds.Niconico.Data.Text.Test.Tests
         }
 
         [DataTestMethod]
-        [DataRow("ceewim14567522565ccew","im14567522565",true)]
+        [DataRow("/im14567522565/", "im14567522565", true)]
+        [DataRow("ceewim14567522565ccew","",false)]
         public void MatchTest(string text,string id,bool succeed)
         {
-            RegexTestHelper.MatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
+            RegexTestHelper.IdMatchTest(NiconicoWebTextPatterns.watchPictureIdGroupPattern, text, id, 2, succeed);
         }
 
         private Regex creteRegex()

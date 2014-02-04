@@ -8,7 +8,7 @@ namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase<T> : INiconicoWebTextSegment, IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegmentTuner
+    internal abstract class NiconicoWebTextSegmentBase<T> :  IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegmentTuner
         where T:IReadOnlyNiconicoWebTextSegment
     {
 
@@ -120,21 +120,6 @@ namespace Onds.Niconico.Data.Text
             get { return false; }
         }
 
-        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
-        {
-            get { return null; }
-        }
-
-        INiconicoWebTextSegment INiconicoWebTextSegment.Parent
-        {
-            get 
-            { 
-                if(! (this.Parent_ is IReadOnlyNiconicoWebTextSegment))
-                    throw new InvalidOperationException("Parent is not writeable.");
-
-                return this.Parent_ as INiconicoWebTextSegment; 
-            }
-        }
 
         NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
         {
@@ -155,10 +140,6 @@ namespace Onds.Niconico.Data.Text
         }
 
 
-        INiconicoWebText INiconicoWebTextSegment.Root
-        {
-            get { return this.HasParent ? (this as INiconicoWebTextSegment).Parent.Root : null; }
-        }
 
 
         public bool DecoratedFontElementSize
