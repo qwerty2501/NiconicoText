@@ -121,17 +121,6 @@ namespace Onds.Niconico.Data.Text
         }
 
 
-        NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
-        {
-            get
-            {
-                return null;
-            }
-            set
-            {
-                throw new InvalidOperationException("This segment does not have Child Segments.");
-            }
-        }
 
 
         public IReadOnlyNiconicoWebText Root

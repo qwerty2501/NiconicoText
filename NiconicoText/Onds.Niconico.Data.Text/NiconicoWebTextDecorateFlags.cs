@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Onds.Niconico.Data.Text
 {
-    class NiconicoWebTextDecorateFlags
+    [Flags]
+    internal enum NiconicoWebTextDecorateFlags
     {
     }
 }

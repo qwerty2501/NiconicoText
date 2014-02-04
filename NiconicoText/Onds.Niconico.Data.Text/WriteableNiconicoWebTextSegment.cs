@@ -8,7 +8,7 @@ namespace Onds.Niconico.Data.Text
 {
     internal sealed class WriteableNiconicoWebTextSegment:INiconicoTextSegment,INiconicoWebTextSegment,IReadOnlyNiconicoWebTextSegment,INiconicoWebTextSegmentTuner
     {
-        public INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
+        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
         {
             get { return this.Segments; }
         }
@@ -150,7 +150,7 @@ namespace Onds.Niconico.Data.Text
         public NiconicoWebTextSegmentCollection Segments
         {
             get;
-            private set;
+            set;
         }
     }
 }

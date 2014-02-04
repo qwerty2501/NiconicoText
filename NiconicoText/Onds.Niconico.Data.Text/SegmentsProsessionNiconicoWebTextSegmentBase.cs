@@ -60,21 +60,5 @@ namespace Onds.Niconico.Data.Text
         }
 
 
-
-
-
-        NiconicoWebTextSegmentCollection INiconicoWebTextSegmentTuner.Segments
-        {
-            get
-            {
-                return this.EditableSegments;
-            }
-            set
-            {
-                this.Segments = value;
-            }
-        }
-
-        
     }
 }
