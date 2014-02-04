@@ -8,7 +8,7 @@ namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase<T> :  IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment, INiconicoWebTextSegmentTuner
+    internal abstract class NiconicoWebTextSegmentBase<T> :  IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
         where T:IReadOnlyNiconicoWebTextSegment
     {
 
