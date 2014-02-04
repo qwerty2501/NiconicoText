@@ -21,8 +21,18 @@ namespace Onds.Niconico.Data.Text
 
         public INiconicoWebText Root
         {
-            get;
-            private set;
+            get
+            {
+                return this.HasParent ? this.Parent.Root : null;
+            }
+        }
+
+        internal bool HasParent
+        {
+            get
+            {
+                return this.Parent != null;
+            }
         }
 
         public IReadOnlyList<INiconicoWebTextSegment> ImportText(string text)
@@ -52,87 +62,131 @@ namespace Onds.Niconico.Data.Text
 
         public bool HasUrl
         {
-            get { throw new NotImplementedException(); }
+            get 
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.HasUrlFlag) == NiconicoWebTextDecorateFlags.HasUrlFlag)
+                    return true;
+
+                return this.HasParent ? this.Parent.HasUrl : false;
+            }
         }
 
         public bool HasSegments
         {
-            get { throw new NotImplementedException(); }
+            get { return this.Segments != null; }
         }
 
         public NiconicoWebTextSegmentType SegmentType
         {
-            get { throw new NotImplementedException(); }
+            get;
+            private set;
         }
 
         IReadOnlyList<IReadOnlyNiconicoWebTextSegment> IReadOnlyNiconicoWebTextSegment.Segments
         {
-            get { throw new NotImplementedException(); }
+            get { return this.Segments; }
         }
 
         public bool HasNumberAnchor
         {
-            get { throw new NotImplementedException(); }
+            get 
+            {
+                return ! this.NumberAnchor.Equals(default(NiconicoWebTextNumberAnchorRange));
+            }
         }
 
         public NiconicoWebTextNumberAnchorRange NumberAnchor
         {
-            get { throw new NotImplementedException(); }
+            get;
+            private set;
         }
 
         public byte FontElementSize
         {
-            get { throw new NotImplementedException(); }
+            get;
+            private set;
         }
 
         public bool DecoratedUnderLine
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.DecoratedUnderLineFlag) == NiconicoWebTextDecorateFlags.DecoratedUnderLineFlag)
+                    return true;
+
+                return this.HasParent ? this.Parent.DecoratedUnderLine : false;
+            }
         }
 
         public bool DecoratedBold
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.DecoratedBoldFlag) == NiconicoWebTextDecorateFlags.DecoratedBoldFlag)
+                    return true;
+
+                return this.HasParent ? this.Parent.DecoratedBold : false;
+                
+            }
         }
 
         public bool DecoratedStrike
         {
-            get { throw new NotImplementedException(); }
+            get 
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.DecoratedStrikeFlag) == NiconicoWebTextDecorateFlags.DecoratedStrikeFlag)
+                    return true;
+
+                return this.HasParent ? this.Parent.DecoratedStrike : false;
+            }
         }
 
         public bool DecoratedItalic
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.DecoratedItalicFlag) == NiconicoWebTextDecorateFlags.DecoratedItalicFlag)
+                    return true;
+                return this.HasParent ? this.Parent.DecoratedItalic : false;
+            }
         }
 
         public bool DecoratedColor
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if ((this.decorateFlag_ & NiconicoWebTextDecorateFlags.DecoratedColorFlag) == NiconicoWebTextDecorateFlags.DecoratedColorFlag)
+                    return true;
+
+                return this.HasParent ? this.Parent.DecoratedColor : false;
+            }
         }
 
         public bool DecoratedFontElementSize
         {
-            get { throw new NotImplementedException(); }
+            get { return this.FontElementSize > 0 ? true : this.HasParent ? this.Parent.DecoratedFontElementSize : false; }
         }
 
         public NiconicoTextColor Color
         {
-            get { throw new NotImplementedException(); }
+            get;
+            private set;
         }
 
         public Uri Url
         {
-            get { throw new NotImplementedException(); }
+            get;
+            private set;
         }
 
         IReadOnlyNiconicoWebTextSegment IReadOnlyNiconicoWebTextSegment.Parent
         {
-            get { throw new NotImplementedException(); }
+            get { return this.Parent; }
         }
 
         IReadOnlyNiconicoWebText IReadOnlyNiconicoWebTextSegment.Root
         {
-            get { throw new NotImplementedException(); }
+            get { return this.Root; }
         }
 
         public string Text
@@ -152,5 +206,7 @@ namespace Onds.Niconico.Data.Text
             get;
             set;
         }
+
+        private NiconicoWebTextDecorateFlags decorateFlag_;
     }
 }
