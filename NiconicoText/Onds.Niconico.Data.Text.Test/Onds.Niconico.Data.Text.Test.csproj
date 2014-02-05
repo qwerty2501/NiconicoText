@@ -238,8 +238,8 @@
     <Compile Include="..\Onds.Niconico.Data.Text\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Onds.Niconico.Data.Text\ReadOnlyNiconicoWebText.cs">
-      <Link>ReadOnlyNiconicoWebText.cs</Link>
+    <Compile Include="..\Onds.Niconico.Data.Text\RestrictedNiconicoWebText.cs">
+      <Link>RestrictedNiconicoWebText.cs</Link>
     </Compile>
     <Compile Include="..\Onds.Niconico.Data.Text\SegmentsProsessionNiconicoWebTextSegmentBase.cs">
       <Link>SegmentsProsessionNiconicoWebTextSegmentBase.cs</Link>
@@ -340,7 +340,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="ff673ebd-b0e2-4e79-b2b9-1d77c48565c9" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

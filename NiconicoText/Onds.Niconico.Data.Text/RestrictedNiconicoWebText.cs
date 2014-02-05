@@ -9,7 +9,7 @@ namespace Onds.Niconico.Data.Text
 
     using Color = NiconicoTextColor;
 
-    public sealed class ReadOnlyNiconicoWebText:IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoText,INiconicoTextSegment
+    public sealed class RestrictedNiconicoWebText:IReadOnlyNiconicoWebText,IReadOnlyNiconicoWebTextSegment,INiconicoText,INiconicoTextSegment
     {
         public NiconicoTextType TextType
         {

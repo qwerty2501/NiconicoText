@@ -16,10 +16,10 @@ namespace Onds.Niconico.Data.Text
         /// </summary>
         /// <param name="text">Plain Niconico web text.</param>
         /// <returns>Parsed text.</returns>
-        public static ReadOnlyNiconicoWebText ParseWebText(string text)
+        public static RestrictedNiconicoWebText ParseWebText(string text)
         {
             var segments =  NiconicoWebTextSegmenter.DivideToSegments(text);
-            var readOnlyText = new ReadOnlyNiconicoWebText();
+            var readOnlyText = new RestrictedNiconicoWebText();
             readOnlyText.Segments = segments;
             return readOnlyText;
         }
