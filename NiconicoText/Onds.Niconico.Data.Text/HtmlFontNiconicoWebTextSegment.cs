@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Onds.Niconico.Data.Text
 {
+    using System.Text.RegularExpressions;
     using Color = NiconicoTextColor;
 
     internal sealed class HtmlFontNiconicoWebTextSegment<T>:SegmentsProsessionNiconicoWebTextSegmentBase<T>,IReadOnlyNiconicoWebTextSegment,INiconicoTextSegment
@@ -125,11 +126,24 @@ namespace Onds.Niconico.Data.Text
         
         private FontElementSize fontElementSize_;
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static HtmlFontNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            var fontElementSizeGroup = match.Groups[NiconicoWebTextPatternIndexs.sizeGroupNumber];
-            var colorCodeGroup = match.Groups[NiconicoWebTextPatternIndexs.colorCodeGroupNumber];
-            var colorNameGroup = match.Groups[NiconicoWebTextPatternIndexs.colorNameGroupNumber];
+            var segment = ParseWebTextPartial(match, parent);
+            segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value, segment);
+            return segment;
+        }
+
+
+        internal static HtmlFontNiconicoWebTextSegment<T> ParseWebTextPartial(Match match, T parent)
+        {
+            return ParseTextPartial(match, parent, NiconicoWebTextPatternIndexs.sizeGroupNumber, NiconicoWebTextPatternIndexs.colorCodeGroupNumber, NiconicoWebTextPatternIndexs.colorNameGroupNumber);
+        }
+
+        internal static HtmlFontNiconicoWebTextSegment<T> ParseTextPartial(Match match, T parent, int sizeGroupNumber, int colorCodeGroupNumber, int colorNameGroupNumber)
+        {
+            var fontElementSizeGroup = match.Groups[sizeGroupNumber];
+            var colorCodeGroup = match.Groups[colorCodeGroupNumber];
+            var colorNameGroup = match.Groups[colorNameGroupNumber];
             var codeColor = new Color();
             var nameColor = new Color();
 
@@ -167,27 +181,26 @@ namespace Onds.Niconico.Data.Text
                     fontSize = new FontElementSize(byte.Parse(fontElementSizeGroup.Value));
                 }
 
-                
 
-               
+
+
             }
 
             HtmlFontNiconicoWebTextSegment<T> segment;
 
             if (colorCodeGroup.Success)
             {
-                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize, codeColor,parent);
+                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize, codeColor, parent);
             }
             else if (colorNameGroup.Success)
             {
-                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize, nameColor,parent);
+                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize, nameColor, parent);
             }
             else
             {
-                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize,parent);
+                segment = new HtmlFontNiconicoWebTextSegment<T>(fontSize, parent);
             }
 
-            segment.Segments = segmenter.PartialDivide(match.Groups[NiconicoWebTextPatternIndexs.fontTextGroupNumber].Value,segment);
             return segment;
         }
     }

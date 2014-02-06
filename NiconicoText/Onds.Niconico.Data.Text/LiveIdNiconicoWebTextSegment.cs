@@ -18,7 +18,7 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.LiveId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static LiveIdNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
             return new LiveIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.liveIdGroupNumber].Value,parent);
         }

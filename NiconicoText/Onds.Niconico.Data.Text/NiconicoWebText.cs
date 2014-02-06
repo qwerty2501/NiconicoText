@@ -12,7 +12,7 @@ namespace Onds.Niconico.Data.Text
     {
         public NiconicoWebText()
         {
-            this.segments_ = new NiconicoWebTextSegmentCollection();
+            this.segments_ = new NiconicoWebTextSegmentCollection(this);
         }
         
         public event NiconicoTextUpdateHandler TextUpdated;

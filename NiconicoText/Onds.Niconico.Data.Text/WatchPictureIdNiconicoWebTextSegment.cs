@@ -15,9 +15,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.PictureId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static WatchPictureIdNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new WatchPictureIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.watchPictureIdGroupNumber].Value,parent);
+            return new WatchPictureIdNiconicoWebTextSegment<T>(match.Value,parent);
         }
     }
 }

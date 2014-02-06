@@ -20,9 +20,9 @@ namespace Onds.Niconico.Data.Text
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static VideoIdNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new VideoIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.videoIdGroupNumber].Value,parent);
+            return new VideoIdNiconicoWebTextSegment<T>(match.Value,parent);
         }
     }
 }

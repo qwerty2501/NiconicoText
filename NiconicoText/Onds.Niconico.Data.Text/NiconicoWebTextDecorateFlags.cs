@@ -11,12 +11,11 @@ namespace Onds.Niconico.Data.Text
     {
         None = 0,
         HasSegmentsFlag = 1,
-        HasUrlFlag = 2,
-        HasNumberAnchorFlag = 4,
-        DecoratedUnderLineFlag = 8,
-        DecoratedBoldFlag = 16,
-        DecoratedStrikeFlag = 32,
-        DecoratedItalicFlag = 64,
-        DecoratedColorFlag = 128,
+        HasNumberAnchorFlag = 2,
+        DecoratedUnderLineFlag = 4,
+        DecoratedBoldFlag = 8,
+        DecoratedStrikeFlag = 16,
+        DecoratedItalicFlag = 32,
+        DecoratedColorFlag = 64,
     }
 }

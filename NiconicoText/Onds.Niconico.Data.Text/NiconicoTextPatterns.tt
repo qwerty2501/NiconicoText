@@ -53,10 +53,17 @@ namespace Onds.Niconico.Data.Text
 				return "(?:" + createIdPattern(pattern) + ")";
 			};
 
+
+			Func<string,string,string,string> toWriteableParseCase = (key,className,methodName) =>
+			{
+				return "case " + className + "." + key + "GroupNumber:\r\n" +
+						@"				return " + "WriteableNiconicoWebTextSegment.Parse" + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + methodName + "(match,segmenter,parent);";
+			};
+
 			Func<string,string,string,string> toParseCase = (key,className,methodName) =>
 			{
 				return "case " + className + "." + key + "GroupNumber:\r\n" +
-						@"		return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment<T>." + methodName + "(match,segmenter,parent);";
+						@"				return " + char.ToUpper(key[0]) + key.Substring(1,key.Length -1) + "NiconicoWebTextSegment<T>." + methodName + "(match,segmenter,parent);";
 			};
 
 			Action writeMatchIndexHead = ()=>
@@ -72,6 +79,18 @@ namespace Onds.Niconico.Data.Text
 			}"
 #>
 			<#
+			};
+
+			Action<Dictionary<string,string>,string,string> writeWriteableParseCases = (patterns,className,methodName)=>
+			{
+				foreach(var pattern in patterns)
+				{
+				#>
+
+			<#= toWriteableParseCase(pattern.Key,className ,methodName) #>
+
+				<#
+				}
 			};
 
 			Action<Dictionary<string,string>,string,string> writeParseCases = (patterns,className,methodName)=>
@@ -211,6 +230,29 @@ namespace Onds.Niconico.Data.Text
 			}
 		}
 
+	}
+
+	internal static class WriteableNiconicoWebTextSegmentMatchParser
+	{
+		internal static WriteableNiconicoWebTextSegment Parse<T>(Match match,NiconicoWebTextSegmenter segmenter,T parent)
+			where T:INiconicoWebTextSegment
+		{
+			<#
+			writeMatchIndexHead();
+			#>
+
+			switch(matchIndex)
+			{
+			<#
+
+			writeWriteableParseCases(niconicoTextPatterns,"NiconicoWebTextPatternIndexs","WebText");
+			#>
+
+			<#= @"default:
+					return WriteableNiconicoWebTextSegment.CreatePlainText(match.Value,parent);"
+			#>
+			}
+		}
 	}
 
 	namespace Comments{

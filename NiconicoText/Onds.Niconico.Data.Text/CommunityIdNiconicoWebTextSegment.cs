@@ -17,9 +17,9 @@ namespace Onds.Niconico.Data.Text
             get { return NiconicoWebTextSegmentType.CommunityId; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static CommunityIdNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new CommunityIdNiconicoWebTextSegment<T>(match.Groups[NiconicoWebTextPatternIndexs.communityIdGroupNumber].Value,parent);
+            return new CommunityIdNiconicoWebTextSegment<T>(match.Value,parent);
         }
     }
 }

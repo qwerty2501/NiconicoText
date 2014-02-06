@@ -8,7 +8,7 @@ namespace Onds.Niconico.Data.Text
 {
     using Color = NiconicoTextColor;
 
-    internal abstract class NiconicoWebTextSegmentBase<T> :  IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment
+    internal abstract class NiconicoWebTextSegmentBase<T> :  IReadOnlyNiconicoWebTextSegment, INiconicoTextSegment,INiconicoWebTextSegment
         where T:IReadOnlyNiconicoWebTextSegment
     {
 
@@ -134,6 +134,58 @@ namespace Onds.Niconico.Data.Text
         public bool DecoratedFontElementSize
         {
             get { return this.HasParent ? this.Parent.DecoratedFontElementSize : false; }
+        }
+
+        INiconicoWebTextSegmentCollection INiconicoWebTextSegment.Segments
+        {
+            get { throw new NotSupportedException(); }
+        }
+
+        INiconicoWebTextSegment INiconicoWebTextSegment.Parent
+        {
+            get
+            {
+                if (!(this.Parent is INiconicoWebTextSegment))
+                    throw new NotSupportedException();
+
+                return this.Parent as INiconicoWebTextSegment;
+            }
+        }
+
+        INiconicoWebText INiconicoWebTextSegment.Root
+        {
+            get 
+            {
+                if (!(this.Parent is INiconicoWebText))
+                    throw new NotSupportedException();
+
+                return this.Parent as INiconicoWebText;
+            }
+        }
+
+        public IReadOnlyList<INiconicoWebTextSegment> ImportText(string text)
+        {
+            throw new NotSupportedException();
+        }
+
+        public IReadOnlyList<INiconicoWebTextSegment> InsertTextBefore(string text, INiconicoWebTextSegment referenceSegment)
+        {
+            throw new NotSupportedException();
+        }
+
+        public INiconicoWebTextSegment ImportSegment(IReadOnlyNiconicoWebTextSegment newSegment)
+        {
+            throw new NotSupportedException();
+        }
+
+        public INiconicoWebTextSegment InsertSegmentBefore(IReadOnlyNiconicoWebTextSegment newSemgment, INiconicoWebTextSegment referenceSegment)
+        {
+            throw new NotSupportedException();
+        }
+
+        public INiconicoWebTextSegment RemoveChildSegment(INiconicoWebTextSegment semgent)
+        {
+            throw new NotSupportedException();
         }
     }
 }

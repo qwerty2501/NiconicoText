@@ -36,7 +36,7 @@ namespace Onds.Niconico.Data.Text
         internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
             var invalidHtml = new HtmlInvalidElementNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
-            var matchValue = match.Groups[NiconicoWebTextPatternIndexs.htmlInvalidElementGroupNumber].Value;
+            var matchValue = match.Value;
             invalidHtml.Segments = segmenter.PartialDivide(matchValue.Substring(1,matchValue.Length - 2), invalidHtml);
             return invalidHtml;
         }

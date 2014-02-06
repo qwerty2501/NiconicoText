@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,11 @@ namespace Onds.Niconico.Data.Text
             return segmenter.Divide(text);
         }
 
+        internal static List<INiconicoWebTextSegment> DivideToWritableSegments(string text,INiconicoWebTextSegment parent)
+        {
+            return segmenter.WritablePartialDivide(text, parent);
+        }
+
         internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> Divide(string text)
         {
             return this.PartialDivide(text, default(IReadOnlyNiconicoWebTextSegment));
@@ -36,29 +42,45 @@ namespace Onds.Niconico.Data.Text
         internal IReadOnlyList<IReadOnlyNiconicoWebTextSegment> PartialDivide(string text, IReadOnlyNiconicoWebTextSegment parent)
         {
             var segments = new List<IReadOnlyNiconicoWebTextSegment>();
-            int matchIndex = 0;
-            foreach(Match match in this.regex_.Matches(text))
+
+            generalDivide(segments, text, parent);
+            return segments.ToArray();
+        }
+
+        internal List<INiconicoWebTextSegment> WritablePartialDivide( string text, IReadOnlyNiconicoWebTextSegment parent)
+        {
+            var segments = new List<INiconicoWebTextSegment>();
+
+            generalDivide(segments, text, parent);
+            return segments;
+        }
+
+        private void generalDivide<T,L>(L segments, string text, T parent)
+            where T:IReadOnlyNiconicoWebTextSegment
+            where L:IList
+        {
+            var matchIndex = 0;
+            foreach (Match match in this.regex_.Matches(text))
             {
                 
                 if (matchIndex < match.Index)
                 {
-                    segments.Add(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(text.Substring(matchIndex, match.Index - matchIndex), parent));
+                    segments.Add(new PlainNiconicoWebTextSegment<T>(text.Substring(matchIndex, match.Index - matchIndex), parent));
                 }
 
-                segments.Add(NiconicoWebTextSegmentMatchParser.Parse<IReadOnlyNiconicoWebTextSegment>(match, this,parent));
+                segments.Add(NiconicoWebTextSegmentMatchParser.Parse<T>(match, this, parent));
 
                 matchIndex = match.Index + match.Length;
-               
+
             }
 
 
             if (matchIndex < text.Length)
             {
-                segments.Add(new PlainNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(text.Substring(matchIndex), parent));
+                segments.Add(new PlainNiconicoWebTextSegment<T>(text.Substring(matchIndex), parent));
             }
-
-            return segments.ToArray();
         }
+
 
         private Regex regex_;
 

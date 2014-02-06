@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 
 namespace Onds.Niconico.Data.Text
@@ -59,20 +60,23 @@ namespace Onds.Niconico.Data.Text
 
         private string rangeCash_;
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
         {
-            var secondGroup = match.Groups[NiconicoWebTextPatternIndexs.endNumberAnchorGroupNumber];
+            return new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(ParseRange(match), parent);   
+        }
 
-            if(secondGroup.Success)
+        internal static NiconicoWebTextNumberAnchorRange ParseRange(Match match)
+        {
+            var endGroup = match.Groups[NiconicoWebTextPatternIndexs.endNumberAnchorGroupNumber];
+            var startGroup = match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber];
+            if (endGroup.Success)
             {
-                return new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value), EndNumber = int.Parse(secondGroup.Value) },parent);
+                return new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(startGroup.Value), EndNumber = int.Parse(endGroup.Value) };
             }
             else
             {
-                return new NumberAnchorNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(match.Groups[NiconicoWebTextPatternIndexs.startNumberAnchorGroupNumber].Value) },parent);
+                return new NiconicoWebTextNumberAnchorRange { StartNumber = int.Parse(startGroup.Value) };
             }
-
-            
         }
     }
 }

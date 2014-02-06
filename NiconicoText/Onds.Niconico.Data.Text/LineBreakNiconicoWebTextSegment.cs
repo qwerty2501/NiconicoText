@@ -35,9 +35,9 @@ namespace Onds.Niconico.Data.Text
             get { return Environment.NewLine; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static LineBreakNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new LineBreakNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
+            return new LineBreakNiconicoWebTextSegment<T>(parent);
         }
     }
 
@@ -51,9 +51,9 @@ namespace Onds.Niconico.Data.Text
             get { return "<br>"; }
         }
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, IReadOnlyNiconicoWebTextSegment parent)
+        internal static HtmlBreakNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new HtmlBreakNiconicoWebTextSegment<IReadOnlyNiconicoWebTextSegment>(parent);
+            return new HtmlBreakNiconicoWebTextSegment<T>(parent);
         }
     }
 }

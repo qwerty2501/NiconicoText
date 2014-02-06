@@ -40,9 +40,9 @@ namespace Onds.Niconico.Data.Text
 
 
 
-        internal static IReadOnlyNiconicoWebTextSegment ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
+        internal static UrlNiconicoWebTextSegment<T> ParseWebText(System.Text.RegularExpressions.Match match, NiconicoWebTextSegmenter segmenter, T parent)
         {
-            return new UrlNiconicoWebTextSegment<T>(new Uri(match.Groups[NiconicoWebTextPatternIndexs.urlGroupNumber].Value),parent);
+            return new UrlNiconicoWebTextSegment<T>(new Uri(match.Value),parent);
         }
     }
 }
